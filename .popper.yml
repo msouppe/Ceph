@@ -1,0 +1,12 @@
+metadata: {}
+pipelines:
+  ceph:
+    envs:
+    - host
+    path: pipelines/ceph
+    stages:
+    - setup
+    - run
+    - post-run
+    - validate
+    - teardown
