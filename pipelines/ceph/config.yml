@@ -1,0 +1,9 @@
+benchmarks:
+- name: radosbench
+  image: ivotron/rados-bench
+  environment_host:
+    node0:
+       CLINET: true
+    node1:
+        MONITOR: true
+        OSD: true
