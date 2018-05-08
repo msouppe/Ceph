@@ -7,4 +7,4 @@ docker run --rm --name=bl \
     -v /home/yeyette:/.ssh/id_rsa \
     --workdir=/bl \
     --net=host \
-    baseliner -e -s -i /hosts
+    ivotron/baseliner:0.2 -e -s -i /hosts

@@ -1,0 +1,161 @@
+
+2018-05-08 17:10:45,806 p=9 u=root |   [WARNING]: Unable to parse /hosts/ceph-src as an inventory source
+
+2018-05-08 17:10:45,811 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/playbook.yml with yaml plugin: YAML
+inventory has invalid structure, it should be a dictionary, got: <class
+'ansible.parsing.yaml.objects.AnsibleSequence'>
+
+2018-05-08 17:10:45,812 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/playbook.yml with ini plugin:
+/hosts/playbook.yml:1: Expected key=value host variable assignment, got: hosts:
+
+2018-05-08 17:10:45,812 p=9 u=root |   [WARNING]: Unable to parse /hosts/playbook.yml as an inventory source
+
+2018-05-08 17:10:45,816 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/results/baseliner.log with ini plugin:
+/hosts/results/baseliner.log:2: Expected key=value host variable assignment,
+got: 17:10:45,806
+
+2018-05-08 17:10:45,816 p=9 u=root |   [WARNING]: Unable to parse /hosts/results/baseliner.log as an inventory source
+
+2018-05-08 17:10:45,816 p=9 u=root |   [WARNING]: Unable to parse /hosts/results as an inventory source
+
+2018-05-08 17:10:45,821 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-bench/ceph/Dockerfile with
+yaml plugin: YAML inventory has invalid structure, it should be a dictionary,
+got: <class 'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2018-05-08 17:10:45,821 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-bench/ceph/Dockerfile with
+ini plugin: /hosts/scripts/docker-bench/ceph/Dockerfile:1: Expected key=value
+host variable assignment, got: ceph/daemon:master-ec8d33f-luminous-
+ubuntu-16.04-x86_64
+
+2018-05-08 17:10:45,822 p=9 u=root |   [WARNING]: Unable to parse /hosts/scripts/docker-bench/ceph/Dockerfile as an
+inventory source
+
+2018-05-08 17:10:45,826 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-bench/ceph/entrypoint.sh
+with script plugin: problem running /hosts/scripts/docker-
+bench/ceph/entrypoint.sh --list ([Errno 13] Permission denied)
+
+2018-05-08 17:10:45,826 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-bench/ceph/entrypoint.sh
+with ini plugin: /hosts/scripts/docker-bench/ceph/entrypoint.sh:2: Expected
+key=value host variable assignment, got: -ex
+
+2018-05-08 17:10:45,827 p=9 u=root |   [WARNING]: Unable to parse /hosts/scripts/docker-bench/ceph/entrypoint.sh as
+an inventory source
+
+2018-05-08 17:10:45,827 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-
+bench/ceph/etcceph/ceph.conf with ini plugin: /hosts/scripts/docker-
+bench/ceph/etcceph/ceph.conf:2: Expected key=value host variable assignment,
+got: b2bb6c0b-6cc6-44f1-bf92-1ce81d78fbdc
+
+2018-05-08 17:10:45,828 p=9 u=root |   [WARNING]: Unable to parse /hosts/scripts/docker-bench/ceph/etcceph/ceph.conf
+as an inventory source
+
+2018-05-08 17:10:45,828 p=9 u=root |   [WARNING]: Unable to parse /hosts/scripts/docker-bench/ceph/etcceph as an
+inventory source
+
+2018-05-08 17:10:45,832 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-
+bench/ceph/scripts/ceph_health_ok with script plugin: problem running
+/hosts/scripts/docker-bench/ceph/scripts/ceph_health_ok --list ([Errno 13]
+Permission denied)
+
+2018-05-08 17:10:45,832 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-
+bench/ceph/scripts/ceph_health_ok with yaml plugin: YAML inventory has invalid
+structure, it should be a dictionary, got: <class
+'ansible.parsing.yaml.objects.AnsibleUnicode'>
+
+2018-05-08 17:10:45,832 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-
+bench/ceph/scripts/ceph_health_ok with ini plugin: /hosts/scripts/docker-
+bench/ceph/scripts/ceph_health_ok:4: Expected key=value host variable
+assignment, got: i
+
+2018-05-08 17:10:45,832 p=9 u=root |   [WARNING]: Unable to parse /hosts/scripts/docker-
+bench/ceph/scripts/ceph_health_ok as an inventory source
+
+2018-05-08 17:10:45,838 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-
+bench/ceph/scripts/run_osds with script plugin: problem running /hosts/scripts
+/docker-bench/ceph/scripts/run_osds --list ([Errno 13] Permission denied)
+
+2018-05-08 17:10:45,838 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-
+bench/ceph/scripts/run_osds with yaml plugin: Syntax Error while loading YAML.
+The error appears to have been in '/hosts/scripts/docker-
+bench/ceph/scripts/run_osds': line 19, column 3, but may be elsewhere in the
+file depending on the exact syntax problem.  The offending line appears to be:
+# last invocation runs in the foreground   if [ $dev == ${devices[-1]} ]; then
+^ here  exception type: <class 'yaml.parser.ParserError'> exception: expected
+'<document start>', but found '<scalar>'   in "<unicode string>", line 19,
+column 3:       if [ $dev == ${devices[-1]} ]; then       ^
+
+2018-05-08 17:10:45,839 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-
+bench/ceph/scripts/run_osds with ini plugin: /hosts/scripts/docker-
+bench/ceph/scripts/run_osds:2: Expected key=value host variable assignment,
+got: -ex
+
+2018-05-08 17:10:45,839 p=9 u=root |   [WARNING]: Unable to parse /hosts/scripts/docker-bench/ceph/scripts/run_osds
+as an inventory source
+
+2018-05-08 17:10:45,844 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-
+bench/ceph/scripts/run_radosbench with script plugin: problem running
+/hosts/scripts/docker-bench/ceph/scripts/run_radosbench --list ([Errno 13]
+Permission denied)
+
+2018-05-08 17:10:45,845 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-
+bench/ceph/scripts/run_radosbench with yaml plugin: Syntax Error while loading
+YAML.   The error appears to have been in '/hosts/scripts/docker-
+bench/ceph/scripts/run_radosbench': line 6, column 1, but may be elsewhere in
+the file depending on the exact syntax problem.  The offending line appears to
+be:   ceph osd pool rm rbd rbd --yes-i-really-really-mean-it ^ here  exception
+type: <class 'yaml.parser.ParserError'> exception: expected '<document start>',
+but found '<scalar>'   in "<unicode string>", line 6, column 1:     ceph osd
+pool rm rbd rbd --yes-i ...      ^
+
+2018-05-08 17:10:45,845 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/scripts/docker-
+bench/ceph/scripts/run_radosbench with ini plugin: /hosts/scripts/docker-
+bench/ceph/scripts/run_radosbench:2: Expected key=value host variable
+assignment, got: -ex
+
+2018-05-08 17:10:45,845 p=9 u=root |   [WARNING]: Unable to parse /hosts/scripts/docker-
+bench/ceph/scripts/run_radosbench as an inventory source
+
+2018-05-08 17:10:45,845 p=9 u=root |   [WARNING]: Unable to parse /hosts/scripts/docker-bench/ceph/scripts as an
+inventory source
+
+2018-05-08 17:10:45,846 p=9 u=root |   [WARNING]: Unable to parse /hosts/scripts/docker-bench/ceph as an inventory
+source
+
+2018-05-08 17:10:45,846 p=9 u=root |   [WARNING]: Unable to parse /hosts/scripts/docker-bench as an inventory source
+
+2018-05-08 17:10:45,846 p=9 u=root |   [WARNING]: Unable to parse /hosts/scripts as an inventory source
+
+2018-05-08 17:10:45,859 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/setup.sh with script plugin: Inventory
+script (/hosts/setup.sh) had an execution error: docker: Cannot connect to the
+Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+
+2018-05-08 17:10:45,859 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/setup.sh with ini plugin:
+/hosts/setup.sh:4: Error parsing host definition 'docker run --rm --name=bl \':
+No escaped character
+
+2018-05-08 17:10:45,859 p=9 u=root |   [WARNING]: Unable to parse /hosts/setup.sh as an inventory source
+
+2018-05-08 17:10:45,867 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/validate.sh with script plugin: Inventory
+script (/hosts/validate.sh) had an execution error: /hosts/validate.sh: line 4:
+syntax error near unexpected token `value1,' /hosts/validate.sh: line 4:
+`function my_function(value1, value2)'
+
+2018-05-08 17:10:45,868 p=9 u=root |   [WARNING]:  * Failed to parse /hosts/validate.sh with ini plugin:
+/hosts/validate.sh:4: Expected key=value host variable assignment, got:
+my_function(value1,
+
+2018-05-08 17:10:45,868 p=9 u=root |   [WARNING]: Unable to parse /hosts/validate.sh as an inventory source
+
+2018-05-08 17:10:46,086 p=9 u=root |  PLAY [all] *********************************************************************
+2018-05-08 17:10:46,093 p=9 u=root |  TASK [Gathering Facts] *********************************************************
+2018-05-08 17:10:46,093 p=9 u=root |  Tuesday 08 May 2018  17:10:46 +0000 (0:00:00.042)       0:00:00.042 *********** 
+2018-05-08 17:10:46,371 p=9 u=root |  fatal: [node1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host localhost port 2221: Connection refused\r\n", "unreachable": true}
+2018-05-08 17:10:46,371 p=9 u=root |  fatal: [node0]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host localhost port 2220: Connection refused\r\n", "unreachable": true}
+2018-05-08 17:10:46,372 p=9 u=root |  PLAY RECAP *********************************************************************
+2018-05-08 17:10:46,372 p=9 u=root |  node0                      : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-08 17:10:46,372 p=9 u=root |  node1                      : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-08 17:10:46,372 p=9 u=root |  Tuesday 08 May 2018  17:10:46 +0000 (0:00:00.279)       0:00:00.321 *********** 
+2018-05-08 17:10:46,372 p=9 u=root |  =============================================================================== 
+2018-05-08 17:10:46,372 p=9 u=root |  Gathering Facts --------------------------------------------------------- 0.28s
+2018-05-08 17:10:46,373 p=9 u=root |  Playbook run took 0 days, 0 hours, 0 minutes, 0 seconds
