@@ -1,0 +1,4 @@
++ '[' -z True ']'
++ '[' -z '' ']'
++ echo 'Expecting CEPH_PUBLIC_NETWORK and MON_IP variables'
++ exit 1

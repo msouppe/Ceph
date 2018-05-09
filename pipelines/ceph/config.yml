@@ -1,9 +1,14 @@
 benchmarks:
 - name: radosbench
-  image: ivotron/rados-bench
+  image: rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64
+  network_mode: cephnet
   environment_host:
     node0:
-       CLINET: true
+       CLIENT: true
+       MON_IP: 175.20.0.12
     node1:
         MONITOR: true
+        IP_HOST: 
+        CEPH_PUBLIC_NETWORK: 175.20.0.0/12 
+        MON_IP: 175.20.0.12
         OSD: true
