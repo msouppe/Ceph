@@ -43,7 +43,7 @@ cat > config.yml << EOL
 install_facter: false
 benchmarks:
 - name: rados-bench
-  image: rados:ADD_PROPER_TAG
+  image: rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64
   network_mode: ceph_net
   environment_host:
     node1:
