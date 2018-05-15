@@ -31,8 +31,8 @@ launch_node 2
 launch_node 3
 
 echo "node1 ansible_host=localhost ansible_port=2221 ansible_user=root" > hosts
-echo "node1 ansible_host=localhost ansible_port=2222 ansible_user=root" >> hosts
-echo "node1 ansible_host=localhost ansible_port=2223 ansible_user=root" >> hosts
+echo "node2 ansible_host=localhost ansible_port=2222 ansible_user=root" >> hosts
+echo "node3 ansible_host=localhost ansible_port=2223 ansible_user=root" >> hosts
 
 # get insecure key
 curl -O https://raw.githubusercontent.com/ivotron/docker-openssh/master/insecure_rsa
