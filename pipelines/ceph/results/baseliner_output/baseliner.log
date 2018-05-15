@@ -1,47 +1,15 @@
 
-2018-05-15 19:21:21,214 p=10 u=root |  PLAY [all] *********************************************************************
-2018-05-15 19:21:21,221 p=10 u=root |  TASK [Gathering Facts] *********************************************************
-2018-05-15 19:21:21,221 p=10 u=root |  Tuesday 15 May 2018  19:21:21 +0000 (0:00:00.044)       0:00:00.044 *********** 
-2018-05-15 19:21:25,459 p=10 u=root |  ok: [node2]
-2018-05-15 19:21:25,470 p=10 u=root |  ok: [node1]
-2018-05-15 19:21:25,485 p=10 u=root |  ok: [node3]
-2018-05-15 19:21:25,492 p=10 u=root |  TASK [baseliner : include_tasks] ***********************************************
-2018-05-15 19:21:25,492 p=10 u=root |  Tuesday 15 May 2018  19:21:25 +0000 (0:00:04.271)       0:00:04.315 *********** 
-2018-05-15 19:21:25,542 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/check_preconditions.yml for node1, node2, node3
-2018-05-15 19:21:25,550 p=10 u=root |  TASK [baseliner : ensure expected variables are defined] ***********************
-2018-05-15 19:21:25,550 p=10 u=root |  Tuesday 15 May 2018  19:21:25 +0000 (0:00:00.058)       0:00:04.374 *********** 
-2018-05-15 19:21:25,604 p=10 u=root |  ok: [node1] => {
-    "changed": false, 
-    "failed": false, 
-    "msg": "All assertions passed"
-}
-2018-05-15 19:21:25,611 p=10 u=root |  ok: [node2] => {
-    "changed": false, 
-    "failed": false, 
-    "msg": "All assertions passed"
-}
-2018-05-15 19:21:25,619 p=10 u=root |  ok: [node3] => {
-    "changed": false, 
-    "failed": false, 
-    "msg": "All assertions passed"
-}
-2018-05-15 19:21:25,624 p=10 u=root |  TASK [baseliner : set remote results path if not defined] **********************
-2018-05-15 19:21:25,625 p=10 u=root |  Tuesday 15 May 2018  19:21:25 +0000 (0:00:00.074)       0:00:04.448 *********** 
-2018-05-15 19:21:25,679 p=10 u=root |  ok: [node1]
-2018-05-15 19:21:25,685 p=10 u=root |  ok: [node2]
-2018-05-15 19:21:25,692 p=10 u=root |  ok: [node3]
-2018-05-15 19:21:25,699 p=10 u=root |  TASK [baseliner : ensure results folder exists] ********************************
-2018-05-15 19:21:25,699 p=10 u=root |  Tuesday 15 May 2018  19:21:25 +0000 (0:00:00.074)       0:00:04.522 *********** 
-2018-05-15 19:21:25,917 p=10 u=root |  ok: [node1 -> localhost]
-2018-05-15 19:21:25,923 p=10 u=root |  TASK [baseliner : check that pre-tasks file exists] ****************************
-2018-05-15 19:21:25,923 p=10 u=root |  Tuesday 15 May 2018  19:21:25 +0000 (0:00:00.224)       0:00:04.746 *********** 
-2018-05-15 19:21:25,941 p=10 u=root |  TASK [baseliner : check that post-tasks file exists] ***************************
-2018-05-15 19:21:25,941 p=10 u=root |  Tuesday 15 May 2018  19:21:25 +0000 (0:00:00.018)       0:00:04.765 *********** 
-2018-05-15 19:21:25,971 p=10 u=root |  TASK [baseliner : ensure docker-engine is installed] ***************************
-2018-05-15 19:21:25,971 p=10 u=root |  Tuesday 15 May 2018  19:21:25 +0000 (0:00:00.029)       0:00:04.794 *********** 
-2018-05-15 19:21:25,999 p=10 u=root |  TASK [baseliner : install statically linked docker] ****************************
-2018-05-15 19:21:25,999 p=10 u=root |  Tuesday 15 May 2018  19:21:25 +0000 (0:00:00.027)       0:00:04.822 *********** 
-2018-05-15 19:21:26,027 p=10 u=root |  TASK [baseliner : ensure the docker daemon is running] *************************
-2018-05-15 19:21:26,028 p=10 u=root |  Tuesday 15 May 2018  19:21:26 +0000 (0:00:00.028)       0:00:04.851 *********** 
-2018-05-15 19:21:26,055 p=10 u=root |  TASK [baseliner : stop any running container] **********************************
-2018-05-15 19:21:26,055 p=10 u=root |  Tuesday 15 May 2018  19:21:26 +0000 (0:00:00.027)       0:00:04.878 *********** 
+2018-05-15 19:32:50,773 p=11 u=root |  PLAY [all] *********************************************************************
+2018-05-15 19:32:50,779 p=11 u=root |  TASK [Gathering Facts] *********************************************************
+2018-05-15 19:32:50,779 p=11 u=root |  Tuesday 15 May 2018  19:32:50 +0000 (0:00:00.043)       0:00:00.043 *********** 
+2018-05-15 19:32:51,059 p=11 u=root |  fatal: [node2]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host localhost port 2222: Connection refused\r\n", "unreachable": true}
+2018-05-15 19:32:51,059 p=11 u=root |  fatal: [node1]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host localhost port 2221: Connection refused\r\n", "unreachable": true}
+2018-05-15 19:32:51,059 p=11 u=root |  fatal: [node3]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: connect to host localhost port 2223: Connection refused\r\n", "unreachable": true}
+2018-05-15 19:32:51,060 p=11 u=root |  PLAY RECAP *********************************************************************
+2018-05-15 19:32:51,060 p=11 u=root |  node1                      : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-15 19:32:51,060 p=11 u=root |  node2                      : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-15 19:32:51,060 p=11 u=root |  node3                      : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-15 19:32:51,061 p=11 u=root |  Tuesday 15 May 2018  19:32:51 +0000 (0:00:00.281)       0:00:00.324 *********** 
+2018-05-15 19:32:51,061 p=11 u=root |  =============================================================================== 
+2018-05-15 19:32:51,061 p=11 u=root |  Gathering Facts --------------------------------------------------------- 0.28s
+2018-05-15 19:32:51,061 p=11 u=root |  Playbook run took 0 days, 0 hours, 0 minutes, 0 seconds
