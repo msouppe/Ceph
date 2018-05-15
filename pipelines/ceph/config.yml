@@ -1,14 +1,19 @@
+install_facter: false
 benchmarks:
-- name: radosbench
+- name: rados-bench
   image: rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64
-  network_mode: cephnet
+  network_mode: ceph_net
   environment_host:
-    node0:
-       CLIENT: true
-       MON_IP: 175.20.0.12
     node1:
-        MONITOR: true
-        IP_HOST: 
-        CEPH_PUBLIC_NETWORK: 175.20.0.0/12 
-        MON_IP: 175.20.0.12
-        OSD: true
+      MONITOR: true
+      CEPH_NET: 175.20.0.0/16
+    node2:
+      OSD: true
+      MONITOR_IP: 
+      CEPH_NET: 175.20.0.0/16
+    node3:
+      CLIENT: true
+      MONITOR_IP: 
+      CEPH_NET: 175.20.0.0/16
+  ip_host:
+    node0: 

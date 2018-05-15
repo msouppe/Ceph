@@ -1,0 +1,33 @@
+
+2018-05-15 19:07:44,841 p=10 u=root |  PLAY [all] *********************************************************************
+2018-05-15 19:07:44,847 p=10 u=root |  TASK [Gathering Facts] *********************************************************
+2018-05-15 19:07:44,847 p=10 u=root |  Tuesday 15 May 2018  19:07:44 +0000 (0:00:00.042)       0:00:00.042 *********** 
+2018-05-15 19:07:48,955 p=10 u=root |  ok: [node1]
+2018-05-15 19:07:48,960 p=10 u=root |  TASK [baseliner : include_tasks] ***********************************************
+2018-05-15 19:07:48,960 p=10 u=root |  Tuesday 15 May 2018  19:07:48 +0000 (0:00:04.113)       0:00:04.155 *********** 
+2018-05-15 19:07:48,994 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/check_preconditions.yml for node1
+2018-05-15 19:07:49,000 p=10 u=root |  TASK [baseliner : ensure expected variables are defined] ***********************
+2018-05-15 19:07:49,000 p=10 u=root |  Tuesday 15 May 2018  19:07:49 +0000 (0:00:00.039)       0:00:04.194 *********** 
+2018-05-15 19:07:49,052 p=10 u=root |  ok: [node1] => {
+    "changed": false, 
+    "failed": false, 
+    "msg": "All assertions passed"
+}
+2018-05-15 19:07:49,056 p=10 u=root |  TASK [baseliner : set remote results path if not defined] **********************
+2018-05-15 19:07:49,056 p=10 u=root |  Tuesday 15 May 2018  19:07:49 +0000 (0:00:00.056)       0:00:04.251 *********** 
+2018-05-15 19:07:49,106 p=10 u=root |  ok: [node1]
+2018-05-15 19:07:49,113 p=10 u=root |  TASK [baseliner : ensure results folder exists] ********************************
+2018-05-15 19:07:49,114 p=10 u=root |  Tuesday 15 May 2018  19:07:49 +0000 (0:00:00.057)       0:00:04.308 *********** 
+2018-05-15 19:07:49,331 p=10 u=root |  ok: [node1 -> localhost]
+2018-05-15 19:07:49,337 p=10 u=root |  TASK [baseliner : check that pre-tasks file exists] ****************************
+2018-05-15 19:07:49,337 p=10 u=root |  Tuesday 15 May 2018  19:07:49 +0000 (0:00:00.223)       0:00:04.532 *********** 
+2018-05-15 19:07:49,358 p=10 u=root |  TASK [baseliner : check that post-tasks file exists] ***************************
+2018-05-15 19:07:49,358 p=10 u=root |  Tuesday 15 May 2018  19:07:49 +0000 (0:00:00.020)       0:00:04.553 *********** 
+2018-05-15 19:07:49,372 p=10 u=root |  TASK [baseliner : ensure docker-engine is installed] ***************************
+2018-05-15 19:07:49,372 p=10 u=root |  Tuesday 15 May 2018  19:07:49 +0000 (0:00:00.014)       0:00:04.567 *********** 
+2018-05-15 19:07:49,386 p=10 u=root |  TASK [baseliner : install statically linked docker] ****************************
+2018-05-15 19:07:49,386 p=10 u=root |  Tuesday 15 May 2018  19:07:49 +0000 (0:00:00.013)       0:00:04.581 *********** 
+2018-05-15 19:07:49,402 p=10 u=root |  TASK [baseliner : ensure the docker daemon is running] *************************
+2018-05-15 19:07:49,402 p=10 u=root |  Tuesday 15 May 2018  19:07:49 +0000 (0:00:00.015)       0:00:04.596 *********** 
+2018-05-15 19:07:49,418 p=10 u=root |  TASK [baseliner : stop any running container] **********************************
+2018-05-15 19:07:49,418 p=10 u=root |  Tuesday 15 May 2018  19:07:49 +0000 (0:00:00.015)       0:00:04.612 *********** 
