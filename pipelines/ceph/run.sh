@@ -30,7 +30,7 @@ docker pull ivotron/baseliner:0.2
 # [wf] invoke baseliner
 docker run --rm --name=bl \
     -v `pwd`:/bl \
-    -v $HOME/.ssh/id_rsa:/root/.ssh/id_rsa \
+    -v $SSHKEY:/root/.ssh/id_rsa \
     --workdir=/bl \
     --net=host \
     ivotron/baseliner:0.2 \
