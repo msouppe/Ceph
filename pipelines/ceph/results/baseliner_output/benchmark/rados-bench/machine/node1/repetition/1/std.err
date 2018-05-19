@@ -1,3 +1,10 @@
-Unable to find image 'rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64' locally
-docker: Error response from daemon: pull access denied for rados_bench, repository does not exist or may require 'docker login'.
-See 'docker run --help'.
++ '[' -z True ']'
++ '[' -z 175.20.0.0/16 ']'
++ '[' -z 175.20.0.12 ']'
++ sed -i -e s@monip@175.20.0.12@ /etc/ceph/ceph.conf
++ sed -i -e s@cephnet@175.20.0.0/16@ /etc/ceph/ceph.conf
++ '[' -f /etc/ceph/extra.conf ']'
++ '[' -n True ']'
++ '[' -n '' ']'
++ '[' -n '' ']'
++ '[' -n '' ']'

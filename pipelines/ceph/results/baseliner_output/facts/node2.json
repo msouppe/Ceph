@@ -21,16 +21,16 @@
     "ansible_date_time": {
         "date": "2018-05-16", 
         "day": "16", 
-        "epoch": "1526440313", 
-        "hour": "03", 
-        "iso8601": "2018-05-16T03:11:53Z", 
-        "iso8601_basic": "20180516T031153379963", 
-        "iso8601_basic_short": "20180516T031153", 
-        "iso8601_micro": "2018-05-16T03:11:53.380018Z", 
-        "minute": "11", 
+        "epoch": "1526496126", 
+        "hour": "18", 
+        "iso8601": "2018-05-16T18:42:06Z", 
+        "iso8601_basic": "20180516T184206919516", 
+        "iso8601_basic_short": "20180516T184206", 
+        "iso8601_micro": "2018-05-16T18:42:06.919570Z", 
+        "minute": "42", 
         "month": "05", 
-        "second": "53", 
-        "time": "03:11:53", 
+        "second": "06", 
+        "time": "18:42:06", 
         "tz": "UTC", 
         "tz_offset": "+0000", 
         "weekday": "Wednesday", 
@@ -420,8 +420,8 @@
         "PWD": "/root", 
         "SHELL": "/bin/bash", 
         "SHLVL": "1", 
-        "SSH_CLIENT": "172.17.0.1 60372 22", 
-        "SSH_CONNECTION": "172.17.0.1 60372 172.17.0.3 22", 
+        "SSH_CLIENT": "172.17.0.1 34472 22", 
+        "SSH_CONNECTION": "172.17.0.1 34472 172.17.0.3 22", 
         "SSH_TTY": "/dev/pts/0", 
         "USER": "root", 
         "_": "/bin/sh"
@@ -443,9 +443,9 @@
     }, 
     "ansible_fips": false, 
     "ansible_form_factor": "Desktop", 
-    "ansible_fqdn": "39162aaf64de", 
+    "ansible_fqdn": "c6013bb24747", 
     "ansible_host": "localhost", 
-    "ansible_hostname": "39162aaf64de", 
+    "ansible_hostname": "c6013bb24747", 
     "ansible_interfaces": [
         "lo", 
         "eth0"
@@ -467,92 +467,92 @@
     "ansible_local": {}, 
     "ansible_lsb": {}, 
     "ansible_machine": "x86_64", 
-    "ansible_memfree_mb": 293, 
+    "ansible_memfree_mb": 3959, 
     "ansible_memory_mb": {
         "nocache": {
-            "free": 3389, 
-            "used": 4459
+            "free": 6005, 
+            "used": 1843
         }, 
         "real": {
-            "free": 293, 
+            "free": 3959, 
             "total": 7848, 
-            "used": 7555
+            "used": 3889
         }, 
         "swap": {
-            "cached": 3, 
-            "free": 3539, 
+            "cached": 7, 
+            "free": 3528, 
             "total": 3965, 
-            "used": 426
+            "used": 437
         }
     }, 
     "ansible_memtotal_mb": 7848, 
     "ansible_mounts": [
         {
-            "block_available": 17265506, 
+            "block_available": 17128769, 
             "block_size": 4096, 
             "block_total": 27812296, 
-            "block_used": 10546790, 
+            "block_used": 10683527, 
             "device": "/dev/sdb1", 
             "fstype": "ext4", 
-            "inode_available": 6452782, 
+            "inode_available": 6432974, 
             "inode_total": 7077888, 
-            "inode_used": 625106, 
+            "inode_used": 644914, 
             "mount": "/tmp", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 70719512576, 
+            "size_available": 70159437824, 
             "size_total": 113919164416, 
             "uuid": "N/A"
         }, 
         {
-            "block_available": 17265506, 
+            "block_available": 17128769, 
             "block_size": 4096, 
             "block_total": 27812296, 
-            "block_used": 10546790, 
+            "block_used": 10683527, 
             "device": "/dev/sdb1", 
             "fstype": "ext4", 
-            "inode_available": 6452782, 
+            "inode_available": 6432974, 
             "inode_total": 7077888, 
-            "inode_used": 625106, 
+            "inode_used": 644914, 
             "mount": "/etc/resolv.conf", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 70719512576, 
+            "size_available": 70159437824, 
             "size_total": 113919164416, 
             "uuid": "N/A"
         }, 
         {
-            "block_available": 17265506, 
+            "block_available": 17128769, 
             "block_size": 4096, 
             "block_total": 27812296, 
-            "block_used": 10546790, 
+            "block_used": 10683527, 
             "device": "/dev/sdb1", 
             "fstype": "ext4", 
-            "inode_available": 6452782, 
+            "inode_available": 6432974, 
             "inode_total": 7077888, 
-            "inode_used": 625106, 
+            "inode_used": 644914, 
             "mount": "/etc/hostname", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 70719512576, 
+            "size_available": 70159437824, 
             "size_total": 113919164416, 
             "uuid": "N/A"
         }, 
         {
-            "block_available": 17265506, 
+            "block_available": 17128769, 
             "block_size": 4096, 
             "block_total": 27812296, 
-            "block_used": 10546790, 
+            "block_used": 10683527, 
             "device": "/dev/sdb1", 
             "fstype": "ext4", 
-            "inode_available": 6452782, 
+            "inode_available": 6432974, 
             "inode_total": 7077888, 
-            "inode_used": 625106, 
+            "inode_used": 644914, 
             "mount": "/etc/hosts", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 70719512576, 
+            "size_available": 70159437824, 
             "size_total": 113919164416, 
             "uuid": "N/A"
         }
     ], 
-    "ansible_nodename": "39162aaf64de", 
+    "ansible_nodename": "c6013bb24747", 
     "ansible_os_family": "Debian", 
     "ansible_pkg_mgr": "apt", 
     "ansible_playbook_python": "/usr/bin/python2", 
@@ -621,11 +621,11 @@
     "ansible_ssh_host_key_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOAfD98OXTWSmh5OgM1tETBzj/g11AcBKiMYVXVJjMjj+sLUyDHn84lWO5PRdL7LlSoX9nkIrRSGMMgElXl5m6s=", 
     "ansible_ssh_host_key_ed25519_public": "AAAAC3NzaC1lZDI1NTE5AAAAIPuUH47sb2gX6abvLFGJfi92PO6aIdFEdZm9hkjeETCv", 
     "ansible_ssh_host_key_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDP3+sztSvzBbFOO/BAElHjqOiQ2hj7J0jmYlCYVdf8YPjdGASNdjuBUSs56oRxvuig0ufqz8T0P4b7wmJKhxi8Gm6UrLBbtaGpRsq5XW/7SqamQY2DEztBrjBP/x/taeQgYq+YuHJRJuJ3MI+YS+mrjhdv53EZjuuCBX30poivGiV8z+Otzshz03hmqG2Lw9Nl2/YBWIw+78ChbXIvG82VLL+/WhGc930FV+ZDXyI734XG3hCn/rFWJRaVZJVllTn7w0EW8l0MoQSB00uMNmwR2TH2Cf9+t4e4wUKKr4WYCNP06T1pVPEWOY4N7TGcLoP2xUCTvzvoqjnjq2NJuRfh", 
-    "ansible_swapfree_mb": 3539, 
+    "ansible_swapfree_mb": 3528, 
     "ansible_swaptotal_mb": 3965, 
     "ansible_system": "Linux", 
     "ansible_system_vendor": "ASUS", 
-    "ansible_uptime_seconds": 1071945, 
+    "ansible_uptime_seconds": 1127759, 
     "ansible_user": "root", 
     "ansible_user_dir": "/root", 
     "ansible_user_gecos": "root", 
@@ -649,26 +649,27 @@
         {
             "environment_host": {
                 "node1": {
-                    "CEPH_NET": "175.20.0.0/16", 
-                    "MONITOR": true
+                    "CEPH_PUBLIC_NETWORK": "175.20.0.0/16", 
+                    "MONITOR": true, 
+                    "MON_IP": "175.20.0.12"
                 }, 
                 "node2": {
-                    "CEPH_NET": "175.20.0.0/16", 
-                    "MONITOR_IP": null, 
+                    "CEPH_PUBLIC_NETWORK": "175.20.0.0/16", 
+                    "MON_IP": "175.20.0.12", 
                     "OSD": true
                 }, 
                 "node3": {
-                    "CEPH_NET": "175.20.0.0/16", 
+                    "CEPH_PUBLIC_NETWORK": "175.20.0.0/16", 
                     "CLIENT": true, 
-                    "MONITOR_IP": null
+                    "MON_IP": "175.20.0.12"
                 }
             }, 
             "image": "rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64", 
             "ip_host": {
-                "node0": null
+                "node0": "175.20.0.12"
             }, 
             "name": "rados-bench", 
-            "network_mode": "ceph_net"
+            "network_mode": "cephnet"
         }
     ], 
     "failfast": "false", 
@@ -697,7 +698,7 @@
     "inventory_hostname_short": "node2", 
     "local_results_path": "/bl/results/baseliner_output", 
     "module_setup": true, 
-    "omit": "__omit_place_holder__b5afae506e96399c110c2a5ef166ecd85fd958c8", 
+    "omit": "__omit_place_holder__79b63792d868ad15bb9f64ef76a894e7ef36d5b5", 
     "playbook_dir": "/bl", 
     "remote_results_path": "/tmp/baseliner_output_node2", 
     "stat_result": {
