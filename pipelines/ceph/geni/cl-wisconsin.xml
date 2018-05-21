@@ -1,0 +1,29 @@
+<rspec xmlns:client="http://www.protogeni.net/resources/rspec/ext/client/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.geni.net/resources/rspec/3" xsi:schemaLocation="http://www.geni.net/resources/rspec/3 http://www.geni.net/resources/rspec/3/manifest.xsd" type="manifest" expires="2018-05-22T14:34:08Z">
+  <node client_id="c220g1" exclusive="true" component_id="urn:publicid:IDN+wisc.cloudlab.us+node+c220g1-030601" component_manager_id="urn:publicid:IDN+wisc.cloudlab.us+authority+cm" sliver_id="urn:publicid:IDN+wisc.cloudlab.us+sliver+127343">
+    <sliver_type name="raw-pc">
+      <disk_image name="urn:publicid:IDN+apt.emulab.net+image+schedock-PG0:docker-ubuntu16:0"/>
+    </sliver_type>
+    <hardware_type name="c220g1"/>
+    <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="c220g1-030601" hardware_type="c220g1"/>
+    <host name="c220g1.quiho-msouppe.schedock-PG0.wisc.cloudlab.us" ipv4="128.104.222.51"/>
+    <services>
+      <login authentication="ssh-keys" hostname="c220g1-030601.wisc.cloudlab.us" port="22" username="msouppe"/>
+      <rs:console xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" server="boss.wisc.cloudlab.us"/>
+    </services>
+  </node>
+  <node client_id="c220g2" exclusive="true" component_id="urn:publicid:IDN+wisc.cloudlab.us+node+c220g2-011006" component_manager_id="urn:publicid:IDN+wisc.cloudlab.us+authority+cm" sliver_id="urn:publicid:IDN+wisc.cloudlab.us+sliver+127344">
+    <sliver_type name="raw-pc">
+      <disk_image name="urn:publicid:IDN+apt.emulab.net+image+schedock-PG0:docker-ubuntu16:0"/>
+    </sliver_type>
+    <hardware_type name="c220g2"/>
+    <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="c220g2-011006" hardware_type="c220g2"/>
+    <host name="c220g2.quiho-msouppe.schedock-PG0.wisc.cloudlab.us" ipv4="128.104.222.190"/>
+    <services>
+      <login authentication="ssh-keys" hostname="c220g2-011006.wisc.cloudlab.us" port="22" username="msouppe"/>
+      <rs:console xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" server="boss.wisc.cloudlab.us"/>
+    </services>
+  </node>
+  <rs:site_info xmlns:rs="http://www.protogeni.net/resources/rspec/ext/site-info/1">
+    <rs:location country="US" latitude="43.0667" longitude="89.4000"/>
+  </rs:site_info>
+</rspec>

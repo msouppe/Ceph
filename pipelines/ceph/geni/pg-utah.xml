@@ -1,0 +1,41 @@
+<rspec xmlns:client="http://www.protogeni.net/resources/rspec/ext/client/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.geni.net/resources/rspec/3" xsi:schemaLocation="http://www.geni.net/resources/rspec/3 http://www.geni.net/resources/rspec/3/manifest.xsd" type="manifest" expires="2018-05-22T14:34:08Z">
+  <node client_id="d710" exclusive="true" component_id="urn:publicid:IDN+emulab.net+node+pc447" component_manager_id="urn:publicid:IDN+emulab.net+authority+cm" sliver_id="urn:publicid:IDN+emulab.net+sliver+564386">
+    <sliver_type name="raw-pc">
+      <disk_image name="urn:publicid:IDN+apt.emulab.net+image+schedock-PG0:docker-ubuntu16:0"/>
+    </sliver_type>
+    <hardware_type name="d710"/>
+    <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="pc447" hardware_type="d710"/>
+    <host name="d710.quiho-msouppe.Schedock.emulab.net" ipv4="155.98.38.47"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc447.emulab.net" port="22" username="msouppe"/>
+      <rs:console xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" server="tipserv5.emulab.net"/>
+    </services>
+  </node>
+  <node client_id="d430" exclusive="true" component_id="urn:publicid:IDN+emulab.net+node+pc754" component_manager_id="urn:publicid:IDN+emulab.net+authority+cm" sliver_id="urn:publicid:IDN+emulab.net+sliver+564388">
+    <sliver_type name="raw-pc">
+      <disk_image name="urn:publicid:IDN+apt.emulab.net+image+schedock-PG0:docker-ubuntu16:0"/>
+    </sliver_type>
+    <hardware_type name="d430"/>
+    <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="pc754" hardware_type="d430"/>
+    <host name="d430.quiho-msouppe.Schedock.emulab.net" ipv4="155.98.36.54"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc754.emulab.net" port="22" username="msouppe"/>
+      <rs:console xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" server="boss.emulab.net"/>
+    </services>
+  </node>
+  <node client_id="pc3000" exclusive="true" component_id="urn:publicid:IDN+emulab.net+node+pc325" component_manager_id="urn:publicid:IDN+emulab.net+authority+cm" sliver_id="urn:publicid:IDN+emulab.net+sliver+564387">
+    <sliver_type name="raw-pc">
+      <disk_image name="urn:publicid:IDN+apt.emulab.net+image+schedock-PG0:docker-ubuntu16:0"/>
+    </sliver_type>
+    <hardware_type name="pc3000"/>
+    <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="pc325" hardware_type="pc3000"/>
+    <host name="pc3000.quiho-msouppe.Schedock.emulab.net" ipv4="155.98.39.125"/>
+    <services>
+      <login authentication="ssh-keys" hostname="pc325.emulab.net" port="22" username="msouppe"/>
+      <rs:console xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" server="tipserv3.emulab.net"/>
+    </services>
+  </node>
+  <rs:site_info xmlns:rs="http://www.protogeni.net/resources/rspec/ext/site-info/1">
+    <rs:location country="US" latitude="40.768652" longitude="-111.84581"/>
+  </rs:site_info>
+</rspec>

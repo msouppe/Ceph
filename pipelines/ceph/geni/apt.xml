@@ -1,0 +1,17 @@
+<rspec xmlns:client="http://www.protogeni.net/resources/rspec/ext/client/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.geni.net/resources/rspec/3" xsi:schemaLocation="http://www.geni.net/resources/rspec/3 http://www.geni.net/resources/rspec/3/manifest.xsd" type="manifest" expires="2018-05-22T14:34:08Z">
+  <node client_id="r320" exclusive="true" component_id="urn:publicid:IDN+apt.emulab.net+node+apt190" component_manager_id="urn:publicid:IDN+apt.emulab.net+authority+cm" sliver_id="urn:publicid:IDN+apt.emulab.net+sliver+151992">
+    <sliver_type name="raw-pc">
+      <disk_image name="urn:publicid:IDN+apt.emulab.net+image+schedock-PG0:docker-ubuntu16:0"/>
+    </sliver_type>
+    <hardware_type name="r320"/>
+    <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="apt190" hardware_type="r320"/>
+    <host name="r320.quiho-msouppe.schedock-PG0.apt.emulab.net" ipv4="128.110.96.190"/>
+    <services>
+      <login authentication="ssh-keys" hostname="apt190.apt.emulab.net" port="22" username="msouppe"/>
+      <rs:console xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" server="boss.apt.emulab.net"/>
+    </services>
+  </node>
+  <rs:site_info xmlns:rs="http://www.protogeni.net/resources/rspec/ext/site-info/1">
+    <rs:location country="US" latitude="40.750714" longitude="-111.893288"/>
+  </rs:site_info>
+</rspec>

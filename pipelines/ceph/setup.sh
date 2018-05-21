@@ -3,8 +3,8 @@
 set -e
 
 if [ -n "$CI" ]; then
-  # [wf] launch a "cluster" locally
-  setup/single-node.sh
+  # [wf] launch a node locally
+  setup/travis.sh
 else
   # [wf] allocate nodes on CloudLab
   setup/cloudlab.sh
