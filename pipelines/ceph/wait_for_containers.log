@@ -1,0 +1,83 @@
+
+2018-05-24 05:18:53,921 p=2723 u=root |  PLAY [all] *********************************************************************
+2018-05-24 05:18:53,929 p=2723 u=root |  TASK [get list of running containers] ******************************************
+2018-05-24 05:18:53,929 p=2723 u=root |  Thursday 24 May 2018  05:18:53 +0000 (0:00:00.053)       0:00:00.053 ********** 
+2018-05-24 05:18:54,175 p=2723 u=root |  fatal: [c220g1.quiho-msouppe.schedock-PG0.wisc.cloudlab.us]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname c220g1.quiho-msouppe.schedock-pg0.wisc.cloudlab.us: Name does not resolve\r\n", "unreachable": true}
+2018-05-24 05:18:54,184 p=2723 u=root |  fatal: [c6320.quiho-msouppe.schedock-PG0.clemson.cloudlab.us]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname c6320.quiho-msouppe.schedock-pg0.clemson.cloudlab.us: Name does not resolve\r\n", "unreachable": true}
+2018-05-24 05:18:54,192 p=2723 u=root |  fatal: [dl360.quiho-msouppe.emulab-net.utahddc.geniracks.net]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname dl360.quiho-msouppe.emulab-net.utahddc.geniracks.net: Name does not resolve\r\n", "unreachable": true}
+2018-05-24 05:18:54,199 p=2723 u=root |  fatal: [c220g2.quiho-msouppe.schedock-PG0.wisc.cloudlab.us]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname c220g2.quiho-msouppe.schedock-pg0.wisc.cloudlab.us: Name does not resolve\r\n", "unreachable": true}
+2018-05-24 05:18:54,207 p=2723 u=root |  fatal: [c8220.quiho-msouppe.schedock-PG0.clemson.cloudlab.us]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname c8220.quiho-msouppe.schedock-pg0.clemson.cloudlab.us: Name does not resolve\r\n", "unreachable": true}
+2018-05-24 05:18:54,647 p=2723 u=root |  fatal: [d430.quiho-msouppe.Schedock.emulab.net]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Permission denied (publickey).\r\n", "unreachable": true}
+2018-05-24 05:18:54,652 p=2723 u=root |  fatal: [d710.quiho-msouppe.Schedock.emulab.net]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Permission denied (publickey).\r\n", "unreachable": true}
+2018-05-24 05:18:54,684 p=2723 u=root |  fatal: [pc3000.quiho-msouppe.Schedock.emulab.net]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Permission denied (publickey).\r\n", "unreachable": true}
+2018-05-24 05:18:55,644 p=2723 u=root |  changed: [m510.quiho-msouppe.schedock-PG0.utah.cloudlab.us]
+2018-05-24 05:18:55,705 p=2723 u=root |  changed: [r320.quiho-msouppe.schedock-PG0.apt.emulab.net]
+2018-05-24 05:18:55,709 p=2723 u=root |  TASK [debug] *******************************************************************
+2018-05-24 05:18:55,709 p=2723 u=root |  Thursday 24 May 2018  05:18:55 +0000 (0:00:01.779)       0:00:01.832 ********** 
+2018-05-24 05:18:55,765 p=2723 u=root |  ok: [r320.quiho-msouppe.schedock-PG0.apt.emulab.net] => {
+    "msg": {
+        "changed": true, 
+        "cmd": [
+            "docker", 
+            "ps", 
+            "-q", 
+            "--filter", 
+            "name=baseliner_r320"
+        ], 
+        "delta": "0:00:00.022897", 
+        "end": "2018-05-23 23:18:55.673871", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2018-05-23 23:18:55.650974", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "", 
+        "stdout_lines": []
+    }
+}
+2018-05-24 05:18:55,774 p=2723 u=root |  ok: [m510.quiho-msouppe.schedock-PG0.utah.cloudlab.us] => {
+    "msg": {
+        "changed": true, 
+        "cmd": [
+            "docker", 
+            "ps", 
+            "-q", 
+            "--filter", 
+            "name=baseliner_m510"
+        ], 
+        "delta": "0:00:00.020444", 
+        "end": "2018-05-23 23:18:55.602494", 
+        "failed": false, 
+        "rc": 0, 
+        "start": "2018-05-23 23:18:55.582050", 
+        "stderr": "", 
+        "stderr_lines": [], 
+        "stdout": "", 
+        "stdout_lines": []
+    }
+}
+2018-05-24 05:18:55,777 p=2723 u=root |  TASK [print message if no containers are running] ******************************
+2018-05-24 05:18:55,777 p=2723 u=root |  Thursday 24 May 2018  05:18:55 +0000 (0:00:00.067)       0:00:01.900 ********** 
+2018-05-24 05:18:55,829 p=2723 u=root |  ok: [r320.quiho-msouppe.schedock-PG0.apt.emulab.net] => {
+    "msg": "INFO: no containers running"
+}
+2018-05-24 05:18:55,837 p=2723 u=root |  ok: [m510.quiho-msouppe.schedock-PG0.utah.cloudlab.us] => {
+    "msg": "INFO: no containers running"
+}
+2018-05-24 05:18:55,839 p=2723 u=root |  PLAY RECAP *********************************************************************
+2018-05-24 05:18:55,839 p=2723 u=root |  c220g1.quiho-msouppe.schedock-PG0.wisc.cloudlab.us : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 05:18:55,839 p=2723 u=root |  c220g2.quiho-msouppe.schedock-PG0.wisc.cloudlab.us : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 05:18:55,839 p=2723 u=root |  c6320.quiho-msouppe.schedock-PG0.clemson.cloudlab.us : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 05:18:55,839 p=2723 u=root |  c8220.quiho-msouppe.schedock-PG0.clemson.cloudlab.us : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 05:18:55,839 p=2723 u=root |  d430.quiho-msouppe.Schedock.emulab.net : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 05:18:55,839 p=2723 u=root |  d710.quiho-msouppe.Schedock.emulab.net : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 05:18:55,839 p=2723 u=root |  dl360.quiho-msouppe.emulab-net.utahddc.geniracks.net : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 05:18:55,839 p=2723 u=root |  m510.quiho-msouppe.schedock-PG0.utah.cloudlab.us : ok=3    changed=1    unreachable=0    failed=0   
+2018-05-24 05:18:55,839 p=2723 u=root |  pc3000.quiho-msouppe.Schedock.emulab.net : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 05:18:55,839 p=2723 u=root |  r320.quiho-msouppe.schedock-PG0.apt.emulab.net : ok=3    changed=1    unreachable=0    failed=0   
+2018-05-24 05:18:55,840 p=2723 u=root |  Thursday 24 May 2018  05:18:55 +0000 (0:00:00.062)       0:00:01.963 ********** 
+2018-05-24 05:18:55,840 p=2723 u=root |  =============================================================================== 
+2018-05-24 05:18:55,840 p=2723 u=root |  get list of running containers ------------------------------------------ 1.78s
+2018-05-24 05:18:55,840 p=2723 u=root |  debug ------------------------------------------------------------------- 0.07s
+2018-05-24 05:18:55,840 p=2723 u=root |  print message if no containers are running ------------------------------ 0.06s
+2018-05-24 05:18:55,840 p=2723 u=root |  Playbook run took 0 days, 0 hours, 0 minutes, 1 seconds

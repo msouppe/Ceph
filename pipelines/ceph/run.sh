@@ -1,8 +1,7 @@
 #!/bin/bash
-# [wf] prepare SSH and execute baseliner
+# [wf] use SSHKEY variable to execute baseliner
 set -ex
 
-# [wf] prepare SSH key config
 if [ -n "$CI" ]; then
   BASELINER_FLAGS='-s'
   SSHKEY="$PWD/insecure_rsa"
@@ -16,23 +15,26 @@ if [ -z "$SSHKEY" ]; then
     exit 1
   fi
 
-  echo "Found .ssh/id_rsa, will use this for running experiment"
+  echo "Found .ssh/id_rsa , will use this for running experiment"
 
   SSHKEY="$HOME/.ssh/id_rsa"
 fi
 
 # delete previous results
-rm -fr results/baseliner_output
+sudo rm -fr results/baseliner_output
 mkdir -p results/baseliner_output
 
 docker pull ivotron/baseliner:0.2
 
 # [wf] invoke baseliner
-docker run --rm --name=bl \
-    -v `pwd`:/bl \
-    -v $SSHKEY:/root/.ssh/id_rsa \
-    --workdir=/bl \
-    --net=host \
-    ivotron/baseliner:0.2 \
-    -o /bl/results/baseliner_output \
+docker run --rm --name=baseliner \
+  --volume `pwd`:/experiment:z \
+  --volume $SSHKEY:/root/.ssh/id_rsa:z \
+  --volume /var/run/docker.sock:/var/run/docker.sock:z \
+  --workdir=/experiment/ \
+  --net=host \
+  ivotron/baseliner:0.2 \
+    -i /experiment/geni/machines \
+#    -f /experiment/vars.yml \
+    -o /experiment/results/baseliner_output \
     $BASELINER_FLAGS

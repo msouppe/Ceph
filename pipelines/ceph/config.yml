@@ -10,6 +10,7 @@ benchmarks:
       CEPH_PUBLIC_NETWORK: 175.20.0.0/16
     node2:
       OSD: true
+      OSD_DEVICES: /dev/sdb
       MON_IP: 175.20.0.12
       CEPH_PUBLIC_NETWORK: 175.20.0.0/16
     node3:

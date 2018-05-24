@@ -1,3 +1,3 @@
-node1 ansible_host=localhost ansible_port=2221 ansible_user=root
-node2 ansible_host=localhost ansible_port=2222 ansible_user=root
-node3 ansible_host=localhost ansible_port=2223 ansible_user=root
+ms1029 ms1029.utah.cloudlab.us ansible_user=msouppe ansible_become=true
+ms1016 ms1016.utah.cloudlab.us ansible_user=msouppe ansible_become=true
+ms1023 ms1023.utah.cloudlab.us ansible_user=msouppe ansible_become=true

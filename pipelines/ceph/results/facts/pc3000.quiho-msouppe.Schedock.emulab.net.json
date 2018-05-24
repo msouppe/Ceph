@@ -1,0 +1,82 @@
+{
+    "ansible_become": "true", 
+    "ansible_check_mode": false, 
+    "ansible_playbook_python": "/usr/bin/python2", 
+    "ansible_user": "msouppe", 
+    "ansible_version": {
+        "full": "2.4.1.0", 
+        "major": 2, 
+        "minor": 4, 
+        "revision": 1, 
+        "string": "2.4.1.0"
+    }, 
+    "baseliner_execution_mode": "single-node", 
+    "benchmarks": [
+        {
+            "environment_host": {
+                "node1": {
+                    "CEPH_PUBLIC_NETWORK": "175.20.0.0/16", 
+                    "MONITOR": true, 
+                    "MON_IP": "175.20.0.12"
+                }, 
+                "node2": {
+                    "CEPH_PUBLIC_NETWORK": "175.20.0.0/16", 
+                    "MON_IP": "175.20.0.12", 
+                    "OSD": true, 
+                    "OSD_DEVICES": "/dev/sdb"
+                }, 
+                "node3": {
+                    "CEPH_PUBLIC_NETWORK": "175.20.0.0/16", 
+                    "CLIENT": true, 
+                    "MON_IP": "175.20.0.12"
+                }
+            }, 
+            "image": "rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64", 
+            "ip_host": {
+                "node0": "175.20.0.12"
+            }, 
+            "name": "rados-bench", 
+            "network_mode": "cephnet"
+        }
+    ], 
+    "failfast": "false", 
+    "group_names": [
+        "ungrouped"
+    ], 
+    "groups": {
+        "all": [
+            "c6320.quiho-msouppe.schedock-PG0.clemson.cloudlab.us", 
+            "c8220.quiho-msouppe.schedock-PG0.clemson.cloudlab.us", 
+            "dl360.quiho-msouppe.emulab-net.utahddc.geniracks.net", 
+            "c220g1.quiho-msouppe.schedock-PG0.wisc.cloudlab.us", 
+            "c220g2.quiho-msouppe.schedock-PG0.wisc.cloudlab.us", 
+            "d710.quiho-msouppe.Schedock.emulab.net", 
+            "d430.quiho-msouppe.Schedock.emulab.net", 
+            "pc3000.quiho-msouppe.Schedock.emulab.net", 
+            "r320.quiho-msouppe.schedock-PG0.apt.emulab.net", 
+            "m510.quiho-msouppe.schedock-PG0.utah.cloudlab.us"
+        ], 
+        "ungrouped": [
+            "c6320.quiho-msouppe.schedock-PG0.clemson.cloudlab.us", 
+            "c8220.quiho-msouppe.schedock-PG0.clemson.cloudlab.us", 
+            "dl360.quiho-msouppe.emulab-net.utahddc.geniracks.net", 
+            "c220g1.quiho-msouppe.schedock-PG0.wisc.cloudlab.us", 
+            "c220g2.quiho-msouppe.schedock-PG0.wisc.cloudlab.us", 
+            "d710.quiho-msouppe.Schedock.emulab.net", 
+            "d430.quiho-msouppe.Schedock.emulab.net", 
+            "pc3000.quiho-msouppe.Schedock.emulab.net", 
+            "r320.quiho-msouppe.schedock-PG0.apt.emulab.net", 
+            "m510.quiho-msouppe.schedock-PG0.utah.cloudlab.us"
+        ]
+    }, 
+    "install_facter": false, 
+    "inventory_dir": "/experiment/geni", 
+    "inventory_file": "/experiment/geni/machines", 
+    "inventory_hostname": "pc3000.quiho-msouppe.Schedock.emulab.net", 
+    "inventory_hostname_short": "pc3000", 
+    "local_results_path": "./results", 
+    "omit": "__omit_place_holder__8c50b023df9a9131a6813bf22ca3b5d09442adb6", 
+    "playbook_dir": "/experiment", 
+    "stop_all": "true", 
+    "test_wait_delay": "60"
+}
