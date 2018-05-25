@@ -215,3 +215,50 @@
 2018-05-24 04:48:29,533 p=14 u=root |  Thursday 24 May 2018  04:48:29 +0000 (0:00:02.035)       0:00:16.035 ********** 
 2018-05-24 04:48:29,555 p=14 u=root |  TASK [baseliner : wait for containers in single-node mode and stop/kill them if they timeout] ***
 2018-05-24 04:48:29,555 p=14 u=root |  Thursday 24 May 2018  04:48:29 +0000 (0:00:00.022)       0:00:16.057 ********** 
+2018-05-24 20:57:31,174 p=14 u=root |  changed: [r320.quiho-msouppe.schedock-PG0.apt.emulab.net -> localhost]
+2018-05-24 20:57:31,183 p=14 u=root |  TASK [baseliner : get wait result] *********************************************
+2018-05-24 20:57:31,183 p=14 u=root |  Thursday 24 May 2018  20:57:31 +0000 (16:09:01.627)       16:09:17.685 ******** 
+2018-05-24 20:57:31,202 p=14 u=root |  ok: [r320.quiho-msouppe.schedock-PG0.apt.emulab.net -> localhost]
+2018-05-24 20:57:31,210 p=14 u=root |  TASK [baseliner : debug] *******************************************************
+2018-05-24 20:57:31,211 p=14 u=root |  Thursday 24 May 2018  20:57:31 +0000 (0:00:00.027)       16:09:17.712 ********* 
+2018-05-24 20:57:31,229 p=14 u=root |  ok: [r320.quiho-msouppe.schedock-PG0.apt.emulab.net -> localhost] => {
+    "msg": "WAIT_FOR_RESULT:  WARNING: timeout waiting for 2 hosts"
+}
+2018-05-24 20:57:31,235 p=14 u=root |  TASK [baseliner : get result of container execution] ***************************
+2018-05-24 20:57:31,235 p=14 u=root |  Thursday 24 May 2018  20:57:31 +0000 (0:00:00.024)       16:09:17.737 ********* 
+2018-05-24 20:57:31,406 p=14 u=root |  fatal: [r320.quiho-msouppe.schedock-PG0.apt.emulab.net]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname r320.quiho-msouppe.schedock-pg0.apt.emulab.net: Name does not resolve\r\n", "unreachable": true}
+2018-05-24 20:57:31,406 p=14 u=root |  fatal: [m510.quiho-msouppe.schedock-PG0.utah.cloudlab.us]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname m510.quiho-msouppe.schedock-pg0.utah.cloudlab.us: Name does not resolve\r\n", "unreachable": true}
+2018-05-24 20:57:31,407 p=14 u=root |  PLAY RECAP *********************************************************************
+2018-05-24 20:57:31,407 p=14 u=root |  c220g1.quiho-msouppe.schedock-PG0.wisc.cloudlab.us : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 20:57:31,407 p=14 u=root |  c220g2.quiho-msouppe.schedock-PG0.wisc.cloudlab.us : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 20:57:31,407 p=14 u=root |  c6320.quiho-msouppe.schedock-PG0.clemson.cloudlab.us : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 20:57:31,407 p=14 u=root |  c8220.quiho-msouppe.schedock-PG0.clemson.cloudlab.us : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 20:57:31,407 p=14 u=root |  d430.quiho-msouppe.Schedock.emulab.net : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 20:57:31,408 p=14 u=root |  d710.quiho-msouppe.Schedock.emulab.net : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 20:57:31,408 p=14 u=root |  dl360.quiho-msouppe.emulab-net.utahddc.geniracks.net : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 20:57:31,408 p=14 u=root |  m510.quiho-msouppe.schedock-PG0.utah.cloudlab.us : ok=31   changed=6    unreachable=1    failed=0   
+2018-05-24 20:57:31,408 p=14 u=root |  pc3000.quiho-msouppe.Schedock.emulab.net : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-24 20:57:31,408 p=14 u=root |  r320.quiho-msouppe.schedock-PG0.apt.emulab.net : ok=37   changed=8    unreachable=1    failed=0   
+2018-05-24 20:57:31,408 p=14 u=root |  Thursday 24 May 2018  20:57:31 +0000 (0:00:00.172)       16:09:17.910 ********* 
+2018-05-24 20:57:31,408 p=14 u=root |  =============================================================================== 
+2018-05-24 20:57:31,408 p=14 u=root |  baseliner : wait for containers in single-node mode and stop/kill them if they timeout  58141.63s
+2018-05-24 20:57:31,408 p=14 u=root |  Gathering Facts --------------------------------------------------------- 2.52s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : store facts about remotes ----------------------------------- 2.32s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : run container ----------------------------------------------- 2.04s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : pull image -------------------------------------------------- 1.59s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : stop any running container ---------------------------------- 1.02s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : check if image already exists ------------------------------- 0.90s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : remove containers to avoid name clashes --------------------- 0.87s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : remove remote results folder -------------------------------- 0.86s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : create remote results folder -------------------------------- 0.83s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : ensure results folder exists -------------------------------- 0.25s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : get result of container execution --------------------------- 0.17s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : ensure output folder exists --------------------------------- 0.16s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : run containerized benchmark --------------------------------- 0.15s
+2018-05-24 20:57:31,409 p=14 u=root |  baseliner : create facts folder if it doesn't exist --------------------- 0.14s
+2018-05-24 20:57:31,410 p=14 u=root |  baseliner : get number of repetitions ----------------------------------- 0.10s
+2018-05-24 20:57:31,410 p=14 u=root |  baseliner : execute each benchmark -------------------------------------- 0.09s
+2018-05-24 20:57:31,410 p=14 u=root |  baseliner : parametrized execution -------------------------------------- 0.08s
+2018-05-24 20:57:31,410 p=14 u=root |  baseliner : add implicit environment from bench_params variable --------- 0.08s
+2018-05-24 20:57:31,410 p=14 u=root |  baseliner : add key/value pairs for each parameter (if any) ------------- 0.08s
+2018-05-24 20:57:31,410 p=14 u=root |  Playbook run took 0 days, 16 hours, 9 minutes, 17 seconds

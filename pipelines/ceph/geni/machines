@@ -1,10 +1,1 @@
-c6320.quiho-msouppe.schedock-PG0.clemson.cloudlab.us ansible_user=msouppe ansible_become=true
-c8220.quiho-msouppe.schedock-PG0.clemson.cloudlab.us ansible_user=msouppe ansible_become=true
-dl360.quiho-msouppe.emulab-net.utahddc.geniracks.net ansible_user=msouppe ansible_become=true
-c220g1.quiho-msouppe.schedock-PG0.wisc.cloudlab.us ansible_user=msouppe ansible_become=true
-c220g2.quiho-msouppe.schedock-PG0.wisc.cloudlab.us ansible_user=msouppe ansible_become=true
-d710.quiho-msouppe.Schedock.emulab.net ansible_user=msouppe ansible_become=true
-d430.quiho-msouppe.Schedock.emulab.net ansible_user=msouppe ansible_become=true
-pc3000.quiho-msouppe.Schedock.emulab.net ansible_user=msouppe ansible_become=true
-r320.quiho-msouppe.schedock-PG0.apt.emulab.net ansible_user=msouppe ansible_become=true
 m510.quiho-msouppe.schedock-PG0.utah.cloudlab.us ansible_user=msouppe ansible_become=true
