@@ -1,11 +1,284 @@
 
-2018-05-25 19:05:14,138 p=10 u=root |  PLAY [all] *********************************************************************
-2018-05-25 19:05:14,145 p=10 u=root |  TASK [Gathering Facts] *********************************************************
-2018-05-25 19:05:14,145 p=10 u=root |  Friday 25 May 2018  19:05:14 +0000 (0:00:00.041)       0:00:00.041 ************ 
-2018-05-25 19:05:14,451 p=10 u=root |  fatal: [m510.quiho-msouppe.schedock-PG0.utah.cloudlab.us]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: ssh: Could not resolve hostname m510.quiho-msouppe.schedock-pg0.utah.cloudlab.us: Name does not resolve\r\n", "unreachable": true}
-2018-05-25 19:05:14,452 p=10 u=root |  PLAY RECAP *********************************************************************
-2018-05-25 19:05:14,453 p=10 u=root |  m510.quiho-msouppe.schedock-PG0.utah.cloudlab.us : ok=0    changed=0    unreachable=1    failed=0   
-2018-05-25 19:05:14,453 p=10 u=root |  Friday 25 May 2018  19:05:14 +0000 (0:00:00.308)       0:00:00.349 ************ 
-2018-05-25 19:05:14,453 p=10 u=root |  =============================================================================== 
-2018-05-25 19:05:14,453 p=10 u=root |  Gathering Facts --------------------------------------------------------- 0.31s
-2018-05-25 19:05:14,453 p=10 u=root |  Playbook run took 0 days, 0 hours, 0 minutes, 0 seconds
+2018-05-25 19:19:12,207 p=10 u=root |  PLAY [all] *********************************************************************
+2018-05-25 19:19:12,213 p=10 u=root |  TASK [Gathering Facts] *********************************************************
+2018-05-25 19:19:12,213 p=10 u=root |  Friday 25 May 2018  19:19:12 +0000 (0:00:00.041)       0:00:00.041 ************ 
+2018-05-25 19:19:12,893 p=10 u=root |  fatal: [ms1023.utah.cloudlab.us]: UNREACHABLE! => {"changed": false, "msg": "Failed to connect to the host via ssh: Warning: Permanently added 'ms1023.utah.cloudlab.us,128.110.153.176' (RSA) to the list of known hosts.\r\nPermission denied (publickey).\r\n", "unreachable": true}
+2018-05-25 19:19:14,381 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:14,392 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:14,398 p=10 u=root |  TASK [baseliner : include_tasks] ***********************************************
+2018-05-25 19:19:14,398 p=10 u=root |  Friday 25 May 2018  19:19:14 +0000 (0:00:02.185)       0:00:02.226 ************ 
+2018-05-25 19:19:14,445 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/check_preconditions.yml for ms1029.utah.cloudlab.us, ms1016.utah.cloudlab.us
+2018-05-25 19:19:14,452 p=10 u=root |  TASK [baseliner : ensure expected variables are defined] ***********************
+2018-05-25 19:19:14,453 p=10 u=root |  Friday 25 May 2018  19:19:14 +0000 (0:00:00.054)       0:00:02.280 ************ 
+2018-05-25 19:19:14,504 p=10 u=root |  ok: [ms1029.utah.cloudlab.us] => {
+    "changed": false, 
+    "failed": false, 
+    "msg": "All assertions passed"
+}
+2018-05-25 19:19:14,510 p=10 u=root |  ok: [ms1016.utah.cloudlab.us] => {
+    "changed": false, 
+    "failed": false, 
+    "msg": "All assertions passed"
+}
+2018-05-25 19:19:14,518 p=10 u=root |  TASK [baseliner : set remote results path if not defined] **********************
+2018-05-25 19:19:14,518 p=10 u=root |  Friday 25 May 2018  19:19:14 +0000 (0:00:00.065)       0:00:02.346 ************ 
+2018-05-25 19:19:14,568 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:14,574 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:14,581 p=10 u=root |  TASK [baseliner : ensure results folder exists] ********************************
+2018-05-25 19:19:14,582 p=10 u=root |  Friday 25 May 2018  19:19:14 +0000 (0:00:00.063)       0:00:02.409 ************ 
+2018-05-25 19:19:14,793 p=10 u=root |  ok: [ms1029.utah.cloudlab.us -> localhost]
+2018-05-25 19:19:14,800 p=10 u=root |  TASK [baseliner : check that pre-tasks file exists] ****************************
+2018-05-25 19:19:14,801 p=10 u=root |  Friday 25 May 2018  19:19:14 +0000 (0:00:00.218)       0:00:02.628 ************ 
+2018-05-25 19:19:14,819 p=10 u=root |  TASK [baseliner : check that post-tasks file exists] ***************************
+2018-05-25 19:19:14,819 p=10 u=root |  Friday 25 May 2018  19:19:14 +0000 (0:00:00.018)       0:00:02.647 ************ 
+2018-05-25 19:19:14,843 p=10 u=root |  TASK [baseliner : ensure docker-engine is installed] ***************************
+2018-05-25 19:19:14,844 p=10 u=root |  Friday 25 May 2018  19:19:14 +0000 (0:00:00.024)       0:00:02.671 ************ 
+2018-05-25 19:19:14,865 p=10 u=root |  TASK [baseliner : install statically linked docker] ****************************
+2018-05-25 19:19:14,866 p=10 u=root |  Friday 25 May 2018  19:19:14 +0000 (0:00:00.021)       0:00:02.693 ************ 
+2018-05-25 19:19:14,889 p=10 u=root |  TASK [baseliner : ensure the docker daemon is running] *************************
+2018-05-25 19:19:14,889 p=10 u=root |  Friday 25 May 2018  19:19:14 +0000 (0:00:00.023)       0:00:02.717 ************ 
+2018-05-25 19:19:14,911 p=10 u=root |  TASK [baseliner : stop any running container] **********************************
+2018-05-25 19:19:14,911 p=10 u=root |  Friday 25 May 2018  19:19:14 +0000 (0:00:00.021)       0:00:02.739 ************ 
+2018-05-25 19:19:15,902 p=10 u=root |  fatal: [ms1016.utah.cloudlab.us]: FAILED! => {"changed": true, "cmd": "docker stop `docker ps -q`", "delta": "0:00:00.060524", "end": "2018-05-25 13:19:15.894946", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-05-25 13:19:15.834422", "stderr": "\"docker stop\" requires at least 1 argument(s).\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument(s).", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2018-05-25 19:19:15,903 p=10 u=root |  ...ignoring
+2018-05-25 19:19:15,908 p=10 u=root |  fatal: [ms1029.utah.cloudlab.us]: FAILED! => {"changed": true, "cmd": "docker stop `docker ps -q`", "delta": "0:00:00.064944", "end": "2018-05-25 13:19:15.903139", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-05-25 13:19:15.838195", "stderr": "\"docker stop\" requires at least 1 argument(s).\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument(s).", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2018-05-25 19:19:15,908 p=10 u=root |  ...ignoring
+2018-05-25 19:19:15,918 p=10 u=root |  TASK [baseliner : remove containers to avoid name clashes] *********************
+2018-05-25 19:19:15,918 p=10 u=root |  Friday 25 May 2018  19:19:15 +0000 (0:00:01.007)       0:00:03.746 ************ 
+2018-05-25 19:19:16,751 p=10 u=root |  fatal: [ms1016.utah.cloudlab.us]: FAILED! => {"changed": true, "cmd": "docker rm `docker ps -qa`", "delta": "0:00:00.036539", "end": "2018-05-25 13:19:16.745246", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-05-25 13:19:16.708707", "stderr": "\"docker rm\" requires at least 1 argument(s).\nSee 'docker rm --help'.\n\nUsage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]\n\nRemove one or more containers", "stderr_lines": ["\"docker rm\" requires at least 1 argument(s).", "See 'docker rm --help'.", "", "Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]", "", "Remove one or more containers"], "stdout": "", "stdout_lines": []}
+2018-05-25 19:19:16,754 p=10 u=root |  ...ignoring
+2018-05-25 19:19:16,765 p=10 u=root |  fatal: [ms1029.utah.cloudlab.us]: FAILED! => {"changed": true, "cmd": "docker rm `docker ps -qa`", "delta": "0:00:00.042471", "end": "2018-05-25 13:19:16.760200", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-05-25 13:19:16.717729", "stderr": "\"docker rm\" requires at least 1 argument(s).\nSee 'docker rm --help'.\n\nUsage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]\n\nRemove one or more containers", "stderr_lines": ["\"docker rm\" requires at least 1 argument(s).", "See 'docker rm --help'.", "", "Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]", "", "Remove one or more containers"], "stdout": "", "stdout_lines": []}
+2018-05-25 19:19:16,765 p=10 u=root |  ...ignoring
+2018-05-25 19:19:16,772 p=10 u=root |  TASK [baseliner : store facts] *************************************************
+2018-05-25 19:19:16,772 p=10 u=root |  Friday 25 May 2018  19:19:16 +0000 (0:00:00.853)       0:00:04.600 ************ 
+2018-05-25 19:19:16,807 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/store-facts.yml for ms1029.utah.cloudlab.us, ms1016.utah.cloudlab.us
+2018-05-25 19:19:16,820 p=10 u=root |  TASK [baseliner : install facter] **********************************************
+2018-05-25 19:19:16,820 p=10 u=root |  Friday 25 May 2018  19:19:16 +0000 (0:00:00.048)       0:00:04.648 ************ 
+2018-05-25 19:19:16,845 p=10 u=root |  TASK [baseliner : create facts folder if it doesn't exist] *********************
+2018-05-25 19:19:16,845 p=10 u=root |  Friday 25 May 2018  19:19:16 +0000 (0:00:00.024)       0:00:04.673 ************ 
+2018-05-25 19:19:16,947 p=10 u=root |  changed: [ms1029.utah.cloudlab.us -> localhost]
+2018-05-25 19:19:16,960 p=10 u=root |  TASK [baseliner : store facts about remotes] ***********************************
+2018-05-25 19:19:16,960 p=10 u=root |  Friday 25 May 2018  19:19:16 +0000 (0:00:00.115)       0:00:04.788 ************ 
+2018-05-25 19:19:17,342 p=10 u=root |  changed: [ms1029.utah.cloudlab.us -> localhost] => (item=ms1029.utah.cloudlab.us)
+2018-05-25 19:19:17,527 p=10 u=root |  changed: [ms1029.utah.cloudlab.us -> localhost] => (item=ms1016.utah.cloudlab.us)
+2018-05-25 19:19:17,706 p=10 u=root |  changed: [ms1029.utah.cloudlab.us -> localhost] => (item=ms1023.utah.cloudlab.us)
+2018-05-25 19:19:17,713 p=10 u=root |  TASK [baseliner : start monitoring] ********************************************
+2018-05-25 19:19:17,713 p=10 u=root |  Friday 25 May 2018  19:19:17 +0000 (0:00:00.752)       0:00:05.541 ************ 
+2018-05-25 19:19:17,736 p=10 u=root |  TASK [baseliner : include_tasks] ***********************************************
+2018-05-25 19:19:17,736 p=10 u=root |  Friday 25 May 2018  19:19:17 +0000 (0:00:00.023)       0:00:05.564 ************ 
+2018-05-25 19:19:17,759 p=10 u=root |  TASK [baseliner : get number of repetitions] ***********************************
+2018-05-25 19:19:17,759 p=10 u=root |  Friday 25 May 2018  19:19:17 +0000 (0:00:00.022)       0:00:05.587 ************ 
+2018-05-25 19:19:17,840 p=10 u=root |  ok: [ms1029.utah.cloudlab.us] => (item=1)
+2018-05-25 19:19:17,845 p=10 u=root |  ok: [ms1016.utah.cloudlab.us] => (item=1)
+2018-05-25 19:19:17,850 p=10 u=root |  TASK [baseliner : execute each benchmark] **************************************
+2018-05-25 19:19:17,850 p=10 u=root |  Friday 25 May 2018  19:19:17 +0000 (0:00:00.091)       0:00:05.678 ************ 
+2018-05-25 19:19:17,892 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/run-bench.yml for ms1029.utah.cloudlab.us, ms1016.utah.cloudlab.us
+2018-05-25 19:19:17,908 p=10 u=root |  TASK [baseliner : upload files] ************************************************
+2018-05-25 19:19:17,908 p=10 u=root |  Friday 25 May 2018  19:19:17 +0000 (0:00:00.057)       0:00:05.736 ************ 
+2018-05-25 19:19:17,928 p=10 u=root |  TASK [baseliner : initialize parameters and add number of repetitions] *********
+2018-05-25 19:19:17,928 p=10 u=root |  Friday 25 May 2018  19:19:17 +0000 (0:00:00.020)       0:00:05.756 ************ 
+2018-05-25 19:19:18,001 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:18,009 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:18,015 p=10 u=root |  TASK [baseliner : unnest parameters when parameters for benchmark were passed] ***
+2018-05-25 19:19:18,015 p=10 u=root |  Friday 25 May 2018  19:19:18 +0000 (0:00:00.086)       0:00:05.843 ************ 
+2018-05-25 19:19:18,037 p=10 u=root |  TASK [baseliner : parametrized execution] **************************************
+2018-05-25 19:19:18,037 p=10 u=root |  Friday 25 May 2018  19:19:18 +0000 (0:00:00.022)       0:00:05.865 ************ 
+2018-05-25 19:19:18,116 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/run-bench-parametrized.yml for ms1029.utah.cloudlab.us, ms1016.utah.cloudlab.us
+2018-05-25 19:19:18,123 p=10 u=root |  TASK [baseliner : remove remote results folder] ********************************
+2018-05-25 19:19:18,124 p=10 u=root |  Friday 25 May 2018  19:19:18 +0000 (0:00:00.086)       0:00:05.951 ************ 
+2018-05-25 19:19:18,938 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:18,944 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:18,952 p=10 u=root |  TASK [baseliner : create remote results folder] ********************************
+2018-05-25 19:19:18,952 p=10 u=root |  Friday 25 May 2018  19:19:18 +0000 (0:00:00.828)       0:00:06.780 ************ 
+2018-05-25 19:19:19,751 p=10 u=root |  changed: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:19,752 p=10 u=root |  changed: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:19,761 p=10 u=root |  TASK [baseliner : initialize parameter dictionary] *****************************
+2018-05-25 19:19:19,761 p=10 u=root |  Friday 25 May 2018  19:19:19 +0000 (0:00:00.809)       0:00:07.589 ************ 
+2018-05-25 19:19:19,810 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:19,817 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:19,823 p=10 u=root |  TASK [baseliner : populate parameter dictionary] *******************************
+2018-05-25 19:19:19,823 p=10 u=root |  Friday 25 May 2018  19:19:19 +0000 (0:00:00.061)       0:00:07.651 ************ 
+2018-05-25 19:19:19,879 p=10 u=root |  ok: [ms1029.utah.cloudlab.us] => (item=[u'repetition', u'1'])
+2018-05-25 19:19:19,885 p=10 u=root |  ok: [ms1016.utah.cloudlab.us] => (item=[u'repetition', u'1'])
+2018-05-25 19:19:19,891 p=10 u=root |  TASK [baseliner : merge default variables to the benchmark-specific options] ***
+2018-05-25 19:19:19,891 p=10 u=root |  Friday 25 May 2018  19:19:19 +0000 (0:00:00.067)       0:00:07.719 ************ 
+2018-05-25 19:19:19,939 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:19,948 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:19,954 p=10 u=root |  TASK [baseliner : initialize string for path] **********************************
+2018-05-25 19:19:19,954 p=10 u=root |  Friday 25 May 2018  19:19:19 +0000 (0:00:00.062)       0:00:07.782 ************ 
+2018-05-25 19:19:20,003 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:20,010 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:20,016 p=10 u=root |  TASK [baseliner : add key/value pairs for each parameter (if any)] *************
+2018-05-25 19:19:20,016 p=10 u=root |  Friday 25 May 2018  19:19:20 +0000 (0:00:00.061)       0:00:07.844 ************ 
+2018-05-25 19:19:20,070 p=10 u=root |  ok: [ms1029.utah.cloudlab.us] => (item={'key': u'repetition', 'value': u'1'})
+2018-05-25 19:19:20,076 p=10 u=root |  ok: [ms1016.utah.cloudlab.us] => (item={'key': u'repetition', 'value': u'1'})
+2018-05-25 19:19:20,083 p=10 u=root |  TASK [baseliner : ensure output folder exists] *********************************
+2018-05-25 19:19:20,083 p=10 u=root |  Friday 25 May 2018  19:19:20 +0000 (0:00:00.067)       0:00:07.911 ************ 
+2018-05-25 19:19:20,188 p=10 u=root |  changed: [ms1029.utah.cloudlab.us -> localhost]
+2018-05-25 19:19:20,201 p=10 u=root |  changed: [ms1016.utah.cloudlab.us -> localhost]
+2018-05-25 19:19:20,206 p=10 u=root |  TASK [baseliner : run containerized benchmark] *********************************
+2018-05-25 19:19:20,206 p=10 u=root |  Friday 25 May 2018  19:19:20 +0000 (0:00:00.122)       0:00:08.034 ************ 
+2018-05-25 19:19:20,312 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/run-container.yml for ms1029.utah.cloudlab.us, ms1016.utah.cloudlab.us
+2018-05-25 19:19:20,327 p=10 u=root |  TASK [baseliner : check if image already exists] *******************************
+2018-05-25 19:19:20,327 p=10 u=root |  Friday 25 May 2018  19:19:20 +0000 (0:00:00.121)       0:00:08.155 ************ 
+2018-05-25 19:19:21,168 p=10 u=root |  changed: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:21,169 p=10 u=root |  changed: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:21,182 p=10 u=root |  TASK [baseliner : pull image] **************************************************
+2018-05-25 19:19:21,182 p=10 u=root |  Friday 25 May 2018  19:19:21 +0000 (0:00:00.854)       0:00:09.010 ************ 
+2018-05-25 19:19:22,796 p=10 u=root |  changed: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:22,797 p=10 u=root |  changed: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:22,803 p=10 u=root |  TASK [baseliner : define name of container] ************************************
+2018-05-25 19:19:22,803 p=10 u=root |  Friday 25 May 2018  19:19:22 +0000 (0:00:01.620)       0:00:10.631 ************ 
+2018-05-25 19:19:22,850 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:22,859 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:22,864 p=10 u=root |  TASK [baseliner : initialize docker_flags variable] ****************************
+2018-05-25 19:19:22,864 p=10 u=root |  Friday 25 May 2018  19:19:22 +0000 (0:00:00.061)       0:00:10.692 ************ 
+2018-05-25 19:19:22,910 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:22,919 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:22,924 p=10 u=root |  TASK [baseliner : add environment to docker_flags] *****************************
+2018-05-25 19:19:22,925 p=10 u=root |  Friday 25 May 2018  19:19:22 +0000 (0:00:00.060)       0:00:10.752 ************ 
+2018-05-25 19:19:22,946 p=10 u=root |  TASK [baseliner : add implicit environment from bench_params variable] *********
+2018-05-25 19:19:22,947 p=10 u=root |  Friday 25 May 2018  19:19:22 +0000 (0:00:00.021)       0:00:10.774 ************ 
+2018-05-25 19:19:22,998 p=10 u=root |  ok: [ms1029.utah.cloudlab.us] => (item={'key': u'repetition', 'value': u'1'})
+2018-05-25 19:19:23,005 p=10 u=root |  ok: [ms1016.utah.cloudlab.us] => (item={'key': u'repetition', 'value': u'1'})
+2018-05-25 19:19:23,011 p=10 u=root |  TASK [baseliner : check if we have host-specific ips] **************************
+2018-05-25 19:19:23,011 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.064)       0:00:10.838 ************ 
+2018-05-25 19:19:23,058 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:23,066 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:23,072 p=10 u=root |  TASK [baseliner : add host-specific ips to docker_flags] ***********************
+2018-05-25 19:19:23,072 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.061)       0:00:10.900 ************ 
+2018-05-25 19:19:23,097 p=10 u=root |  TASK [baseliner : check if we have host-specific environment] ******************
+2018-05-25 19:19:23,097 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.025)       0:00:10.925 ************ 
+2018-05-25 19:19:23,145 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:23,153 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:23,158 p=10 u=root |  TASK [baseliner : add host-specific environment to docker_flags] ***************
+2018-05-25 19:19:23,158 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.061)       0:00:10.986 ************ 
+2018-05-25 19:19:23,180 p=10 u=root |  TASK [baseliner : add devices to docker_flags] *********************************
+2018-05-25 19:19:23,180 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.021)       0:00:11.008 ************ 
+2018-05-25 19:19:23,201 p=10 u=root |  TASK [baseliner : add network mode to docker_flags] ****************************
+2018-05-25 19:19:23,201 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.021)       0:00:11.029 ************ 
+2018-05-25 19:19:23,250 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:23,257 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:23,263 p=10 u=root |  TASK [baseliner : add ipc mode to docker_flags] ********************************
+2018-05-25 19:19:23,263 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.061)       0:00:11.091 ************ 
+2018-05-25 19:19:23,288 p=10 u=root |  TASK [baseliner : add ports to docker_flags] ***********************************
+2018-05-25 19:19:23,288 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.024)       0:00:11.116 ************ 
+2018-05-25 19:19:23,310 p=10 u=root |  TASK [baseliner : add volumes to docker_flags] *********************************
+2018-05-25 19:19:23,310 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.022)       0:00:11.138 ************ 
+2018-05-25 19:19:23,333 p=10 u=root |  TASK [baseliner : add default volumes to docker_flags] *************************
+2018-05-25 19:19:23,333 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.022)       0:00:11.161 ************ 
+2018-05-25 19:19:23,381 p=10 u=root |  ok: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:23,388 p=10 u=root |  ok: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:23,394 p=10 u=root |  TASK [baseliner : set entrypoint] **********************************************
+2018-05-25 19:19:23,394 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.060)       0:00:11.222 ************ 
+2018-05-25 19:19:23,419 p=10 u=root |  TASK [baseliner : set limits] **************************************************
+2018-05-25 19:19:23,419 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.024)       0:00:11.247 ************ 
+2018-05-25 19:19:23,443 p=10 u=root |  TASK [baseliner : add capabilities] ********************************************
+2018-05-25 19:19:23,443 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.024)       0:00:11.271 ************ 
+2018-05-25 19:19:23,466 p=10 u=root |  TASK [baseliner : remove capabilities] *****************************************
+2018-05-25 19:19:23,466 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.023)       0:00:11.294 ************ 
+2018-05-25 19:19:23,491 p=10 u=root |  TASK [baseliner : set privileged mode] *****************************************
+2018-05-25 19:19:23,491 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.024)       0:00:11.319 ************ 
+2018-05-25 19:19:23,516 p=10 u=root |  TASK [baseliner : set memory constraint] ***************************************
+2018-05-25 19:19:23,516 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.025)       0:00:11.344 ************ 
+2018-05-25 19:19:23,538 p=10 u=root |  TASK [baseliner : set memory-swap constraint] **********************************
+2018-05-25 19:19:23,539 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.022)       0:00:11.366 ************ 
+2018-05-25 19:19:23,562 p=10 u=root |  TASK [baseliner : set parent cgroup] *******************************************
+2018-05-25 19:19:23,562 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.023)       0:00:11.390 ************ 
+2018-05-25 19:19:23,587 p=10 u=root |  TASK [baseliner : debug] *******************************************************
+2018-05-25 19:19:23,587 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.024)       0:00:11.415 ************ 
+2018-05-25 19:19:23,634 p=10 u=root |  ok: [ms1029.utah.cloudlab.us] => {
+    "msg": "docker run --rm  -e repetition=\"1\" --net=cephnet -v /tmp/baseliner_output_ms1029:/results -v /tmp/baseliner_output_ms1029:/output rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64 "
+}
+2018-05-25 19:19:23,642 p=10 u=root |  ok: [ms1016.utah.cloudlab.us] => {
+    "msg": "docker run --rm  -e repetition=\"1\" --net=cephnet -v /tmp/baseliner_output_ms1016:/results -v /tmp/baseliner_output_ms1016:/output rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64 "
+}
+2018-05-25 19:19:23,649 p=10 u=root |  TASK [baseliner : run container] ***********************************************
+2018-05-25 19:19:23,649 p=10 u=root |  Friday 25 May 2018  19:19:23 +0000 (0:00:00.061)       0:00:11.477 ************ 
+2018-05-25 19:19:25,671 p=10 u=root |  changed: [ms1029.utah.cloudlab.us]
+2018-05-25 19:19:25,672 p=10 u=root |  changed: [ms1016.utah.cloudlab.us]
+2018-05-25 19:19:25,680 p=10 u=root |  TASK [baseliner : wait for containers in parallel mode and stop/kill them if they timeout] ***
+2018-05-25 19:19:25,680 p=10 u=root |  Friday 25 May 2018  19:19:25 +0000 (0:00:02.031)       0:00:13.508 ************ 
+2018-05-25 19:19:25,699 p=10 u=root |  TASK [baseliner : wait for containers in single-node mode and stop/kill them if they timeout] ***
+2018-05-25 19:19:25,700 p=10 u=root |  Friday 25 May 2018  19:19:25 +0000 (0:00:00.019)       0:00:13.528 ************ 
+2018-05-25 21:00:22,249 p=10 u=root |  changed: [ms1029.utah.cloudlab.us -> localhost]
+2018-05-25 21:00:22,258 p=10 u=root |  TASK [baseliner : get wait result] *********************************************
+2018-05-25 21:00:22,258 p=10 u=root |  Friday 25 May 2018  21:00:22 +0000 (1:40:56.557)       1:41:10.086 ************ 
+2018-05-25 21:00:22,279 p=10 u=root |  ok: [ms1029.utah.cloudlab.us -> localhost]
+2018-05-25 21:00:22,288 p=10 u=root |  TASK [baseliner : debug] *******************************************************
+2018-05-25 21:00:22,288 p=10 u=root |  Friday 25 May 2018  21:00:22 +0000 (0:00:00.030)       1:41:10.116 ************ 
+2018-05-25 21:00:22,304 p=10 u=root |  ok: [ms1029.utah.cloudlab.us -> localhost] => {
+    "msg": "WAIT_FOR_RESULT:  WARNING: timeout waiting for 2 hosts"
+}
+2018-05-25 21:00:22,310 p=10 u=root |  TASK [baseliner : get result of container execution] ***************************
+2018-05-25 21:00:22,311 p=10 u=root |  Friday 25 May 2018  21:00:22 +0000 (0:00:00.022)       1:41:10.138 ************ 
+2018-05-25 21:00:23,254 p=10 u=root |  fatal: [ms1016.utah.cloudlab.us]: FAILED! => {"ansible_job_id": "471628403181.27632", "changed": true, "cmd": "docker run --rm --name baseliner_ms1016  -e repetition=\"1\" --net=cephnet -v /tmp/baseliner_output_ms1016:/results -v /tmp/baseliner_output_ms1016:/output rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64 ", "delta": "0:00:00.678247", "end": "2018-05-25 13:19:25.455877", "failed": true, "finished": 1, "msg": "non-zero return code", "rc": 125, "start": "2018-05-25 13:19:24.777630", "stderr": "Unable to find image 'rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64' locally\ndocker: Error response from daemon: repository rados_bench not found: does not exist or no pull access.\nSee 'docker run --help'.", "stderr_lines": ["Unable to find image 'rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64' locally", "docker: Error response from daemon: repository rados_bench not found: does not exist or no pull access.", "See 'docker run --help'."], "stdout": "", "stdout_lines": []}
+2018-05-25 21:00:23,254 p=10 u=root |  ...ignoring
+2018-05-25 21:00:23,260 p=10 u=root |  fatal: [ms1029.utah.cloudlab.us]: FAILED! => {"ansible_job_id": "886706603032.27877", "changed": true, "cmd": "docker run --rm --name baseliner_ms1029  -e repetition=\"1\" --net=cephnet -v /tmp/baseliner_output_ms1029:/results -v /tmp/baseliner_output_ms1029:/output rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64 ", "delta": "0:00:00.661859", "end": "2018-05-25 13:19:25.440098", "failed": true, "finished": 1, "msg": "non-zero return code", "rc": 125, "start": "2018-05-25 13:19:24.778239", "stderr": "Unable to find image 'rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64' locally\ndocker: Error response from daemon: repository rados_bench not found: does not exist or no pull access.\nSee 'docker run --help'.", "stderr_lines": ["Unable to find image 'rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64' locally", "docker: Error response from daemon: repository rados_bench not found: does not exist or no pull access.", "See 'docker run --help'."], "stdout": "", "stdout_lines": []}
+2018-05-25 21:00:23,260 p=10 u=root |  ...ignoring
+2018-05-25 21:00:23,269 p=10 u=root |  TASK [baseliner : set fact to store result of bench execution] *****************
+2018-05-25 21:00:23,269 p=10 u=root |  Friday 25 May 2018  21:00:23 +0000 (0:00:00.958)       1:41:11.097 ************ 
+2018-05-25 21:00:23,289 p=10 u=root |  ok: [ms1029.utah.cloudlab.us -> localhost]
+2018-05-25 21:00:23,297 p=10 u=root |  TASK [baseliner : record elapsed time in output folder] ************************
+2018-05-25 21:00:23,297 p=10 u=root |  Friday 25 May 2018  21:00:23 +0000 (0:00:00.028)       1:41:11.125 ************ 
+2018-05-25 21:00:23,499 p=10 u=root |  changed: [ms1029.utah.cloudlab.us -> localhost]
+2018-05-25 21:00:23,512 p=10 u=root |  changed: [ms1016.utah.cloudlab.us -> localhost]
+2018-05-25 21:00:23,521 p=10 u=root |  TASK [baseliner : capture stdout] **********************************************
+2018-05-25 21:00:23,522 p=10 u=root |  Friday 25 May 2018  21:00:23 +0000 (0:00:00.224)       1:41:11.349 ************ 
+2018-05-25 21:00:23,738 p=10 u=root |  changed: [ms1029.utah.cloudlab.us -> localhost]
+2018-05-25 21:00:23,754 p=10 u=root |  changed: [ms1016.utah.cloudlab.us -> localhost]
+2018-05-25 21:00:23,762 p=10 u=root |  TASK [baseliner : capture stderr] **********************************************
+2018-05-25 21:00:23,762 p=10 u=root |  Friday 25 May 2018  21:00:23 +0000 (0:00:00.240)       1:41:11.590 ************ 
+2018-05-25 21:00:23,979 p=10 u=root |  changed: [ms1016.utah.cloudlab.us -> localhost]
+2018-05-25 21:00:23,984 p=10 u=root |  changed: [ms1029.utah.cloudlab.us -> localhost]
+2018-05-25 21:00:23,990 p=10 u=root |  TASK [baseliner : debug] *******************************************************
+2018-05-25 21:00:23,990 p=10 u=root |  Friday 25 May 2018  21:00:23 +0000 (0:00:00.227)       1:41:11.818 ************ 
+2018-05-25 21:00:24,018 p=10 u=root |  TASK [baseliner : run compose benchmark] ***************************************
+2018-05-25 21:00:24,018 p=10 u=root |  Friday 25 May 2018  21:00:24 +0000 (0:00:00.028)       1:41:11.846 ************ 
+2018-05-25 21:00:24,044 p=10 u=root |  TASK [baseliner : run script benchmark] ****************************************
+2018-05-25 21:00:24,044 p=10 u=root |  Friday 25 May 2018  21:00:24 +0000 (0:00:00.026)       1:41:11.872 ************ 
+2018-05-25 21:00:24,069 p=10 u=root |  TASK [baseliner : download results] ********************************************
+2018-05-25 21:00:24,070 p=10 u=root |  Friday 25 May 2018  21:00:24 +0000 (0:00:00.025)       1:41:11.897 ************ 
+2018-05-25 21:00:24,117 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/download-output.yml for ms1029.utah.cloudlab.us, ms1016.utah.cloudlab.us
+2018-05-25 21:00:24,164 p=10 u=root |  TASK [baseliner : get any bench-specific files] ********************************
+2018-05-25 21:00:24,164 p=10 u=root |  Friday 25 May 2018  21:00:24 +0000 (0:00:00.094)       1:41:11.992 ************ 
+2018-05-25 21:00:25,645 p=10 u=root |  changed: [ms1029.utah.cloudlab.us] => (item=/tmp/baseliner_output_ms1029)
+2018-05-25 21:00:25,651 p=10 u=root |  changed: [ms1016.utah.cloudlab.us] => (item=/tmp/baseliner_output_ms1016)
+2018-05-25 21:00:25,659 p=10 u=root |  TASK [baseliner : delete remote folder after transfer] *************************
+2018-05-25 21:00:25,660 p=10 u=root |  Friday 25 May 2018  21:00:25 +0000 (0:00:01.495)       1:41:13.487 ************ 
+2018-05-25 21:00:26,537 p=10 u=root |  changed: [ms1029.utah.cloudlab.us] => (item=/tmp/baseliner_output_ms1029)
+2018-05-25 21:00:26,547 p=10 u=root |  changed: [ms1016.utah.cloudlab.us] => (item=/tmp/baseliner_output_ms1016)
+2018-05-25 21:00:26,558 p=10 u=root |  TASK [baseliner : check if we should fail fast] ********************************
+2018-05-25 21:00:26,558 p=10 u=root |  Friday 25 May 2018  21:00:26 +0000 (0:00:00.898)       1:41:14.386 ************ 
+2018-05-25 21:00:26,599 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/fail-fast.yml for ms1029.utah.cloudlab.us, ms1016.utah.cloudlab.us
+2018-05-25 21:00:26,702 p=10 u=root |  TASK [baseliner : failfast for single-node mode] *******************************
+2018-05-25 21:00:26,703 p=10 u=root |  Friday 25 May 2018  21:00:26 +0000 (0:00:00.144)       1:41:14.530 ************ 
+2018-05-25 21:00:26,761 p=10 u=root |  fatal: [ms1029.utah.cloudlab.us]: FAILED! => {"changed": false, "failed": true, "msg": "benchmark failed"}
+2018-05-25 21:00:26,761 p=10 u=root |  NO MORE HOSTS LEFT *************************************************************
+2018-05-25 21:00:26,762 p=10 u=root |  PLAY RECAP *********************************************************************
+2018-05-25 21:00:26,762 p=10 u=root |  ms1016.utah.cloudlab.us    : ok=39   changed=13   unreachable=0    failed=0   
+2018-05-25 21:00:26,762 p=10 u=root |  ms1023.utah.cloudlab.us    : ok=0    changed=0    unreachable=1    failed=0   
+2018-05-25 21:00:26,762 p=10 u=root |  ms1029.utah.cloudlab.us    : ok=46   changed=16   unreachable=0    failed=1   
+2018-05-25 21:00:26,762 p=10 u=root |  Friday 25 May 2018  21:00:26 +0000 (0:00:00.059)       1:41:14.590 ************ 
+2018-05-25 21:00:26,762 p=10 u=root |  =============================================================================== 
+2018-05-25 21:00:26,763 p=10 u=root |  baseliner : wait for containers in single-node mode and stop/kill them if they timeout  6056.56s
+2018-05-25 21:00:26,763 p=10 u=root |  Gathering Facts --------------------------------------------------------- 2.19s
+2018-05-25 21:00:26,763 p=10 u=root |  baseliner : run container ----------------------------------------------- 2.03s
+2018-05-25 21:00:26,763 p=10 u=root |  baseliner : pull image -------------------------------------------------- 1.62s
+2018-05-25 21:00:26,763 p=10 u=root |  baseliner : get any bench-specific files -------------------------------- 1.50s
+2018-05-25 21:00:26,763 p=10 u=root |  baseliner : stop any running container ---------------------------------- 1.01s
+2018-05-25 21:00:26,763 p=10 u=root |  baseliner : get result of container execution --------------------------- 0.96s
+2018-05-25 21:00:26,763 p=10 u=root |  baseliner : delete remote folder after transfer ------------------------- 0.90s
+2018-05-25 21:00:26,763 p=10 u=root |  baseliner : check if image already exists ------------------------------- 0.85s
+2018-05-25 21:00:26,763 p=10 u=root |  baseliner : remove containers to avoid name clashes --------------------- 0.85s
+2018-05-25 21:00:26,763 p=10 u=root |  baseliner : remove remote results folder -------------------------------- 0.83s
+2018-05-25 21:00:26,764 p=10 u=root |  baseliner : create remote results folder -------------------------------- 0.81s
+2018-05-25 21:00:26,764 p=10 u=root |  baseliner : store facts about remotes ----------------------------------- 0.75s
+2018-05-25 21:00:26,764 p=10 u=root |  baseliner : capture stdout ---------------------------------------------- 0.24s
+2018-05-25 21:00:26,764 p=10 u=root |  baseliner : capture stderr ---------------------------------------------- 0.23s
+2018-05-25 21:00:26,764 p=10 u=root |  baseliner : record elapsed time in output folder ------------------------ 0.22s
+2018-05-25 21:00:26,764 p=10 u=root |  baseliner : ensure results folder exists -------------------------------- 0.22s
+2018-05-25 21:00:26,764 p=10 u=root |  baseliner : check if we should fail fast -------------------------------- 0.14s
+2018-05-25 21:00:26,764 p=10 u=root |  baseliner : ensure output folder exists --------------------------------- 0.12s
+2018-05-25 21:00:26,764 p=10 u=root |  baseliner : run containerized benchmark --------------------------------- 0.12s
+2018-05-25 21:00:26,764 p=10 u=root |  Playbook run took 0 days, 1 hours, 41 minutes, 14 seconds

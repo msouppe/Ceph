@@ -1,0 +1,68 @@
+{
+    "ansible_become": "true", 
+    "ansible_check_mode": false, 
+    "ansible_playbook_python": "/usr/bin/python2", 
+    "ansible_user": "msouppe", 
+    "ansible_version": {
+        "full": "2.4.1.0", 
+        "major": 2, 
+        "minor": 4, 
+        "revision": 1, 
+        "string": "2.4.1.0"
+    }, 
+    "baseliner_execution_mode": "single-node", 
+    "benchmarks": [
+        {
+            "environment_host": {
+                "node1": {
+                    "CEPH_PUBLIC_NETWORK": "175.20.0.0/16", 
+                    "MONITOR": true, 
+                    "MON_IP": "175.20.0.12"
+                }, 
+                "node2": {
+                    "CEPH_PUBLIC_NETWORK": "175.20.0.0/16", 
+                    "MON_IP": "175.20.0.12", 
+                    "OSD": true, 
+                    "OSD_DEVICES": "/dev/sdb"
+                }, 
+                "node3": {
+                    "CEPH_PUBLIC_NETWORK": "175.20.0.0/16", 
+                    "CLIENT": true, 
+                    "MON_IP": "175.20.0.12"
+                }
+            }, 
+            "image": "rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64", 
+            "ip_host": {
+                "node0": "175.20.0.12"
+            }, 
+            "name": "rados-bench", 
+            "network_mode": "cephnet"
+        }
+    ], 
+    "failfast": "false", 
+    "group_names": [
+        "ungrouped"
+    ], 
+    "groups": {
+        "all": [
+            "ms1029.utah.cloudlab.us", 
+            "ms1016.utah.cloudlab.us", 
+            "ms1023.utah.cloudlab.us"
+        ], 
+        "ungrouped": [
+            "ms1029.utah.cloudlab.us", 
+            "ms1016.utah.cloudlab.us", 
+            "ms1023.utah.cloudlab.us"
+        ]
+    }, 
+    "install_facter": false, 
+    "inventory_dir": "/experiment", 
+    "inventory_file": "/experiment/hosts", 
+    "inventory_hostname": "ms1023.utah.cloudlab.us", 
+    "inventory_hostname_short": "ms1023", 
+    "local_results_path": "/experiment/results/baseliner_output", 
+    "omit": "__omit_place_holder__aada04d3337c3e2b189c10a83898fa0acf9120f4", 
+    "playbook_dir": "/experiment", 
+    "stop_all": "true", 
+    "test_wait_delay": "60"
+}

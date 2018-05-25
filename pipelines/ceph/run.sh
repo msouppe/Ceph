@@ -34,7 +34,7 @@ docker run --rm --name=baseliner \
   --workdir=/experiment/ \
   --net=host \
   ivotron/baseliner:0.2 \
-    -i /experiment/geni/machines \
+    -i /experiment/hosts \
     -f /experiment/config.yml \
     -o /experiment/results/baseliner_output \
     $BASELINER_FLAGS
