@@ -46,11 +46,13 @@
     "groups": {
         "all": [
             "ms1029.utah.cloudlab.us", 
+            "ms0913.utah.cloudlab.us", 
             "ms1016.utah.cloudlab.us", 
             "ms1023.utah.cloudlab.us"
         ], 
         "ungrouped": [
             "ms1029.utah.cloudlab.us", 
+            "ms0913.utah.cloudlab.us", 
             "ms1016.utah.cloudlab.us", 
             "ms1023.utah.cloudlab.us"
         ]
@@ -61,7 +63,7 @@
     "inventory_hostname": "ms1023.utah.cloudlab.us", 
     "inventory_hostname_short": "ms1023", 
     "local_results_path": "/experiment/results/baseliner_output", 
-    "omit": "__omit_place_holder__aada04d3337c3e2b189c10a83898fa0acf9120f4", 
+    "omit": "__omit_place_holder__ac9821271ec0a28da7cc8cfae61c31dae08ca2fc", 
     "playbook_dir": "/experiment", 
     "stop_all": "true", 
     "test_wait_delay": "60"

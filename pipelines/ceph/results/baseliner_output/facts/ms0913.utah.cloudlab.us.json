@@ -1,10 +1,10 @@
 {
     "ansible_all_ipv4_addresses": [
-        "128.110.153.169", 
+        "128.110.153.121", 
         "172.17.0.1"
     ], 
     "ansible_all_ipv6_addresses": [
-        "fe80::1658:d0ff:fe58:1fc2"
+        "fe80::1658:d0ff:fe58:ff12"
     ], 
     "ansible_apparmor": {
         "status": "enabled"
@@ -24,16 +24,16 @@
     "ansible_date_time": {
         "date": "2018-05-25", 
         "day": "25", 
-        "epoch": "1527310070", 
+        "epoch": "1527310071", 
         "hour": "22", 
-        "iso8601": "2018-05-26T04:47:50Z", 
-        "iso8601_basic": "20180525T224750968576", 
-        "iso8601_basic_short": "20180525T224750", 
-        "iso8601_micro": "2018-05-26T04:47:50.968750Z", 
+        "iso8601": "2018-05-26T04:47:51Z", 
+        "iso8601_basic": "20180525T224751008938", 
+        "iso8601_basic_short": "20180525T224751", 
+        "iso8601_micro": "2018-05-26T04:47:51.009110Z", 
         "minute": "47", 
         "month": "05", 
-        "second": "50", 
-        "time": "22:47:50", 
+        "second": "51", 
+        "time": "22:47:51", 
         "tz": "MDT", 
         "tz_offset": "-0600", 
         "weekday": "Friday", 
@@ -42,12 +42,12 @@
         "year": "2018"
     }, 
     "ansible_default_ipv4": {
-        "address": "128.110.153.169", 
+        "address": "128.110.153.121", 
         "alias": "eno1", 
         "broadcast": "128.110.155.255", 
         "gateway": "128.110.152.1", 
         "interface": "eno1", 
-        "macaddress": "14:58:d0:58:1f:c2", 
+        "macaddress": "14:58:d0:58:ff:12", 
         "mtu": 1500, 
         "netmask": "255.255.252.0", 
         "network": "128.110.152.0", 
@@ -67,7 +67,7 @@
                 "ce184cb1-3771-4a20-b6cd-8e9a4649a561"
             ], 
             "nvme0n1p3": [
-                "822fa151-af0b-4c71-a506-4748341c3d9d"
+                "8c21e976-2336-46ee-9617-c31ef4823659"
             ]
         }
     }, 
@@ -713,7 +713,7 @@
             "vlan_challenged": "off [fixed]"
         }, 
         "hw_timestamp_filters": [], 
-        "id": "8000.0242ea394837", 
+        "id": "8000.02424ccba1c3", 
         "interfaces": [], 
         "ipv4": {
             "address": "172.17.0.1", 
@@ -721,7 +721,7 @@
             "netmask": "255.255.0.0", 
             "network": "172.17.0.0"
         }, 
-        "macaddress": "02:42:ea:39:48:37", 
+        "macaddress": "02:42:4c:cb:a1:c3", 
         "mtu": 1500, 
         "promisc": false, 
         "stp": false, 
@@ -788,19 +788,19 @@
             "all"
         ], 
         "ipv4": {
-            "address": "128.110.153.169", 
+            "address": "128.110.153.121", 
             "broadcast": "128.110.155.255", 
             "netmask": "255.255.252.0", 
             "network": "128.110.152.0"
         }, 
         "ipv6": [
             {
-                "address": "fe80::1658:d0ff:fe58:1fc2", 
+                "address": "fe80::1658:d0ff:fe58:ff12", 
                 "prefix": "64", 
                 "scope": "link"
             }
         ], 
-        "macaddress": "14:58:d0:58:1f:c2", 
+        "macaddress": "14:58:d0:58:ff:12", 
         "module": "mlx4_core", 
         "mtu": 1500, 
         "pciid": "0000:09:00.0", 
@@ -870,7 +870,7 @@
             "none", 
             "all"
         ], 
-        "macaddress": "14:58:d0:58:1f:c3", 
+        "macaddress": "14:58:d0:58:ff:13", 
         "module": "mlx4_core", 
         "mtu": 1500, 
         "pciid": "0000:09:00.0", 
@@ -895,10 +895,10 @@
         "PWD": "/users/msouppe", 
         "SHELL": "/bin/bash", 
         "SHLVL": "1", 
-        "SSH_CLIENT": "169.233.37.59 51064 22", 
-        "SSH_CONNECTION": "169.233.37.59 51064 128.110.153.169 22", 
-        "SSH_TTY": "/dev/pts/1", 
-        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-junrrzschungceosbxegjxjaevflymtt; /usr/bin/python /users/msouppe/.ansible/tmp/ansible-tmp-1527310069.48-78387768277344/setup.py; rm -rf \"/users/msouppe/.ansible/tmp/ansible-tmp-1527310069.48-78387768277344/\" > /dev/null 2>&1", 
+        "SSH_CLIENT": "169.233.37.59 34056 22", 
+        "SSH_CONNECTION": "169.233.37.59 34056 128.110.153.121 22", 
+        "SSH_TTY": "/dev/pts/0", 
+        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-jvzzzcbzrtvcysprgcnfdsslwsogwjmu; /usr/bin/python /users/msouppe/.ansible/tmp/ansible-tmp-1527310069.48-186524231179084/setup.py; rm -rf \"/users/msouppe/.ansible/tmp/ansible-tmp-1527310069.48-186524231179084/\" > /dev/null 2>&1", 
         "SUDO_GID": "2196", 
         "SUDO_UID": "20001", 
         "SUDO_USER": "msouppe", 
@@ -906,12 +906,12 @@
         "USER": "root", 
         "USERNAME": "root", 
         "XDG_RUNTIME_DIR": "/run/user/20001", 
-        "XDG_SESSION_ID": "177", 
+        "XDG_SESSION_ID": "5", 
         "_": "/bin/sh"
     }, 
     "ansible_fips": false, 
     "ansible_form_factor": "Multi-system", 
-    "ansible_fqdn": "ms1016.utah.cloudlab.us", 
+    "ansible_fqdn": "ms0913.utah.cloudlab.us", 
     "ansible_hostname": "node", 
     "ansible_interfaces": [
         "lo", 
@@ -1006,16 +1006,16 @@
     }, 
     "ansible_machine": "x86_64", 
     "ansible_machine_id": "de1cbcb0603c491f96684e6ab8fbe1e2", 
-    "ansible_memfree_mb": 63338, 
+    "ansible_memfree_mb": 63500, 
     "ansible_memory_mb": {
         "nocache": {
-            "free": 63604, 
-            "used": 568
+            "free": 63654, 
+            "used": 518
         }, 
         "real": {
-            "free": 63338, 
+            "free": 63500, 
             "total": 64172, 
-            "used": 834
+            "used": 672
         }, 
         "swap": {
             "cached": 0, 
@@ -1027,34 +1027,34 @@
     "ansible_memtotal_mb": 64172, 
     "ansible_mounts": [
         {
-            "block_available": 3385614, 
+            "block_available": 3385941, 
             "block_size": 4096, 
             "block_total": 4095722, 
-            "block_used": 710108, 
+            "block_used": 709781, 
             "device": "/dev/nvme0n1p1", 
             "fstype": "ext3", 
-            "inode_available": 935648, 
+            "inode_available": 935678, 
             "inode_total": 1048576, 
-            "inode_used": 112928, 
+            "inode_used": 112898, 
             "mount": "/", 
             "options": "rw,relatime,errors=remount-ro,data=ordered", 
-            "size_available": 13867474944, 
+            "size_available": 13868814336, 
             "size_total": 16776077312, 
             "uuid": "ce184cb1-3771-4a20-b6cd-8e9a4649a561"
         }, 
         {
-            "block_available": 3385614, 
+            "block_available": 3385941, 
             "block_size": 4096, 
             "block_total": 4095722, 
-            "block_used": 710108, 
+            "block_used": 709781, 
             "device": "/dev/nvme0n1p1", 
             "fstype": "ext3", 
-            "inode_available": 935648, 
+            "inode_available": 935678, 
             "inode_total": 1048576, 
-            "inode_used": 112928, 
+            "inode_used": 112898, 
             "mount": "/var/lib/docker/aufs", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 13867474944, 
+            "size_available": 13868814336, 
             "size_total": 16776077312, 
             "uuid": "ce184cb1-3771-4a20-b6cd-8e9a4649a561"
         }, 
@@ -1091,7 +1091,7 @@
             "uuid": "N/A"
         }
     ], 
-    "ansible_nodename": "node.msouppe-qv37149.schedock-pg0.utah.cloudlab.us", 
+    "ansible_nodename": "node.msouppe-qv37222.schedock-pg0.utah.cloudlab.us", 
     "ansible_os_family": "Debian", 
     "ansible_pkg_mgr": "apt", 
     "ansible_playbook_python": "/usr/bin/python2", 
@@ -1150,8 +1150,8 @@
     "ansible_processor_threads_per_core": 2, 
     "ansible_processor_vcpus": 16, 
     "ansible_product_name": "ProLiant m510 Server Cartridge", 
-    "ansible_product_serial": "CN7626V10V", 
-    "ansible_product_uuid": "15A2407E-6CDA-598B-A459-48D3A241D3A2", 
+    "ansible_product_serial": "CN7626V13J", 
+    "ansible_product_uuid": "3F53A870-FCF0-507D-A966-D1B1419257F3", 
     "ansible_product_version": "NA", 
     "ansible_python": {
         "executable": "/usr/bin/python", 
@@ -1229,7 +1229,7 @@
     ], 
     "ansible_system_capabilities_enforced": "True", 
     "ansible_system_vendor": "HP", 
-    "ansible_uptime_seconds": 207318, 
+    "ansible_uptime_seconds": 323, 
     "ansible_user": "msouppe", 
     "ansible_user_dir": "/root", 
     "ansible_user_gecos": "root", 
@@ -1301,13 +1301,13 @@
     "install_facter": false, 
     "inventory_dir": "/experiment", 
     "inventory_file": "/experiment/hosts", 
-    "inventory_hostname": "ms1016.utah.cloudlab.us", 
-    "inventory_hostname_short": "ms1016", 
+    "inventory_hostname": "ms0913.utah.cloudlab.us", 
+    "inventory_hostname_short": "ms0913", 
     "local_results_path": "/experiment/results/baseliner_output", 
     "module_setup": true, 
     "omit": "__omit_place_holder__ac9821271ec0a28da7cc8cfae61c31dae08ca2fc", 
     "playbook_dir": "/experiment", 
-    "remote_results_path": "/tmp/baseliner_output_ms1016", 
+    "remote_results_path": "/tmp/baseliner_output_ms0913", 
     "stat_result": {
         "changed": false, 
         "skip_reason": "Conditional result was False", 
