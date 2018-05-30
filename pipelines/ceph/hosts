@@ -1,4 +1,3 @@
-ms1029.utah.cloudlab.us ansible_user=msouppe ansible_become=true
-ms0913.utah.cloudlab.us ansible_user=msouppe ansible_become=true
-ms1016.utah.cloudlab.us ansible_user=msouppe ansible_become=true
-ms1023.utah.cloudlab.us ansible_user=msouppe ansible_become=true
+ms1044.utah.cloudlab.us ansible_user=msouppe ansible_become=true
+ms1020.utah.cloudlab.us ansible_user=msouppe ansible_become=true
+ms0906.utah.cloudlab.us ansible_user=msouppe ansible_become=true
