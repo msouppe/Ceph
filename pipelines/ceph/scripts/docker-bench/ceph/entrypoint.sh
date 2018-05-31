@@ -19,9 +19,9 @@ fi
 
 if [ -n "$MONITOR" ]; then
   if [ -n "$CLIENT" ]; then
-    /entrypoint.sh mon
+    /entrypoint.sh mon &
   else
-    exec /entrypoin.sh mon &
+    exec /entrypoint.sh mon 
   fi
 fi
 
@@ -43,6 +43,5 @@ if [ -n "$CLIENT" ]; then
     echo "Failed waiting for HEALTH_OK from monitor"
     exit 1
   fi
-  $CLIENT_SCRIPT
-  exit 13
+  exec $CLIENT_SCRIPT
 fi

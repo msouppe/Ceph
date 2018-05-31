@@ -1,18 +1,23 @@
 benchmarks:
 - name: rados-bench
-  image: rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64
+  image: mariettesouppe/rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64
   network_mode: host
+  put: 
+  - src: /experiment/scripts/docker-bench/ceph/etcceph/ceph.conf
+    dest: /tmp/etc/ceph.conf
+  volumes:
+  - /tmp/etc:/etc/ceph
   environment_host:
     node1:
       MONITOR: true
       MON_IP: 128.110.153.197
-      CEPH_PUBLIC_NETWORK: 128.110.153.0/100
+      CEPH_PUBLIC_NETWORK: 128.110.152.0/22
     node2:
       OSD: true
       OSD_DEVICES: /dev/sdb
       MON_IP: 128.110.153.114
-      CEPH_PUBLIC_NETWORK: 128.110.153.0/100
+      CEPH_PUBLIC_NETWORK: 128.110.152.0/22
     node3:
       CLIENT: true
       MON_IP: 128.110.153.173
-      CEPH_PUBLIC_NETWORK: 128.110.153.0/100
+      CEPH_PUBLIC_NETWORK: 128.110.152.0/22

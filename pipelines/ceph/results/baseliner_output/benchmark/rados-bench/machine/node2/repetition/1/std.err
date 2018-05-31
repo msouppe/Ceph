@@ -1,0 +1,18 @@
++ '[' -z '' ']'
++ '[' -z True ']'
++ '[' -z 128.110.152.0/22 ']'
++ '[' -z 128.110.153.114 ']'
++ sed -i -e s@monip@128.110.153.114@ /etc/ceph/ceph.conf
++ sed -i -e s@cephnet@128.110.152.0/22@ /etc/ceph/ceph.conf
++ '[' -f /etc/ceph/extra.conf ']'
++ '[' -n '' ']'
++ '[' -n True ']'
++ '[' -n '' ']'
++ exec run_osds
++ '[' -z /dev/sdb ']'
++ ceph auth get client.bootstrap-osd -o /var/lib/ceph/bootstrap-osd/ceph.keyring
+2018-05-30 23:38:00.855473 7fc68c43c700 -1 auth: unable to find a keyring on /etc/ceph/ceph.client.admin.keyring,/etc/ceph/ceph.keyring,/etc/ceph/keyring,/etc/ceph/keyring.bin,: (2) No such file or directory
+2018-05-30 23:43:00.855749 7fc68c43c700  0 monclient(hunting): authenticate timed out after 300
+2018-05-30 23:43:00.855782 7fc68c43c700 -1 monclient(hunting): authenticate NOTE: no keyring found; disabled cephx authentication
+2018-05-30 23:43:00.855791 7fc68c43c700  0 librados: client.admin authentication error (110) Connection timed out
+[errno 110] error connecting to the cluster

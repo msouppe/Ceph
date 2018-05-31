@@ -1,10 +1,10 @@
 {
     "ansible_all_ipv4_addresses": [
-        "128.110.153.173", 
+        "128.110.153.197", 
         "172.17.0.1"
     ], 
     "ansible_all_ipv6_addresses": [
-        "fe80::1658:d0ff:fe58:fea2"
+        "fe80::1658:d0ff:fe58:df52"
     ], 
     "ansible_apparmor": {
         "status": "enabled"
@@ -24,16 +24,16 @@
     "ansible_date_time": {
         "date": "2018-05-30", 
         "day": "30", 
-        "epoch": "1527700829", 
-        "hour": "11", 
-        "iso8601": "2018-05-30T17:20:29Z", 
-        "iso8601_basic": "20180530T112029223396", 
-        "iso8601_basic_short": "20180530T112029", 
-        "iso8601_micro": "2018-05-30T17:20:29.223591Z", 
-        "minute": "20", 
+        "epoch": "1527723465", 
+        "hour": "17", 
+        "iso8601": "2018-05-30T23:37:45Z", 
+        "iso8601_basic": "20180530T173745110467", 
+        "iso8601_basic_short": "20180530T173745", 
+        "iso8601_micro": "2018-05-30T23:37:45.110641Z", 
+        "minute": "37", 
         "month": "05", 
-        "second": "29", 
-        "time": "11:20:29", 
+        "second": "45", 
+        "time": "17:37:45", 
         "tz": "MDT", 
         "tz_offset": "-0600", 
         "weekday": "Wednesday", 
@@ -42,12 +42,12 @@
         "year": "2018"
     }, 
     "ansible_default_ipv4": {
-        "address": "128.110.153.173", 
+        "address": "128.110.153.197", 
         "alias": "eno1", 
         "broadcast": "128.110.155.255", 
         "gateway": "128.110.152.1", 
         "interface": "eno1", 
-        "macaddress": "14:58:d0:58:fe:a2", 
+        "macaddress": "14:58:d0:58:df:52", 
         "mtu": 1500, 
         "netmask": "255.255.252.0", 
         "network": "128.110.152.0", 
@@ -67,7 +67,7 @@
                 "ce184cb1-3771-4a20-b6cd-8e9a4649a561"
             ], 
             "nvme0n1p3": [
-                "46371b4e-5f76-4b16-8a46-8a4b9d9922f5"
+                "d1a7e853-9414-4923-8016-b5be63c9af7c"
             ]
         }
     }, 
@@ -713,7 +713,7 @@
             "vlan_challenged": "off [fixed]"
         }, 
         "hw_timestamp_filters": [], 
-        "id": "8000.0242a19d5b15", 
+        "id": "8000.024272dafa98", 
         "interfaces": [], 
         "ipv4": {
             "address": "172.17.0.1", 
@@ -721,7 +721,7 @@
             "netmask": "255.255.0.0", 
             "network": "172.17.0.0"
         }, 
-        "macaddress": "02:42:a1:9d:5b:15", 
+        "macaddress": "02:42:72:da:fa:98", 
         "mtu": 1500, 
         "promisc": false, 
         "stp": false, 
@@ -788,19 +788,19 @@
             "all"
         ], 
         "ipv4": {
-            "address": "128.110.153.173", 
+            "address": "128.110.153.197", 
             "broadcast": "128.110.155.255", 
             "netmask": "255.255.252.0", 
             "network": "128.110.152.0"
         }, 
         "ipv6": [
             {
-                "address": "fe80::1658:d0ff:fe58:fea2", 
+                "address": "fe80::1658:d0ff:fe58:df52", 
                 "prefix": "64", 
                 "scope": "link"
             }
         ], 
-        "macaddress": "14:58:d0:58:fe:a2", 
+        "macaddress": "14:58:d0:58:df:52", 
         "module": "mlx4_core", 
         "mtu": 1500, 
         "pciid": "0000:09:00.0", 
@@ -870,7 +870,7 @@
             "none", 
             "all"
         ], 
-        "macaddress": "14:58:d0:58:fe:a3", 
+        "macaddress": "14:58:d0:58:df:53", 
         "module": "mlx4_core", 
         "mtu": 1500, 
         "pciid": "0000:09:00.0", 
@@ -895,10 +895,10 @@
         "PWD": "/users/msouppe", 
         "SHELL": "/bin/bash", 
         "SHLVL": "1", 
-        "SSH_CLIENT": "169.233.38.116 56364 22", 
-        "SSH_CONNECTION": "169.233.38.116 56364 128.110.153.173 22", 
-        "SSH_TTY": "/dev/pts/0", 
-        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-dyvjbiqaxtcusqzdllnlczlqtpyuuhmi; /usr/bin/python /users/msouppe/.ansible/tmp/ansible-tmp-1527700827.69-51983054512862/setup.py; rm -rf \"/users/msouppe/.ansible/tmp/ansible-tmp-1527700827.69-51983054512862/\" > /dev/null 2>&1", 
+        "SSH_CLIENT": "169.233.38.116 38370 22", 
+        "SSH_CONNECTION": "169.233.38.116 38370 128.110.153.197 22", 
+        "SSH_TTY": "/dev/pts/3", 
+        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-robzuurossjbrobluygojlsjgdoflyqg; /usr/bin/python /users/msouppe/.ansible/tmp/ansible-tmp-1527723463.61-137224351738072/setup.py; rm -rf \"/users/msouppe/.ansible/tmp/ansible-tmp-1527723463.61-137224351738072/\" > /dev/null 2>&1", 
         "SUDO_GID": "2196", 
         "SUDO_UID": "20001", 
         "SUDO_USER": "msouppe", 
@@ -906,12 +906,13 @@
         "USER": "root", 
         "USERNAME": "root", 
         "XDG_RUNTIME_DIR": "/run/user/20001", 
-        "XDG_SESSION_ID": "11", 
+        "XDG_SESSION_ID": "210", 
         "_": "/bin/sh"
     }, 
     "ansible_fips": false, 
     "ansible_form_factor": "Multi-system", 
-    "ansible_fqdn": "ms1020.utah.cloudlab.us", 
+    "ansible_fqdn": "ms1044.utah.cloudlab.us", 
+    "ansible_host": "ms1044.utah.cloudlab.us", 
     "ansible_hostname": "node", 
     "ansible_interfaces": [
         "lo", 
@@ -1006,16 +1007,16 @@
     }, 
     "ansible_machine": "x86_64", 
     "ansible_machine_id": "de1cbcb0603c491f96684e6ab8fbe1e2", 
-    "ansible_memfree_mb": 63155, 
+    "ansible_memfree_mb": 62450, 
     "ansible_memory_mb": {
         "nocache": {
-            "free": 63623, 
-            "used": 549
+            "free": 63552, 
+            "used": 620
         }, 
         "real": {
-            "free": 63155, 
+            "free": 62450, 
             "total": 64172, 
-            "used": 1017
+            "used": 1722
         }, 
         "swap": {
             "cached": 0, 
@@ -1027,52 +1028,36 @@
     "ansible_memtotal_mb": 64172, 
     "ansible_mounts": [
         {
-            "block_available": 3321590, 
+            "block_available": 3170356, 
             "block_size": 4096, 
             "block_total": 4095722, 
-            "block_used": 774132, 
+            "block_used": 925366, 
             "device": "/dev/nvme0n1p1", 
             "fstype": "ext3", 
-            "inode_available": 935409, 
+            "inode_available": 918685, 
             "inode_total": 1048576, 
-            "inode_used": 113167, 
+            "inode_used": 129891, 
             "mount": "/", 
             "options": "rw,relatime,errors=remount-ro,data=ordered", 
-            "size_available": 13605232640, 
+            "size_available": 12985778176, 
             "size_total": 16776077312, 
             "uuid": "ce184cb1-3771-4a20-b6cd-8e9a4649a561"
         }, 
         {
-            "block_available": 3321590, 
+            "block_available": 3170356, 
             "block_size": 4096, 
             "block_total": 4095722, 
-            "block_used": 774132, 
+            "block_used": 925366, 
             "device": "/dev/nvme0n1p1", 
             "fstype": "ext3", 
-            "inode_available": 935409, 
+            "inode_available": 918685, 
             "inode_total": 1048576, 
-            "inode_used": 113167, 
+            "inode_used": 129891, 
             "mount": "/var/lib/docker/aufs", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 13605232640, 
+            "size_available": 12985778176, 
             "size_total": 16776077312, 
             "uuid": "ce184cb1-3771-4a20-b6cd-8e9a4649a561"
-        }, 
-        {
-            "block_available": 6510473, 
-            "block_size": 16384, 
-            "block_total": 6553600, 
-            "block_used": 43127, 
-            "device": "ops.utah.cloudlab.us:/proj/schedock-PG0", 
-            "fstype": "nfs", 
-            "inode_available": 208335122, 
-            "inode_total": 208335252, 
-            "inode_used": 130, 
-            "mount": "/proj/schedock-PG0", 
-            "options": "rw,relatime,vers=3,rsize=16384,wsize=16384,namlen=255,hard,nolock,proto=udp,timeo=11,retrans=3,sec=sys,mountaddr=128.110.156.34,mountvers=3,mountport=900,mountproto=udp,local_lock=all,addr=128.110.156.34", 
-            "size_available": 106667589632, 
-            "size_total": 107374182400, 
-            "uuid": "N/A"
         }, 
         {
             "block_available": 5189605, 
@@ -1089,9 +1074,25 @@
             "size_available": 85026488320, 
             "size_total": 103991771136, 
             "uuid": "N/A"
+        }, 
+        {
+            "block_available": 6510473, 
+            "block_size": 16384, 
+            "block_total": 6553600, 
+            "block_used": 43127, 
+            "device": "ops.utah.cloudlab.us:/proj/schedock-PG0", 
+            "fstype": "nfs", 
+            "inode_available": 208335122, 
+            "inode_total": 208335252, 
+            "inode_used": 130, 
+            "mount": "/proj/schedock-PG0", 
+            "options": "rw,relatime,vers=3,rsize=16384,wsize=16384,namlen=255,hard,nolock,proto=udp,timeo=11,retrans=3,sec=sys,mountaddr=128.110.156.34,mountvers=3,mountport=900,mountproto=udp,local_lock=all,addr=128.110.156.34", 
+            "size_available": 106667589632, 
+            "size_total": 107374182400, 
+            "uuid": "N/A"
         }
     ], 
-    "ansible_nodename": "node.msouppe-qv37320.schedock-pg0.utah.cloudlab.us", 
+    "ansible_nodename": "node.msouppe-qv37324.schedock-pg0.utah.cloudlab.us", 
     "ansible_os_family": "Debian", 
     "ansible_pkg_mgr": "apt", 
     "ansible_playbook_python": "/usr/bin/python2", 
@@ -1150,8 +1151,8 @@
     "ansible_processor_threads_per_core": 2, 
     "ansible_processor_vcpus": 16, 
     "ansible_product_name": "ProLiant m510 Server Cartridge", 
-    "ansible_product_serial": "CN7626V12Y", 
-    "ansible_product_uuid": "C4735917-FEF5-57C2-AB6A-02F577951B68", 
+    "ansible_product_serial": "CN7626V0V8", 
+    "ansible_product_uuid": "E68B2EF8-B3FF-52CA-A06C-50C01A50F2D3", 
     "ansible_product_version": "NA", 
     "ansible_python": {
         "executable": "/usr/bin/python", 
@@ -1229,7 +1230,7 @@
     ], 
     "ansible_system_capabilities_enforced": "True", 
     "ansible_system_vendor": "HP", 
-    "ansible_uptime_seconds": 2202, 
+    "ansible_uptime_seconds": 24584, 
     "ansible_user": "msouppe", 
     "ansible_user_dir": "/root", 
     "ansible_user_gecos": "root", 
@@ -1253,25 +1254,34 @@
         {
             "environment_host": {
                 "node1": {
-                    "CEPH_PUBLIC_NETWORK": "128.110.153.0/100", 
+                    "CEPH_PUBLIC_NETWORK": "128.110.152.0/22", 
                     "MONITOR": true, 
                     "MON_IP": "128.110.153.197"
                 }, 
                 "node2": {
-                    "CEPH_PUBLIC_NETWORK": "128.110.153.0/100", 
+                    "CEPH_PUBLIC_NETWORK": "128.110.152.0/22", 
                     "MON_IP": "128.110.153.114", 
                     "OSD": true, 
                     "OSD_DEVICES": "/dev/sdb"
                 }, 
                 "node3": {
-                    "CEPH_PUBLIC_NETWORK": "128.110.153.0/100", 
+                    "CEPH_PUBLIC_NETWORK": "128.110.152.0/22", 
                     "CLIENT": true, 
                     "MON_IP": "128.110.153.173"
                 }
             }, 
-            "image": "rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64", 
+            "image": "mariettesouppe/rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64", 
             "name": "rados-bench", 
-            "network_mode": "host"
+            "network_mode": "host", 
+            "put": [
+                {
+                    "dest": "/tmp/etc/ceph.conf", 
+                    "src": "/experiment/scripts/docker-bench/ceph/etcceph/ceph.conf"
+                }
+            ], 
+            "volumes": [
+                "/tmp/etc:/etc/ceph"
+            ]
         }
     ], 
     "facter_architecture": "amd64", 
@@ -1283,7 +1293,7 @@
     "facter_blockdevices": "nvme0n1", 
     "facter_boardmanufacturer": "HP", 
     "facter_boardproductname": "ProLiant m510 Server Cartridge", 
-    "facter_boardserialnumber": "CN7626V12Y", 
+    "facter_boardserialnumber": "CN7626V0V8", 
     "facter_domain": "utah.cloudlab.us", 
     "facter_facterversion": "2.4.6", 
     "facter_filesystems": "ext2,ext3,ext4,squashfs,vfat", 
@@ -1296,7 +1306,7 @@
     "facter_interfaces": "docker0,eno1,eno1d1,lo", 
     "facter_ipaddress": "172.17.0.1", 
     "facter_ipaddress_docker0": "172.17.0.1", 
-    "facter_ipaddress_eno1": "128.110.153.173", 
+    "facter_ipaddress_eno1": "128.110.153.197", 
     "facter_ipaddress_lo": "127.0.0.1", 
     "facter_is_virtual": false, 
     "facter_kernel": "Linux", 
@@ -1308,13 +1318,13 @@
     "facter_lsbdistid": "Ubuntu", 
     "facter_lsbdistrelease": "16.04", 
     "facter_lsbmajdistrelease": "16.04", 
-    "facter_macaddress": "02:42:a1:9d:5b:15", 
-    "facter_macaddress_docker0": "02:42:a1:9d:5b:15", 
-    "facter_macaddress_eno1": "14:58:d0:58:fe:a2", 
-    "facter_macaddress_eno1d1": "14:58:d0:58:fe:a3", 
+    "facter_macaddress": "02:42:72:da:fa:98", 
+    "facter_macaddress_docker0": "02:42:72:da:fa:98", 
+    "facter_macaddress_eno1": "14:58:d0:58:df:52", 
+    "facter_macaddress_eno1d1": "14:58:d0:58:df:53", 
     "facter_manufacturer": "HP", 
-    "facter_memoryfree": "62.12 GB", 
-    "facter_memoryfree_mb": "63608.83", 
+    "facter_memoryfree": "62.05 GB", 
+    "facter_memoryfree_mb": "63542.11", 
     "facter_memorysize": "62.67 GB", 
     "facter_memorysize_mb": "64172.53", 
     "facter_mtu_docker0": 1500, 
@@ -1357,7 +1367,7 @@
         "nvme0n1p2": {}, 
         "nvme0n1p3": {
             "filesystem": "swap", 
-            "uuid": "46371b4e-5f76-4b16-8a46-8a4b9d9922f5"
+            "uuid": "d1a7e853-9414-4923-8016-b5be63c9af7c"
         }, 
         "nvme0n1p4": {}
     }, 
@@ -1408,7 +1418,7 @@
     "facter_rubysitedir": "/usr/local/lib/site_ruby/2.3.0", 
     "facter_rubyversion": "2.3.1", 
     "facter_selinux": false, 
-    "facter_serialnumber": "CN7626V12Y", 
+    "facter_serialnumber": "CN7626V0V8", 
     "facter_sshdsakey": "AAAAB3NzaC1kc3MAAACBAL24NXfSqEblp+IJWVMwUjbmPOvRsZCrq7e1R6GfVnHC0udyFMezxyDBnGmFEwYNXgms5a+QWd8nKcfRYhin6Y8/6NSuKlYTBwhjv4gBIANkh0A1leVRK4HyfLB4aNtVuIb2JHm5yFPRjhMLA/2si/Go1bW8uyGQPjcYQDkGto3VAAAAFQC5NHtaOnWXFJ6Ex53GJ8LXBoJB9QAAAIEAgIXt7B5Tpkj6yiPgcGdjjjiQ/2DKy0bKXLX1PmwSaucDi1/yaUvkpXGANqahVpyydh+bOahKcwzzlqv3BHwbe1Q6sgPG8+NhHE9IcqvIyzqi1WMfs8CXPc/L3rguvghdjnlmde7Do4taSX0RZXqwv6fbXGxRSeS1LUbgIdOaGjQAAACAMZYI+YsNHvPaLQilCO+x5Ge+MdJwH5Y28wejeLbYC85U56JA5GCnlI4JNlEgChjN03xSNgF6acy1MpodjzqInrjIP49suX5bOJ9RdOOxx1RkCV//RmMD46XSOCB6Qc3JaIW/xoYi9/2TqXG6x61GzMoEVE3CjNr9Z9QPJgqAyjE=", 
     "facter_sshecdsakey": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEZpnAXK54UphVLLtt2kDLhusb+ghQ8EJLdT/IOiz6TzwBJJhP1JYEl1HrAKSO9BBzGN+7gzHHUSpgPlCKdnbNQ=", 
     "facter_sshed25519key": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGfViSRiguEggI3bGf0+c4gl6KDRusGZ1mpJ4OO5uOluAdXD9wmqwEWbrS9qR5zzfeKoxQ3DXholfULxjwT2tmk=", 
@@ -1423,18 +1433,18 @@
     "facter_swapsize_mb": "3072.00", 
     "facter_system_uptime": {
         "days": 0, 
-        "hours": 0, 
-        "seconds": 2203, 
-        "uptime": "0:36 hours"
+        "hours": 6, 
+        "seconds": 24584, 
+        "uptime": "6:49 hours"
     }, 
     "facter_timezone": "MDT", 
     "facter_type": "Multi-system", 
-    "facter_uniqueid": "6e80ad99", 
-    "facter_uptime": "0:36 hours", 
+    "facter_uniqueid": "6e80c599", 
+    "facter_uptime": "6:49 hours", 
     "facter_uptime_days": 0, 
-    "facter_uptime_hours": 0, 
-    "facter_uptime_seconds": 2203, 
-    "facter_uuid": "C4735917-FEF5-57C2-AB6A-02F577951B68", 
+    "facter_uptime_hours": 6, 
+    "facter_uptime_seconds": 24584, 
+    "facter_uuid": "E68B2EF8-B3FF-52CA-A06C-50C01A50F2D3", 
     "facter_virtual": "physical", 
     "failfast": "false", 
     "gather_subset": [
@@ -1445,25 +1455,25 @@
     ], 
     "groups": {
         "all": [
-            "ms1044.utah.cloudlab.us", 
-            "ms0906.utah.cloudlab.us", 
-            "ms1020.utah.cloudlab.us"
+            "node1", 
+            "node2", 
+            "node3"
         ], 
         "ungrouped": [
-            "ms1044.utah.cloudlab.us", 
-            "ms0906.utah.cloudlab.us", 
-            "ms1020.utah.cloudlab.us"
+            "node1", 
+            "node2", 
+            "node3"
         ]
     }, 
     "inventory_dir": "/experiment", 
     "inventory_file": "/experiment/hosts", 
-    "inventory_hostname": "ms1020.utah.cloudlab.us", 
-    "inventory_hostname_short": "ms1020", 
+    "inventory_hostname": "node1", 
+    "inventory_hostname_short": "node1", 
     "local_results_path": "/experiment/results/baseliner_output", 
     "module_setup": true, 
-    "omit": "__omit_place_holder__eb80303681dd0abad40355b08cb2e6ca9ae1ed2b", 
+    "omit": "__omit_place_holder__83350282459262c549756a27e6e8e92c7e1587da", 
     "playbook_dir": "/experiment", 
-    "remote_results_path": "/tmp/baseliner_output_ms1020", 
+    "remote_results_path": "/tmp/baseliner_output_node1", 
     "stat_result": {
         "changed": false, 
         "skip_reason": "Conditional result was False", 
