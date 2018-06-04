@@ -1,255 +1,255 @@
 
-2018-06-02 05:04:35,344 p=9 u=root |  PLAY [all] *********************************************************************
-2018-06-02 05:04:35,355 p=9 u=root |  TASK [Gathering Facts] *********************************************************
-2018-06-02 05:04:35,355 p=9 u=root |  Saturday 02 June 2018  05:04:35 +0000 (0:00:00.060)       0:00:00.060 ********* 
-2018-06-02 05:04:38,285 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:38,320 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:38,324 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:38,331 p=9 u=root |  TASK [baseliner : include_tasks] ***********************************************
-2018-06-02 05:04:38,331 p=9 u=root |  Saturday 02 June 2018  05:04:38 +0000 (0:00:02.976)       0:00:03.036 ********* 
-2018-06-02 05:04:38,400 p=9 u=root |  included: /etc/ansible/roles/baseliner/tasks/check_preconditions.yml for node1, node2, node3
-2018-06-02 05:04:38,411 p=9 u=root |  TASK [baseliner : ensure expected variables are defined] ***********************
-2018-06-02 05:04:38,411 p=9 u=root |  Saturday 02 June 2018  05:04:38 +0000 (0:00:00.079)       0:00:03.116 ********* 
-2018-06-02 05:04:38,474 p=9 u=root |  ok: [node1] => {
+2018-06-04 16:03:51,154 p=10 u=root |  PLAY [all] *********************************************************************
+2018-06-04 16:03:51,161 p=10 u=root |  TASK [Gathering Facts] *********************************************************
+2018-06-04 16:03:51,161 p=10 u=root |  Monday 04 June 2018  16:03:51 +0000 (0:00:00.044)       0:00:00.044 *********** 
+2018-06-04 16:03:54,103 p=10 u=root |  ok: [node2]
+2018-06-04 16:03:54,108 p=10 u=root |  ok: [node3]
+2018-06-04 16:03:54,142 p=10 u=root |  ok: [node1]
+2018-06-04 16:03:54,149 p=10 u=root |  TASK [baseliner : include_tasks] ***********************************************
+2018-06-04 16:03:54,149 p=10 u=root |  Monday 04 June 2018  16:03:54 +0000 (0:00:02.988)       0:00:03.032 *********** 
+2018-06-04 16:03:54,211 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/check_preconditions.yml for node1, node2, node3
+2018-06-04 16:03:54,220 p=10 u=root |  TASK [baseliner : ensure expected variables are defined] ***********************
+2018-06-04 16:03:54,221 p=10 u=root |  Monday 04 June 2018  16:03:54 +0000 (0:00:00.071)       0:00:03.103 *********** 
+2018-06-04 16:03:54,281 p=10 u=root |  ok: [node1] => {
     "changed": false, 
     "failed": false, 
     "msg": "All assertions passed"
 }
-2018-06-02 05:04:38,487 p=9 u=root |  ok: [node2] => {
+2018-06-04 16:03:54,285 p=10 u=root |  ok: [node2] => {
     "changed": false, 
     "failed": false, 
     "msg": "All assertions passed"
 }
-2018-06-02 05:04:38,497 p=9 u=root |  ok: [node3] => {
+2018-06-04 16:03:54,296 p=10 u=root |  ok: [node3] => {
     "changed": false, 
     "failed": false, 
     "msg": "All assertions passed"
 }
-2018-06-02 05:04:38,507 p=9 u=root |  TASK [baseliner : set remote results path if not defined] **********************
-2018-06-02 05:04:38,507 p=9 u=root |  Saturday 02 June 2018  05:04:38 +0000 (0:00:00.095)       0:00:03.212 ********* 
-2018-06-02 05:04:38,571 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:38,578 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:38,589 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:38,599 p=9 u=root |  TASK [baseliner : ensure results folder exists] ********************************
-2018-06-02 05:04:38,599 p=9 u=root |  Saturday 02 June 2018  05:04:38 +0000 (0:00:00.091)       0:00:03.304 ********* 
-2018-06-02 05:04:38,860 p=9 u=root |  ok: [node1 -> localhost]
-2018-06-02 05:04:38,871 p=9 u=root |  TASK [baseliner : check that pre-tasks file exists] ****************************
-2018-06-02 05:04:38,871 p=9 u=root |  Saturday 02 June 2018  05:04:38 +0000 (0:00:00.271)       0:00:03.576 ********* 
-2018-06-02 05:04:38,890 p=9 u=root |  TASK [baseliner : check that post-tasks file exists] ***************************
-2018-06-02 05:04:38,891 p=9 u=root |  Saturday 02 June 2018  05:04:38 +0000 (0:00:00.019)       0:00:03.596 ********* 
-2018-06-02 05:04:38,937 p=9 u=root |  TASK [baseliner : ensure docker-engine is installed] ***************************
-2018-06-02 05:04:38,938 p=9 u=root |  Saturday 02 June 2018  05:04:38 +0000 (0:00:00.046)       0:00:03.643 ********* 
-2018-06-02 05:04:38,979 p=9 u=root |  TASK [baseliner : install statically linked docker] ****************************
-2018-06-02 05:04:38,979 p=9 u=root |  Saturday 02 June 2018  05:04:38 +0000 (0:00:00.041)       0:00:03.684 ********* 
-2018-06-02 05:04:39,018 p=9 u=root |  TASK [baseliner : ensure the docker daemon is running] *************************
-2018-06-02 05:04:39,018 p=9 u=root |  Saturday 02 June 2018  05:04:39 +0000 (0:00:00.038)       0:00:03.723 ********* 
-2018-06-02 05:04:39,061 p=9 u=root |  TASK [baseliner : stop any running container] **********************************
-2018-06-02 05:04:39,061 p=9 u=root |  Saturday 02 June 2018  05:04:39 +0000 (0:00:00.042)       0:00:03.766 ********* 
-2018-06-02 05:04:40,062 p=9 u=root |  fatal: [node2]: FAILED! => {"changed": true, "cmd": "docker stop `docker ps -q`", "delta": "0:00:00.030901", "end": "2018-06-01 23:04:40.021346", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-06-01 23:04:39.990445", "stderr": "\"docker stop\" requires at least 1 argument(s).\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument(s).", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
-2018-06-02 05:04:40,063 p=9 u=root |  ...ignoring
-2018-06-02 05:04:40,064 p=9 u=root |  fatal: [node3]: FAILED! => {"changed": true, "cmd": "docker stop `docker ps -q`", "delta": "0:00:00.034842", "end": "2018-06-01 23:04:40.021775", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-06-01 23:04:39.986933", "stderr": "\"docker stop\" requires at least 1 argument(s).\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument(s).", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
-2018-06-02 05:04:40,064 p=9 u=root |  ...ignoring
-2018-06-02 05:04:40,071 p=9 u=root |  fatal: [node1]: FAILED! => {"changed": true, "cmd": "docker stop `docker ps -q`", "delta": "0:00:00.043775", "end": "2018-06-01 23:04:40.034917", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-06-01 23:04:39.991142", "stderr": "\"docker stop\" requires at least 1 argument(s).\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument(s).", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
-2018-06-02 05:04:40,071 p=9 u=root |  ...ignoring
-2018-06-02 05:04:40,078 p=9 u=root |  TASK [baseliner : remove containers to avoid name clashes] *********************
-2018-06-02 05:04:40,079 p=9 u=root |  Saturday 02 June 2018  05:04:40 +0000 (0:00:01.017)       0:00:04.784 ********* 
-2018-06-02 05:04:40,914 p=9 u=root |  fatal: [node1]: FAILED! => {"changed": true, "cmd": "docker rm `docker ps -qa`", "delta": "0:00:00.041238", "end": "2018-06-01 23:04:40.877465", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-06-01 23:04:40.836227", "stderr": "\"docker rm\" requires at least 1 argument(s).\nSee 'docker rm --help'.\n\nUsage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]\n\nRemove one or more containers", "stderr_lines": ["\"docker rm\" requires at least 1 argument(s).", "See 'docker rm --help'.", "", "Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]", "", "Remove one or more containers"], "stdout": "", "stdout_lines": []}
-2018-06-02 05:04:40,914 p=9 u=root |  ...ignoring
-2018-06-02 05:04:40,919 p=9 u=root |  fatal: [node2]: FAILED! => {"changed": true, "cmd": "docker rm `docker ps -qa`", "delta": "0:00:00.038903", "end": "2018-06-01 23:04:40.880534", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-06-01 23:04:40.841631", "stderr": "\"docker rm\" requires at least 1 argument(s).\nSee 'docker rm --help'.\n\nUsage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]\n\nRemove one or more containers", "stderr_lines": ["\"docker rm\" requires at least 1 argument(s).", "See 'docker rm --help'.", "", "Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]", "", "Remove one or more containers"], "stdout": "", "stdout_lines": []}
-2018-06-02 05:04:40,919 p=9 u=root |  ...ignoring
-2018-06-02 05:04:40,937 p=9 u=root |  fatal: [node3]: FAILED! => {"changed": true, "cmd": "docker rm `docker ps -qa`", "delta": "0:00:00.034164", "end": "2018-06-01 23:04:40.898834", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-06-01 23:04:40.864670", "stderr": "\"docker rm\" requires at least 1 argument(s).\nSee 'docker rm --help'.\n\nUsage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]\n\nRemove one or more containers", "stderr_lines": ["\"docker rm\" requires at least 1 argument(s).", "See 'docker rm --help'.", "", "Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]", "", "Remove one or more containers"], "stdout": "", "stdout_lines": []}
-2018-06-02 05:04:40,937 p=9 u=root |  ...ignoring
-2018-06-02 05:04:40,946 p=9 u=root |  TASK [baseliner : store facts] *************************************************
-2018-06-02 05:04:40,947 p=9 u=root |  Saturday 02 June 2018  05:04:40 +0000 (0:00:00.867)       0:00:05.652 ********* 
-2018-06-02 05:04:41,006 p=9 u=root |  included: /etc/ansible/roles/baseliner/tasks/store-facts.yml for node1, node2, node3
-2018-06-02 05:04:41,022 p=9 u=root |  TASK [baseliner : install facter] **********************************************
-2018-06-02 05:04:41,022 p=9 u=root |  Saturday 02 June 2018  05:04:41 +0000 (0:00:00.075)       0:00:05.727 ********* 
-2018-06-02 05:04:42,474 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:42,488 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:42,494 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:42,508 p=9 u=root |  TASK [baseliner : create facts folder if it doesn't exist] *********************
-2018-06-02 05:04:42,508 p=9 u=root |  Saturday 02 June 2018  05:04:42 +0000 (0:00:01.485)       0:00:07.213 ********* 
-2018-06-02 05:04:42,633 p=9 u=root |  changed: [node1 -> localhost]
-2018-06-02 05:04:42,647 p=9 u=root |  TASK [baseliner : store facts about remotes] ***********************************
-2018-06-02 05:04:42,647 p=9 u=root |  Saturday 02 June 2018  05:04:42 +0000 (0:00:00.138)       0:00:07.352 ********* 
-2018-06-02 05:04:43,062 p=9 u=root |  changed: [node1 -> localhost] => (item=node1)
-2018-06-02 05:04:43,275 p=9 u=root |  changed: [node1 -> localhost] => (item=node2)
-2018-06-02 05:04:43,495 p=9 u=root |  changed: [node1 -> localhost] => (item=node3)
-2018-06-02 05:04:43,502 p=9 u=root |  TASK [baseliner : start monitoring] ********************************************
-2018-06-02 05:04:43,502 p=9 u=root |  Saturday 02 June 2018  05:04:43 +0000 (0:00:00.855)       0:00:08.207 ********* 
-2018-06-02 05:04:43,539 p=9 u=root |  TASK [baseliner : include_tasks] ***********************************************
-2018-06-02 05:04:43,539 p=9 u=root |  Saturday 02 June 2018  05:04:43 +0000 (0:00:00.036)       0:00:08.244 ********* 
-2018-06-02 05:04:43,579 p=9 u=root |  TASK [baseliner : get number of repetitions] ***********************************
-2018-06-02 05:04:43,580 p=9 u=root |  Saturday 02 June 2018  05:04:43 +0000 (0:00:00.040)       0:00:08.285 ********* 
-2018-06-02 05:04:43,645 p=9 u=root |  ok: [node1] => (item=1)
-2018-06-02 05:04:43,650 p=9 u=root |  ok: [node2] => (item=1)
-2018-06-02 05:04:43,668 p=9 u=root |  ok: [node3] => (item=1)
-2018-06-02 05:04:43,676 p=9 u=root |  TASK [baseliner : execute each benchmark] **************************************
-2018-06-02 05:04:43,676 p=9 u=root |  Saturday 02 June 2018  05:04:43 +0000 (0:00:00.096)       0:00:08.381 ********* 
-2018-06-02 05:04:43,748 p=9 u=root |  included: /etc/ansible/roles/baseliner/tasks/run-bench.yml for node1, node2, node3
-2018-06-02 05:04:43,773 p=9 u=root |  TASK [baseliner : upload files] ************************************************
-2018-06-02 05:04:43,773 p=9 u=root |  Saturday 02 June 2018  05:04:43 +0000 (0:00:00.097)       0:00:08.478 ********* 
-2018-06-02 05:04:45,280 p=9 u=root |  changed: [node1] => (item={u'dest': u'/tmp/etc/ceph.conf', u'src': u'/experiment/scripts/docker-bench/ceph/etcceph/ceph.conf'})
-2018-06-02 05:04:45,281 p=9 u=root |  changed: [node3] => (item={u'dest': u'/tmp/etc/ceph.conf', u'src': u'/experiment/scripts/docker-bench/ceph/etcceph/ceph.conf'})
-2018-06-02 05:04:45,282 p=9 u=root |  changed: [node2] => (item={u'dest': u'/tmp/etc/ceph.conf', u'src': u'/experiment/scripts/docker-bench/ceph/etcceph/ceph.conf'})
-2018-06-02 05:04:45,289 p=9 u=root |  TASK [baseliner : initialize parameters and add number of repetitions] *********
-2018-06-02 05:04:45,289 p=9 u=root |  Saturday 02 June 2018  05:04:45 +0000 (0:00:01.515)       0:00:09.994 ********* 
-2018-06-02 05:04:45,358 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:45,358 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:45,373 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:45,381 p=9 u=root |  TASK [baseliner : unnest parameters when parameters for benchmark were passed] ***
-2018-06-02 05:04:45,381 p=9 u=root |  Saturday 02 June 2018  05:04:45 +0000 (0:00:00.091)       0:00:10.086 ********* 
-2018-06-02 05:04:45,420 p=9 u=root |  TASK [baseliner : parametrized execution] **************************************
-2018-06-02 05:04:45,420 p=9 u=root |  Saturday 02 June 2018  05:04:45 +0000 (0:00:00.039)       0:00:10.125 ********* 
-2018-06-02 05:04:45,507 p=9 u=root |  included: /etc/ansible/roles/baseliner/tasks/run-bench-parametrized.yml for node1, node2, node3
-2018-06-02 05:04:45,516 p=9 u=root |  TASK [baseliner : remove remote results folder] ********************************
-2018-06-02 05:04:45,517 p=9 u=root |  Saturday 02 June 2018  05:04:45 +0000 (0:00:00.096)       0:00:10.222 ********* 
-2018-06-02 05:04:46,351 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:46,356 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:46,360 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:46,369 p=9 u=root |  TASK [baseliner : create remote results folder] ********************************
-2018-06-02 05:04:46,369 p=9 u=root |  Saturday 02 June 2018  05:04:46 +0000 (0:00:00.852)       0:00:11.074 ********* 
-2018-06-02 05:04:47,182 p=9 u=root |  changed: [node2]
-2018-06-02 05:04:47,183 p=9 u=root |  changed: [node1]
-2018-06-02 05:04:47,185 p=9 u=root |  changed: [node3]
-2018-06-02 05:04:47,193 p=9 u=root |  TASK [baseliner : initialize parameter dictionary] *****************************
-2018-06-02 05:04:47,194 p=9 u=root |  Saturday 02 June 2018  05:04:47 +0000 (0:00:00.824)       0:00:11.899 ********* 
-2018-06-02 05:04:47,247 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:47,264 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:47,273 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:47,280 p=9 u=root |  TASK [baseliner : populate parameter dictionary] *******************************
-2018-06-02 05:04:47,281 p=9 u=root |  Saturday 02 June 2018  05:04:47 +0000 (0:00:00.087)       0:00:11.986 ********* 
-2018-06-02 05:04:47,344 p=9 u=root |  ok: [node1] => (item=[u'repetition', u'1'])
-2018-06-02 05:04:47,356 p=9 u=root |  ok: [node2] => (item=[u'repetition', u'1'])
-2018-06-02 05:04:47,362 p=9 u=root |  ok: [node3] => (item=[u'repetition', u'1'])
-2018-06-02 05:04:47,368 p=9 u=root |  TASK [baseliner : merge default variables to the benchmark-specific options] ***
-2018-06-02 05:04:47,368 p=9 u=root |  Saturday 02 June 2018  05:04:47 +0000 (0:00:00.087)       0:00:12.074 ********* 
-2018-06-02 05:04:47,423 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:47,433 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:47,447 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:47,454 p=9 u=root |  TASK [baseliner : initialize string for path] **********************************
-2018-06-02 05:04:47,454 p=9 u=root |  Saturday 02 June 2018  05:04:47 +0000 (0:00:00.085)       0:00:12.159 ********* 
-2018-06-02 05:04:47,516 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:47,521 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:47,534 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:47,542 p=9 u=root |  TASK [baseliner : add key/value pairs for each parameter (if any)] *************
-2018-06-02 05:04:47,543 p=9 u=root |  Saturday 02 June 2018  05:04:47 +0000 (0:00:00.088)       0:00:12.248 ********* 
-2018-06-02 05:04:47,603 p=9 u=root |  ok: [node1] => (item={'key': u'repetition', 'value': u'1'})
-2018-06-02 05:04:47,620 p=9 u=root |  ok: [node2] => (item={'key': u'repetition', 'value': u'1'})
-2018-06-02 05:04:47,626 p=9 u=root |  ok: [node3] => (item={'key': u'repetition', 'value': u'1'})
-2018-06-02 05:04:47,634 p=9 u=root |  TASK [baseliner : ensure output folder exists] *********************************
-2018-06-02 05:04:47,634 p=9 u=root |  Saturday 02 June 2018  05:04:47 +0000 (0:00:00.091)       0:00:12.339 ********* 
-2018-06-02 05:04:47,769 p=9 u=root |  changed: [node1 -> localhost]
-2018-06-02 05:04:47,785 p=9 u=root |  changed: [node2 -> localhost]
-2018-06-02 05:04:47,806 p=9 u=root |  changed: [node3 -> localhost]
-2018-06-02 05:04:47,815 p=9 u=root |  TASK [baseliner : run containerized benchmark] *********************************
-2018-06-02 05:04:47,815 p=9 u=root |  Saturday 02 June 2018  05:04:47 +0000 (0:00:00.180)       0:00:12.520 ********* 
-2018-06-02 05:04:47,958 p=9 u=root |  included: /etc/ansible/roles/baseliner/tasks/run-container.yml for node1, node2, node3
-2018-06-02 05:04:47,981 p=9 u=root |  TASK [baseliner : check if image already exists] *******************************
-2018-06-02 05:04:47,982 p=9 u=root |  Saturday 02 June 2018  05:04:47 +0000 (0:00:00.166)       0:00:12.687 ********* 
-2018-06-02 05:04:48,850 p=9 u=root |  changed: [node1]
-2018-06-02 05:04:48,852 p=9 u=root |  changed: [node3]
-2018-06-02 05:04:48,859 p=9 u=root |  changed: [node2]
-2018-06-02 05:04:48,870 p=9 u=root |  TASK [baseliner : pull image] **************************************************
-2018-06-02 05:04:48,870 p=9 u=root |  Saturday 02 June 2018  05:04:48 +0000 (0:00:00.888)       0:00:13.575 ********* 
-2018-06-02 05:04:50,479 p=9 u=root |  changed: [node1]
-2018-06-02 05:04:50,482 p=9 u=root |  changed: [node2]
-2018-06-02 05:04:50,836 p=9 u=root |  changed: [node3]
-2018-06-02 05:04:50,846 p=9 u=root |  TASK [baseliner : define name of container] ************************************
-2018-06-02 05:04:50,846 p=9 u=root |  Saturday 02 June 2018  05:04:50 +0000 (0:00:01.975)       0:00:15.551 ********* 
-2018-06-02 05:04:50,906 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:50,913 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:50,924 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:50,932 p=9 u=root |  TASK [baseliner : initialize docker_flags variable] ****************************
-2018-06-02 05:04:50,933 p=9 u=root |  Saturday 02 June 2018  05:04:50 +0000 (0:00:00.086)       0:00:15.638 ********* 
-2018-06-02 05:04:50,991 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:51,005 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:51,017 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:51,024 p=9 u=root |  TASK [baseliner : add environment to docker_flags] *****************************
-2018-06-02 05:04:51,024 p=9 u=root |  Saturday 02 June 2018  05:04:51 +0000 (0:00:00.091)       0:00:15.729 ********* 
-2018-06-02 05:04:51,071 p=9 u=root |  TASK [baseliner : add implicit environment from bench_params variable] *********
-2018-06-02 05:04:51,072 p=9 u=root |  Saturday 02 June 2018  05:04:51 +0000 (0:00:00.047)       0:00:15.777 ********* 
-2018-06-02 05:04:51,137 p=9 u=root |  ok: [node1] => (item={'key': u'repetition', 'value': u'1'})
-2018-06-02 05:04:51,147 p=9 u=root |  ok: [node2] => (item={'key': u'repetition', 'value': u'1'})
-2018-06-02 05:04:51,161 p=9 u=root |  ok: [node3] => (item={'key': u'repetition', 'value': u'1'})
-2018-06-02 05:04:51,170 p=9 u=root |  TASK [baseliner : check if we have host-specific ips] **************************
-2018-06-02 05:04:51,170 p=9 u=root |  Saturday 02 June 2018  05:04:51 +0000 (0:00:00.098)       0:00:15.875 ********* 
-2018-06-02 05:04:51,230 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:51,242 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:51,250 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:51,258 p=9 u=root |  TASK [baseliner : add host-specific ips to docker_flags] ***********************
-2018-06-02 05:04:51,259 p=9 u=root |  Saturday 02 June 2018  05:04:51 +0000 (0:00:00.088)       0:00:15.964 ********* 
-2018-06-02 05:04:51,302 p=9 u=root |  TASK [baseliner : check if we have host-specific environment] ******************
-2018-06-02 05:04:51,302 p=9 u=root |  Saturday 02 June 2018  05:04:51 +0000 (0:00:00.043)       0:00:16.008 ********* 
-2018-06-02 05:04:51,360 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:51,370 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:51,382 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:51,389 p=9 u=root |  TASK [baseliner : add host-specific environment to docker_flags] ***************
-2018-06-02 05:04:51,390 p=9 u=root |  Saturday 02 June 2018  05:04:51 +0000 (0:00:00.087)       0:00:16.095 ********* 
-2018-06-02 05:04:51,453 p=9 u=root |  ok: [node1] => (item={'key': u'CEPH_PUBLIC_NETWORK', 'value': u'128.110.152.0/22'})
-2018-06-02 05:04:51,468 p=9 u=root |  ok: [node2] => (item={'key': u'CEPH_PUBLIC_NETWORK', 'value': u'128.110.152.0/22'})
-2018-06-02 05:04:51,483 p=9 u=root |  ok: [node3] => (item={'key': u'CEPH_PUBLIC_NETWORK', 'value': u'128.110.152.0/22'})
-2018-06-02 05:04:51,500 p=9 u=root |  ok: [node1] => (item={'key': u'MON_IP', 'value': u'128.110.153.197'})
-2018-06-02 05:04:51,510 p=9 u=root |  ok: [node2] => (item={'key': u'MON_IP', 'value': u'128.110.153.77'})
-2018-06-02 05:04:51,529 p=9 u=root |  ok: [node3] => (item={'key': u'CLIENT', 'value': True})
-2018-06-02 05:04:51,548 p=9 u=root |  ok: [node1] => (item={'key': u'MONITOR', 'value': True})
-2018-06-02 05:04:51,554 p=9 u=root |  ok: [node2] => (item={'key': u'OSD', 'value': True})
-2018-06-02 05:04:51,574 p=9 u=root |  ok: [node3] => (item={'key': u'MON_IP', 'value': u'128.110.153.138'})
-2018-06-02 05:04:51,640 p=9 u=root |  ok: [node2] => (item={'key': u'OSD_DEVICES', 'value': u'/dev/sdb'})
-2018-06-02 05:04:51,648 p=9 u=root |  TASK [baseliner : add devices to docker_flags] *********************************
-2018-06-02 05:04:51,648 p=9 u=root |  Saturday 02 June 2018  05:04:51 +0000 (0:00:00.258)       0:00:16.354 ********* 
-2018-06-02 05:04:51,694 p=9 u=root |  TASK [baseliner : add network mode to docker_flags] ****************************
-2018-06-02 05:04:51,694 p=9 u=root |  Saturday 02 June 2018  05:04:51 +0000 (0:00:00.045)       0:00:16.399 ********* 
-2018-06-02 05:04:51,752 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:51,767 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:51,780 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:51,787 p=9 u=root |  TASK [baseliner : add ipc mode to docker_flags] ********************************
-2018-06-02 05:04:51,787 p=9 u=root |  Saturday 02 June 2018  05:04:51 +0000 (0:00:00.093)       0:00:16.492 ********* 
-2018-06-02 05:04:51,829 p=9 u=root |  TASK [baseliner : add ports to docker_flags] ***********************************
-2018-06-02 05:04:51,829 p=9 u=root |  Saturday 02 June 2018  05:04:51 +0000 (0:00:00.041)       0:00:16.534 ********* 
-2018-06-02 05:04:51,870 p=9 u=root |  TASK [baseliner : add volumes to docker_flags] *********************************
-2018-06-02 05:04:51,870 p=9 u=root |  Saturday 02 June 2018  05:04:51 +0000 (0:00:00.040)       0:00:16.575 ********* 
-2018-06-02 05:04:51,945 p=9 u=root |  ok: [node1] => (item=/tmp/etc:/etc/ceph)
-2018-06-02 05:04:51,954 p=9 u=root |  ok: [node2] => (item=/tmp/etc:/etc/ceph)
-2018-06-02 05:04:51,965 p=9 u=root |  ok: [node3] => (item=/tmp/etc:/etc/ceph)
-2018-06-02 05:04:51,973 p=9 u=root |  TASK [baseliner : add default volumes to docker_flags] *************************
-2018-06-02 05:04:51,973 p=9 u=root |  Saturday 02 June 2018  05:04:51 +0000 (0:00:00.102)       0:00:16.678 ********* 
-2018-06-02 05:04:52,043 p=9 u=root |  ok: [node1]
-2018-06-02 05:04:52,050 p=9 u=root |  ok: [node2]
-2018-06-02 05:04:52,063 p=9 u=root |  ok: [node3]
-2018-06-02 05:04:52,070 p=9 u=root |  TASK [baseliner : set entrypoint] **********************************************
-2018-06-02 05:04:52,071 p=9 u=root |  Saturday 02 June 2018  05:04:52 +0000 (0:00:00.097)       0:00:16.776 ********* 
-2018-06-02 05:04:52,111 p=9 u=root |  TASK [baseliner : set limits] **************************************************
-2018-06-02 05:04:52,111 p=9 u=root |  Saturday 02 June 2018  05:04:52 +0000 (0:00:00.040)       0:00:16.816 ********* 
-2018-06-02 05:04:52,153 p=9 u=root |  TASK [baseliner : add capabilities] ********************************************
-2018-06-02 05:04:52,154 p=9 u=root |  Saturday 02 June 2018  05:04:52 +0000 (0:00:00.042)       0:00:16.859 ********* 
-2018-06-02 05:04:52,198 p=9 u=root |  TASK [baseliner : remove capabilities] *****************************************
-2018-06-02 05:04:52,199 p=9 u=root |  Saturday 02 June 2018  05:04:52 +0000 (0:00:00.044)       0:00:16.904 ********* 
-2018-06-02 05:04:52,237 p=9 u=root |  TASK [baseliner : set privileged mode] *****************************************
-2018-06-02 05:04:52,238 p=9 u=root |  Saturday 02 June 2018  05:04:52 +0000 (0:00:00.038)       0:00:16.943 ********* 
-2018-06-02 05:04:52,280 p=9 u=root |  TASK [baseliner : set memory constraint] ***************************************
-2018-06-02 05:04:52,280 p=9 u=root |  Saturday 02 June 2018  05:04:52 +0000 (0:00:00.042)       0:00:16.985 ********* 
-2018-06-02 05:04:52,324 p=9 u=root |  TASK [baseliner : set memory-swap constraint] **********************************
-2018-06-02 05:04:52,324 p=9 u=root |  Saturday 02 June 2018  05:04:52 +0000 (0:00:00.043)       0:00:17.029 ********* 
-2018-06-02 05:04:52,366 p=9 u=root |  TASK [baseliner : set parent cgroup] *******************************************
-2018-06-02 05:04:52,367 p=9 u=root |  Saturday 02 June 2018  05:04:52 +0000 (0:00:00.042)       0:00:17.072 ********* 
-2018-06-02 05:04:52,403 p=9 u=root |  TASK [baseliner : debug] *******************************************************
-2018-06-02 05:04:52,404 p=9 u=root |  Saturday 02 June 2018  05:04:52 +0000 (0:00:00.037)       0:00:17.109 ********* 
-2018-06-02 05:04:52,459 p=9 u=root |  ok: [node1] => {
+2018-06-04 16:03:54,303 p=10 u=root |  TASK [baseliner : set remote results path if not defined] **********************
+2018-06-04 16:03:54,304 p=10 u=root |  Monday 04 June 2018  16:03:54 +0000 (0:00:00.082)       0:00:03.186 *********** 
+2018-06-04 16:03:54,366 p=10 u=root |  ok: [node1]
+2018-06-04 16:03:54,370 p=10 u=root |  ok: [node2]
+2018-06-04 16:03:54,382 p=10 u=root |  ok: [node3]
+2018-06-04 16:03:54,391 p=10 u=root |  TASK [baseliner : ensure results folder exists] ********************************
+2018-06-04 16:03:54,391 p=10 u=root |  Monday 04 June 2018  16:03:54 +0000 (0:00:00.087)       0:00:03.274 *********** 
+2018-06-04 16:03:54,608 p=10 u=root |  ok: [node1 -> localhost]
+2018-06-04 16:03:54,617 p=10 u=root |  TASK [baseliner : check that pre-tasks file exists] ****************************
+2018-06-04 16:03:54,617 p=10 u=root |  Monday 04 June 2018  16:03:54 +0000 (0:00:00.225)       0:00:03.500 *********** 
+2018-06-04 16:03:54,638 p=10 u=root |  TASK [baseliner : check that post-tasks file exists] ***************************
+2018-06-04 16:03:54,638 p=10 u=root |  Monday 04 June 2018  16:03:54 +0000 (0:00:00.020)       0:00:03.521 *********** 
+2018-06-04 16:03:54,676 p=10 u=root |  TASK [baseliner : ensure docker-engine is installed] ***************************
+2018-06-04 16:03:54,676 p=10 u=root |  Monday 04 June 2018  16:03:54 +0000 (0:00:00.038)       0:00:03.559 *********** 
+2018-06-04 16:03:54,712 p=10 u=root |  TASK [baseliner : install statically linked docker] ****************************
+2018-06-04 16:03:54,712 p=10 u=root |  Monday 04 June 2018  16:03:54 +0000 (0:00:00.036)       0:00:03.595 *********** 
+2018-06-04 16:03:54,750 p=10 u=root |  TASK [baseliner : ensure the docker daemon is running] *************************
+2018-06-04 16:03:54,750 p=10 u=root |  Monday 04 June 2018  16:03:54 +0000 (0:00:00.038)       0:00:03.633 *********** 
+2018-06-04 16:03:54,786 p=10 u=root |  TASK [baseliner : stop any running container] **********************************
+2018-06-04 16:03:54,787 p=10 u=root |  Monday 04 June 2018  16:03:54 +0000 (0:00:00.036)       0:00:03.669 *********** 
+2018-06-04 16:03:55,762 p=10 u=root |  fatal: [node3]: FAILED! => {"changed": true, "cmd": "docker stop `docker ps -q`", "delta": "0:00:00.035830", "end": "2018-06-04 10:03:55.722439", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-06-04 10:03:55.686609", "stderr": "\"docker stop\" requires at least 1 argument(s).\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument(s).", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2018-06-04 16:03:55,762 p=10 u=root |  ...ignoring
+2018-06-04 16:03:55,765 p=10 u=root |  fatal: [node2]: FAILED! => {"changed": true, "cmd": "docker stop `docker ps -q`", "delta": "0:00:00.037586", "end": "2018-06-04 10:03:55.727873", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-06-04 10:03:55.690287", "stderr": "\"docker stop\" requires at least 1 argument(s).\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument(s).", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2018-06-04 16:03:55,765 p=10 u=root |  ...ignoring
+2018-06-04 16:03:55,766 p=10 u=root |  fatal: [node1]: FAILED! => {"changed": true, "cmd": "docker stop `docker ps -q`", "delta": "0:00:00.039654", "end": "2018-06-04 10:03:55.727412", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-06-04 10:03:55.687758", "stderr": "\"docker stop\" requires at least 1 argument(s).\nSee 'docker stop --help'.\n\nUsage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]\n\nStop one or more running containers", "stderr_lines": ["\"docker stop\" requires at least 1 argument(s).", "See 'docker stop --help'.", "", "Usage:  docker stop [OPTIONS] CONTAINER [CONTAINER...]", "", "Stop one or more running containers"], "stdout": "", "stdout_lines": []}
+2018-06-04 16:03:55,766 p=10 u=root |  ...ignoring
+2018-06-04 16:03:55,777 p=10 u=root |  TASK [baseliner : remove containers to avoid name clashes] *********************
+2018-06-04 16:03:55,777 p=10 u=root |  Monday 04 June 2018  16:03:55 +0000 (0:00:00.990)       0:00:04.660 *********** 
+2018-06-04 16:03:56,621 p=10 u=root |  fatal: [node2]: FAILED! => {"changed": true, "cmd": "docker rm `docker ps -qa`", "delta": "0:00:00.035900", "end": "2018-06-04 10:03:56.585662", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-06-04 10:03:56.549762", "stderr": "\"docker rm\" requires at least 1 argument(s).\nSee 'docker rm --help'.\n\nUsage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]\n\nRemove one or more containers", "stderr_lines": ["\"docker rm\" requires at least 1 argument(s).", "See 'docker rm --help'.", "", "Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]", "", "Remove one or more containers"], "stdout": "", "stdout_lines": []}
+2018-06-04 16:03:56,621 p=10 u=root |  ...ignoring
+2018-06-04 16:03:56,623 p=10 u=root |  fatal: [node1]: FAILED! => {"changed": true, "cmd": "docker rm `docker ps -qa`", "delta": "0:00:00.043630", "end": "2018-06-04 10:03:56.586103", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-06-04 10:03:56.542473", "stderr": "\"docker rm\" requires at least 1 argument(s).\nSee 'docker rm --help'.\n\nUsage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]\n\nRemove one or more containers", "stderr_lines": ["\"docker rm\" requires at least 1 argument(s).", "See 'docker rm --help'.", "", "Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]", "", "Remove one or more containers"], "stdout": "", "stdout_lines": []}
+2018-06-04 16:03:56,623 p=10 u=root |  ...ignoring
+2018-06-04 16:03:56,624 p=10 u=root |  fatal: [node3]: FAILED! => {"changed": true, "cmd": "docker rm `docker ps -qa`", "delta": "0:00:00.034950", "end": "2018-06-04 10:03:56.582932", "failed": true, "msg": "non-zero return code", "rc": 1, "start": "2018-06-04 10:03:56.547982", "stderr": "\"docker rm\" requires at least 1 argument(s).\nSee 'docker rm --help'.\n\nUsage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]\n\nRemove one or more containers", "stderr_lines": ["\"docker rm\" requires at least 1 argument(s).", "See 'docker rm --help'.", "", "Usage:  docker rm [OPTIONS] CONTAINER [CONTAINER...]", "", "Remove one or more containers"], "stdout": "", "stdout_lines": []}
+2018-06-04 16:03:56,624 p=10 u=root |  ...ignoring
+2018-06-04 16:03:56,632 p=10 u=root |  TASK [baseliner : store facts] *************************************************
+2018-06-04 16:03:56,633 p=10 u=root |  Monday 04 June 2018  16:03:56 +0000 (0:00:00.855)       0:00:05.515 *********** 
+2018-06-04 16:03:56,701 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/store-facts.yml for node1, node2, node3
+2018-06-04 16:03:56,721 p=10 u=root |  TASK [baseliner : install facter] **********************************************
+2018-06-04 16:03:56,722 p=10 u=root |  Monday 04 June 2018  16:03:56 +0000 (0:00:00.089)       0:00:05.604 *********** 
+2018-06-04 16:03:58,152 p=10 u=root |  ok: [node3]
+2018-06-04 16:03:58,165 p=10 u=root |  ok: [node2]
+2018-06-04 16:03:58,166 p=10 u=root |  ok: [node1]
+2018-06-04 16:03:58,201 p=10 u=root |  TASK [baseliner : create facts folder if it doesn't exist] *********************
+2018-06-04 16:03:58,202 p=10 u=root |  Monday 04 June 2018  16:03:58 +0000 (0:00:01.479)       0:00:07.084 *********** 
+2018-06-04 16:03:58,311 p=10 u=root |  changed: [node1 -> localhost]
+2018-06-04 16:03:58,323 p=10 u=root |  TASK [baseliner : store facts about remotes] ***********************************
+2018-06-04 16:03:58,323 p=10 u=root |  Monday 04 June 2018  16:03:58 +0000 (0:00:00.121)       0:00:07.206 *********** 
+2018-06-04 16:03:58,685 p=10 u=root |  changed: [node1 -> localhost] => (item=node1)
+2018-06-04 16:03:58,883 p=10 u=root |  changed: [node1 -> localhost] => (item=node2)
+2018-06-04 16:03:59,070 p=10 u=root |  changed: [node1 -> localhost] => (item=node3)
+2018-06-04 16:03:59,079 p=10 u=root |  TASK [baseliner : start monitoring] ********************************************
+2018-06-04 16:03:59,079 p=10 u=root |  Monday 04 June 2018  16:03:59 +0000 (0:00:00.755)       0:00:07.962 *********** 
+2018-06-04 16:03:59,116 p=10 u=root |  TASK [baseliner : include_tasks] ***********************************************
+2018-06-04 16:03:59,117 p=10 u=root |  Monday 04 June 2018  16:03:59 +0000 (0:00:00.037)       0:00:07.999 *********** 
+2018-06-04 16:03:59,149 p=10 u=root |  TASK [baseliner : get number of repetitions] ***********************************
+2018-06-04 16:03:59,149 p=10 u=root |  Monday 04 June 2018  16:03:59 +0000 (0:00:00.032)       0:00:08.032 *********** 
+2018-06-04 16:03:59,205 p=10 u=root |  ok: [node1] => (item=1)
+2018-06-04 16:03:59,213 p=10 u=root |  ok: [node2] => (item=1)
+2018-06-04 16:03:59,224 p=10 u=root |  ok: [node3] => (item=1)
+2018-06-04 16:03:59,230 p=10 u=root |  TASK [baseliner : execute each benchmark] **************************************
+2018-06-04 16:03:59,230 p=10 u=root |  Monday 04 June 2018  16:03:59 +0000 (0:00:00.080)       0:00:08.113 *********** 
+2018-06-04 16:03:59,289 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/run-bench.yml for node1, node2, node3
+2018-06-04 16:03:59,313 p=10 u=root |  TASK [baseliner : upload files] ************************************************
+2018-06-04 16:03:59,313 p=10 u=root |  Monday 04 June 2018  16:03:59 +0000 (0:00:00.083)       0:00:08.196 *********** 
+2018-06-04 16:04:00,786 p=10 u=root |  changed: [node2] => (item={u'dest': u'/tmp/etc/ceph.conf', u'src': u'/experiment/scripts/docker-bench/ceph/etcceph/ceph.conf'})
+2018-06-04 16:04:00,787 p=10 u=root |  changed: [node1] => (item={u'dest': u'/tmp/etc/ceph.conf', u'src': u'/experiment/scripts/docker-bench/ceph/etcceph/ceph.conf'})
+2018-06-04 16:04:00,791 p=10 u=root |  changed: [node3] => (item={u'dest': u'/tmp/etc/ceph.conf', u'src': u'/experiment/scripts/docker-bench/ceph/etcceph/ceph.conf'})
+2018-06-04 16:04:00,798 p=10 u=root |  TASK [baseliner : initialize parameters and add number of repetitions] *********
+2018-06-04 16:04:00,798 p=10 u=root |  Monday 04 June 2018  16:04:00 +0000 (0:00:01.484)       0:00:09.680 *********** 
+2018-06-04 16:04:00,855 p=10 u=root |  ok: [node1]
+2018-06-04 16:04:00,860 p=10 u=root |  ok: [node2]
+2018-06-04 16:04:00,871 p=10 u=root |  ok: [node3]
+2018-06-04 16:04:00,879 p=10 u=root |  TASK [baseliner : unnest parameters when parameters for benchmark were passed] ***
+2018-06-04 16:04:00,879 p=10 u=root |  Monday 04 June 2018  16:04:00 +0000 (0:00:00.081)       0:00:09.762 *********** 
+2018-06-04 16:04:00,914 p=10 u=root |  TASK [baseliner : parametrized execution] **************************************
+2018-06-04 16:04:00,915 p=10 u=root |  Monday 04 June 2018  16:04:00 +0000 (0:00:00.035)       0:00:09.797 *********** 
+2018-06-04 16:04:00,991 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/run-bench-parametrized.yml for node1, node2, node3
+2018-06-04 16:04:01,001 p=10 u=root |  TASK [baseliner : remove remote results folder] ********************************
+2018-06-04 16:04:01,001 p=10 u=root |  Monday 04 June 2018  16:04:01 +0000 (0:00:00.086)       0:00:09.884 *********** 
+2018-06-04 16:04:01,827 p=10 u=root |  ok: [node1]
+2018-06-04 16:04:01,832 p=10 u=root |  ok: [node3]
+2018-06-04 16:04:01,837 p=10 u=root |  ok: [node2]
+2018-06-04 16:04:01,846 p=10 u=root |  TASK [baseliner : create remote results folder] ********************************
+2018-06-04 16:04:01,846 p=10 u=root |  Monday 04 June 2018  16:04:01 +0000 (0:00:00.845)       0:00:10.729 *********** 
+2018-06-04 16:04:02,652 p=10 u=root |  changed: [node3]
+2018-06-04 16:04:02,653 p=10 u=root |  changed: [node1]
+2018-06-04 16:04:02,663 p=10 u=root |  changed: [node2]
+2018-06-04 16:04:02,675 p=10 u=root |  TASK [baseliner : initialize parameter dictionary] *****************************
+2018-06-04 16:04:02,675 p=10 u=root |  Monday 04 June 2018  16:04:02 +0000 (0:00:00.829)       0:00:11.558 *********** 
+2018-06-04 16:04:02,726 p=10 u=root |  ok: [node1]
+2018-06-04 16:04:02,733 p=10 u=root |  ok: [node2]
+2018-06-04 16:04:02,741 p=10 u=root |  ok: [node3]
+2018-06-04 16:04:02,748 p=10 u=root |  TASK [baseliner : populate parameter dictionary] *******************************
+2018-06-04 16:04:02,748 p=10 u=root |  Monday 04 June 2018  16:04:02 +0000 (0:00:00.072)       0:00:11.631 *********** 
+2018-06-04 16:04:02,806 p=10 u=root |  ok: [node1] => (item=[u'repetition', u'1'])
+2018-06-04 16:04:02,814 p=10 u=root |  ok: [node2] => (item=[u'repetition', u'1'])
+2018-06-04 16:04:02,826 p=10 u=root |  ok: [node3] => (item=[u'repetition', u'1'])
+2018-06-04 16:04:02,833 p=10 u=root |  TASK [baseliner : merge default variables to the benchmark-specific options] ***
+2018-06-04 16:04:02,833 p=10 u=root |  Monday 04 June 2018  16:04:02 +0000 (0:00:00.084)       0:00:11.715 *********** 
+2018-06-04 16:04:02,886 p=10 u=root |  ok: [node1]
+2018-06-04 16:04:02,895 p=10 u=root |  ok: [node2]
+2018-06-04 16:04:02,909 p=10 u=root |  ok: [node3]
+2018-06-04 16:04:02,915 p=10 u=root |  TASK [baseliner : initialize string for path] **********************************
+2018-06-04 16:04:02,915 p=10 u=root |  Monday 04 June 2018  16:04:02 +0000 (0:00:00.082)       0:00:11.798 *********** 
+2018-06-04 16:04:02,970 p=10 u=root |  ok: [node1]
+2018-06-04 16:04:02,979 p=10 u=root |  ok: [node2]
+2018-06-04 16:04:02,986 p=10 u=root |  ok: [node3]
+2018-06-04 16:04:02,994 p=10 u=root |  TASK [baseliner : add key/value pairs for each parameter (if any)] *************
+2018-06-04 16:04:02,994 p=10 u=root |  Monday 04 June 2018  16:04:02 +0000 (0:00:00.079)       0:00:11.877 *********** 
+2018-06-04 16:04:03,051 p=10 u=root |  ok: [node1] => (item={'key': u'repetition', 'value': u'1'})
+2018-06-04 16:04:03,082 p=10 u=root |  ok: [node2] => (item={'key': u'repetition', 'value': u'1'})
+2018-06-04 16:04:03,091 p=10 u=root |  ok: [node3] => (item={'key': u'repetition', 'value': u'1'})
+2018-06-04 16:04:03,099 p=10 u=root |  TASK [baseliner : ensure output folder exists] *********************************
+2018-06-04 16:04:03,099 p=10 u=root |  Monday 04 June 2018  16:04:03 +0000 (0:00:00.104)       0:00:11.982 *********** 
+2018-06-04 16:04:03,216 p=10 u=root |  changed: [node1 -> localhost]
+2018-06-04 16:04:03,234 p=10 u=root |  changed: [node2 -> localhost]
+2018-06-04 16:04:03,250 p=10 u=root |  changed: [node3 -> localhost]
+2018-06-04 16:04:03,257 p=10 u=root |  TASK [baseliner : run containerized benchmark] *********************************
+2018-06-04 16:04:03,258 p=10 u=root |  Monday 04 June 2018  16:04:03 +0000 (0:00:00.158)       0:00:12.140 *********** 
+2018-06-04 16:04:03,382 p=10 u=root |  included: /etc/ansible/roles/baseliner/tasks/run-container.yml for node1, node2, node3
+2018-06-04 16:04:03,403 p=10 u=root |  TASK [baseliner : check if image already exists] *******************************
+2018-06-04 16:04:03,403 p=10 u=root |  Monday 04 June 2018  16:04:03 +0000 (0:00:00.145)       0:00:12.286 *********** 
+2018-06-04 16:04:04,264 p=10 u=root |  changed: [node2]
+2018-06-04 16:04:04,269 p=10 u=root |  changed: [node1]
+2018-06-04 16:04:04,269 p=10 u=root |  changed: [node3]
+2018-06-04 16:04:04,276 p=10 u=root |  TASK [baseliner : pull image] **************************************************
+2018-06-04 16:04:04,276 p=10 u=root |  Monday 04 June 2018  16:04:04 +0000 (0:00:00.873)       0:00:13.159 *********** 
+2018-06-04 16:04:05,831 p=10 u=root |  changed: [node1]
+2018-06-04 16:04:05,869 p=10 u=root |  changed: [node2]
+2018-06-04 16:04:05,926 p=10 u=root |  changed: [node3]
+2018-06-04 16:04:05,933 p=10 u=root |  TASK [baseliner : define name of container] ************************************
+2018-06-04 16:04:05,933 p=10 u=root |  Monday 04 June 2018  16:04:05 +0000 (0:00:01.657)       0:00:14.816 *********** 
+2018-06-04 16:04:05,987 p=10 u=root |  ok: [node1]
+2018-06-04 16:04:05,999 p=10 u=root |  ok: [node2]
+2018-06-04 16:04:06,010 p=10 u=root |  ok: [node3]
+2018-06-04 16:04:06,017 p=10 u=root |  TASK [baseliner : initialize docker_flags variable] ****************************
+2018-06-04 16:04:06,017 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.083)       0:00:14.899 *********** 
+2018-06-04 16:04:06,068 p=10 u=root |  ok: [node1]
+2018-06-04 16:04:06,077 p=10 u=root |  ok: [node2]
+2018-06-04 16:04:06,092 p=10 u=root |  ok: [node3]
+2018-06-04 16:04:06,099 p=10 u=root |  TASK [baseliner : add environment to docker_flags] *****************************
+2018-06-04 16:04:06,100 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.082)       0:00:14.982 *********** 
+2018-06-04 16:04:06,135 p=10 u=root |  TASK [baseliner : add implicit environment from bench_params variable] *********
+2018-06-04 16:04:06,135 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.035)       0:00:15.018 *********** 
+2018-06-04 16:04:06,192 p=10 u=root |  ok: [node1] => (item={'key': u'repetition', 'value': u'1'})
+2018-06-04 16:04:06,201 p=10 u=root |  ok: [node2] => (item={'key': u'repetition', 'value': u'1'})
+2018-06-04 16:04:06,210 p=10 u=root |  ok: [node3] => (item={'key': u'repetition', 'value': u'1'})
+2018-06-04 16:04:06,217 p=10 u=root |  TASK [baseliner : check if we have host-specific ips] **************************
+2018-06-04 16:04:06,217 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.082)       0:00:15.100 *********** 
+2018-06-04 16:04:06,276 p=10 u=root |  ok: [node1]
+2018-06-04 16:04:06,282 p=10 u=root |  ok: [node2]
+2018-06-04 16:04:06,288 p=10 u=root |  ok: [node3]
+2018-06-04 16:04:06,296 p=10 u=root |  TASK [baseliner : add host-specific ips to docker_flags] ***********************
+2018-06-04 16:04:06,296 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.079)       0:00:15.179 *********** 
+2018-06-04 16:04:06,332 p=10 u=root |  TASK [baseliner : check if we have host-specific environment] ******************
+2018-06-04 16:04:06,333 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.036)       0:00:15.215 *********** 
+2018-06-04 16:04:06,385 p=10 u=root |  ok: [node1]
+2018-06-04 16:04:06,395 p=10 u=root |  ok: [node2]
+2018-06-04 16:04:06,404 p=10 u=root |  ok: [node3]
+2018-06-04 16:04:06,413 p=10 u=root |  TASK [baseliner : add host-specific environment to docker_flags] ***************
+2018-06-04 16:04:06,413 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.080)       0:00:15.296 *********** 
+2018-06-04 16:04:06,479 p=10 u=root |  ok: [node1] => (item={'key': u'CEPH_PUBLIC_NETWORK', 'value': u'128.110.152.0/22'})
+2018-06-04 16:04:06,484 p=10 u=root |  ok: [node2] => (item={'key': u'CEPH_PUBLIC_NETWORK', 'value': u'128.110.152.0/22'})
+2018-06-04 16:04:06,498 p=10 u=root |  ok: [node3] => (item={'key': u'CEPH_PUBLIC_NETWORK', 'value': u'128.110.152.0/22'})
+2018-06-04 16:04:06,521 p=10 u=root |  ok: [node1] => (item={'key': u'MON_IP', 'value': u'128.110.153.197'})
+2018-06-04 16:04:06,526 p=10 u=root |  ok: [node2] => (item={'key': u'MON_IP', 'value': u'128.110.153.77'})
+2018-06-04 16:04:06,540 p=10 u=root |  ok: [node3] => (item={'key': u'CLIENT', 'value': True})
+2018-06-04 16:04:06,566 p=10 u=root |  ok: [node1] => (item={'key': u'MONITOR', 'value': True})
+2018-06-04 16:04:06,570 p=10 u=root |  ok: [node2] => (item={'key': u'OSD', 'value': True})
+2018-06-04 16:04:06,583 p=10 u=root |  ok: [node3] => (item={'key': u'MON_IP', 'value': u'128.110.153.138'})
+2018-06-04 16:04:06,609 p=10 u=root |  ok: [node2] => (item={'key': u'OSD_DEVICES', 'value': u'/dev/sdb'})
+2018-06-04 16:04:06,616 p=10 u=root |  TASK [baseliner : add devices to docker_flags] *********************************
+2018-06-04 16:04:06,617 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.203)       0:00:15.499 *********** 
+2018-06-04 16:04:06,655 p=10 u=root |  TASK [baseliner : add network mode to docker_flags] ****************************
+2018-06-04 16:04:06,656 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.039)       0:00:15.538 *********** 
+2018-06-04 16:04:06,710 p=10 u=root |  ok: [node1]
+2018-06-04 16:04:06,720 p=10 u=root |  ok: [node2]
+2018-06-04 16:04:06,730 p=10 u=root |  ok: [node3]
+2018-06-04 16:04:06,736 p=10 u=root |  TASK [baseliner : add ipc mode to docker_flags] ********************************
+2018-06-04 16:04:06,736 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.080)       0:00:15.619 *********** 
+2018-06-04 16:04:06,776 p=10 u=root |  TASK [baseliner : add ports to docker_flags] ***********************************
+2018-06-04 16:04:06,776 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.039)       0:00:15.658 *********** 
+2018-06-04 16:04:06,812 p=10 u=root |  TASK [baseliner : add volumes to docker_flags] *********************************
+2018-06-04 16:04:06,812 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.036)       0:00:15.695 *********** 
+2018-06-04 16:04:06,869 p=10 u=root |  ok: [node1] => (item=/tmp/etc:/etc/ceph)
+2018-06-04 16:04:06,876 p=10 u=root |  ok: [node2] => (item=/tmp/etc:/etc/ceph)
+2018-06-04 16:04:06,888 p=10 u=root |  ok: [node3] => (item=/tmp/etc:/etc/ceph)
+2018-06-04 16:04:06,897 p=10 u=root |  TASK [baseliner : add default volumes to docker_flags] *************************
+2018-06-04 16:04:06,898 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.085)       0:00:15.780 *********** 
+2018-06-04 16:04:06,955 p=10 u=root |  ok: [node1]
+2018-06-04 16:04:06,966 p=10 u=root |  ok: [node2]
+2018-06-04 16:04:06,976 p=10 u=root |  ok: [node3]
+2018-06-04 16:04:06,984 p=10 u=root |  TASK [baseliner : set entrypoint] **********************************************
+2018-06-04 16:04:06,984 p=10 u=root |  Monday 04 June 2018  16:04:06 +0000 (0:00:00.086)       0:00:15.866 *********** 
+2018-06-04 16:04:07,024 p=10 u=root |  TASK [baseliner : set limits] **************************************************
+2018-06-04 16:04:07,024 p=10 u=root |  Monday 04 June 2018  16:04:07 +0000 (0:00:00.040)       0:00:15.907 *********** 
+2018-06-04 16:04:07,059 p=10 u=root |  TASK [baseliner : add capabilities] ********************************************
+2018-06-04 16:04:07,060 p=10 u=root |  Monday 04 June 2018  16:04:07 +0000 (0:00:00.035)       0:00:15.942 *********** 
+2018-06-04 16:04:07,094 p=10 u=root |  TASK [baseliner : remove capabilities] *****************************************
+2018-06-04 16:04:07,095 p=10 u=root |  Monday 04 June 2018  16:04:07 +0000 (0:00:00.035)       0:00:15.977 *********** 
+2018-06-04 16:04:07,130 p=10 u=root |  TASK [baseliner : set privileged mode] *****************************************
+2018-06-04 16:04:07,130 p=10 u=root |  Monday 04 June 2018  16:04:07 +0000 (0:00:00.035)       0:00:16.012 *********** 
+2018-06-04 16:04:07,168 p=10 u=root |  TASK [baseliner : set memory constraint] ***************************************
+2018-06-04 16:04:07,168 p=10 u=root |  Monday 04 June 2018  16:04:07 +0000 (0:00:00.038)       0:00:16.051 *********** 
+2018-06-04 16:04:07,207 p=10 u=root |  TASK [baseliner : set memory-swap constraint] **********************************
+2018-06-04 16:04:07,207 p=10 u=root |  Monday 04 June 2018  16:04:07 +0000 (0:00:00.038)       0:00:16.090 *********** 
+2018-06-04 16:04:07,242 p=10 u=root |  TASK [baseliner : set parent cgroup] *******************************************
+2018-06-04 16:04:07,242 p=10 u=root |  Monday 04 June 2018  16:04:07 +0000 (0:00:00.034)       0:00:16.124 *********** 
+2018-06-04 16:04:07,279 p=10 u=root |  TASK [baseliner : debug] *******************************************************
+2018-06-04 16:04:07,279 p=10 u=root |  Monday 04 June 2018  16:04:07 +0000 (0:00:00.037)       0:00:16.162 *********** 
+2018-06-04 16:04:07,330 p=10 u=root |  ok: [node1] => {
     "msg": "docker run --rm  -e repetition=\"1\" -e CEPH_PUBLIC_NETWORK=\"128.110.152.0/22\" -e MON_IP=\"128.110.153.197\" -e MONITOR=\"True\" --net=host -v /tmp/etc:/etc/ceph -v /tmp/baseliner_output_node1:/results -v /tmp/baseliner_output_node1:/output mariettesouppe/rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64 "
 }
-2018-06-02 05:04:52,488 p=9 u=root |  ok: [node2] => {
+2018-06-04 16:04:07,346 p=10 u=root |  ok: [node2] => {
     "msg": "docker run --rm  -e repetition=\"1\" -e CEPH_PUBLIC_NETWORK=\"128.110.152.0/22\" -e MON_IP=\"128.110.153.77\" -e OSD=\"True\" -e OSD_DEVICES=\"/dev/sdb\" --net=host -v /tmp/etc:/etc/ceph -v /tmp/baseliner_output_node2:/results -v /tmp/baseliner_output_node2:/output mariettesouppe/rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64 "
 }
-2018-06-02 05:04:52,497 p=9 u=root |  ok: [node3] => {
+2018-06-04 16:04:07,354 p=10 u=root |  ok: [node3] => {
     "msg": "docker run --rm  -e repetition=\"1\" -e CEPH_PUBLIC_NETWORK=\"128.110.152.0/22\" -e CLIENT=\"True\" -e MON_IP=\"128.110.153.138\" --net=host -v /tmp/etc:/etc/ceph -v /tmp/baseliner_output_node3:/results -v /tmp/baseliner_output_node3:/output mariettesouppe/rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64 "
 }
-2018-06-02 05:04:52,504 p=9 u=root |  TASK [baseliner : run container] ***********************************************
-2018-06-02 05:04:52,504 p=9 u=root |  Saturday 02 June 2018  05:04:52 +0000 (0:00:00.100)       0:00:17.209 ********* 
-2018-06-02 05:04:54,534 p=9 u=root |  changed: [node1]
-2018-06-02 05:04:54,538 p=9 u=root |  changed: [node2]
-2018-06-02 05:04:54,543 p=9 u=root |  changed: [node3]
-2018-06-02 05:04:54,554 p=9 u=root |  TASK [baseliner : wait for containers in parallel mode and stop/kill them if they timeout] ***
-2018-06-02 05:04:54,555 p=9 u=root |  Saturday 02 June 2018  05:04:54 +0000 (0:00:02.050)       0:00:19.260 ********* 
-2018-06-02 05:04:54,578 p=9 u=root |  TASK [baseliner : wait for containers in single-node mode and stop/kill them if they timeout] ***
-2018-06-02 05:04:54,578 p=9 u=root |  Saturday 02 June 2018  05:04:54 +0000 (0:00:00.023)       0:00:19.283 ********* 
+2018-06-04 16:04:07,360 p=10 u=root |  TASK [baseliner : run container] ***********************************************
+2018-06-04 16:04:07,360 p=10 u=root |  Monday 04 June 2018  16:04:07 +0000 (0:00:00.080)       0:00:16.243 *********** 
+2018-06-04 16:04:09,385 p=10 u=root |  changed: [node1]
+2018-06-04 16:04:09,390 p=10 u=root |  changed: [node2]
+2018-06-04 16:04:09,391 p=10 u=root |  changed: [node3]
+2018-06-04 16:04:09,403 p=10 u=root |  TASK [baseliner : wait for containers in parallel mode and stop/kill them if they timeout] ***
+2018-06-04 16:04:09,403 p=10 u=root |  Monday 04 June 2018  16:04:09 +0000 (0:00:02.043)       0:00:18.286 *********** 
+2018-06-04 16:04:09,424 p=10 u=root |  TASK [baseliner : wait for containers in single-node mode and stop/kill them if they timeout] ***
+2018-06-04 16:04:09,424 p=10 u=root |  Monday 04 June 2018  16:04:09 +0000 (0:00:00.021)       0:00:18.307 *********** 
