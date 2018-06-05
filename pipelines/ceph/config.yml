@@ -15,9 +15,9 @@ benchmarks:
     node2:
       OSD: true
       OSD_DEVICES: /dev/sdb
-      MON_IP: 128.110.153.77
+      MON_IP: 128.110.153.197
       CEPH_PUBLIC_NETWORK: 128.110.152.0/22
     node3:
       CLIENT: true
-      MON_IP: 128.110.153.138
+      MON_IP: 128.110.153.197
       CEPH_PUBLIC_NETWORK: 128.110.152.0/22
