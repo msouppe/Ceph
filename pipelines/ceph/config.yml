@@ -2,11 +2,9 @@ benchmarks:
 - name: rados-bench
   image: mariettesouppe/rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64
   network_mode: host
-  put: 
-  - src: /experiment/scripts/docker-bench/ceph/etcceph/ceph.conf
-    dest: /tmp/etc/ceph.conf
-  volumes:
-  - /tmp/etc:/etc/ceph
+  privilaged: true
+  devices:
+  - /dev/sdb
   environment_host:
     node1:
       MONITOR: true

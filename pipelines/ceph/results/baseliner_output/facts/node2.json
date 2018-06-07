@@ -22,22 +22,22 @@
         "root": "UUID=ce184cb1-3771-4a20-b6cd-8e9a4649a561"
     }, 
     "ansible_date_time": {
-        "date": "2018-06-05", 
-        "day": "05", 
-        "epoch": "1528231593", 
-        "hour": "14", 
-        "iso8601": "2018-06-05T20:46:33Z", 
-        "iso8601_basic": "20180605T144633730664", 
-        "iso8601_basic_short": "20180605T144633", 
-        "iso8601_micro": "2018-06-05T20:46:33.730820Z", 
-        "minute": "46", 
+        "date": "2018-06-06", 
+        "day": "06", 
+        "epoch": "1528332188", 
+        "hour": "18", 
+        "iso8601": "2018-06-07T00:43:08Z", 
+        "iso8601_basic": "20180606T184308490575", 
+        "iso8601_basic_short": "20180606T184308", 
+        "iso8601_micro": "2018-06-07T00:43:08.490751Z", 
+        "minute": "43", 
         "month": "06", 
-        "second": "33", 
-        "time": "14:46:33", 
+        "second": "08", 
+        "time": "18:43:08", 
         "tz": "MDT", 
         "tz_offset": "-0600", 
-        "weekday": "Tuesday", 
-        "weekday_number": "2", 
+        "weekday": "Wednesday", 
+        "weekday_number": "3", 
         "weeknumber": "23", 
         "year": "2018"
     }, 
@@ -895,10 +895,10 @@
         "PWD": "/users/msouppe", 
         "SHELL": "/bin/bash", 
         "SHLVL": "1", 
-        "SSH_CLIENT": "169.233.38.127 33846 22", 
-        "SSH_CONNECTION": "169.233.38.127 33846 128.110.153.77 22", 
+        "SSH_CLIENT": "169.233.38.127 42740 22", 
+        "SSH_CONNECTION": "169.233.38.127 42740 128.110.153.77 22", 
         "SSH_TTY": "/dev/pts/0", 
-        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-rhtqwkuicxayrztwywljwakeibjvjxxy; /usr/bin/python /users/msouppe/.ansible/tmp/ansible-tmp-1528231592.17-74864219309257/setup.py; rm -rf \"/users/msouppe/.ansible/tmp/ansible-tmp-1528231592.17-74864219309257/\" > /dev/null 2>&1", 
+        "SUDO_COMMAND": "/bin/sh -c echo BECOME-SUCCESS-qnxilzawlzzmyunigzjfkauhfbknhyho; /usr/bin/python /users/msouppe/.ansible/tmp/ansible-tmp-1528332186.91-147820261746487/setup.py; rm -rf \"/users/msouppe/.ansible/tmp/ansible-tmp-1528332186.91-147820261746487/\" > /dev/null 2>&1", 
         "SUDO_GID": "2196", 
         "SUDO_UID": "20001", 
         "SUDO_USER": "msouppe", 
@@ -906,7 +906,7 @@
         "USER": "root", 
         "USERNAME": "root", 
         "XDG_RUNTIME_DIR": "/run/user/20001", 
-        "XDG_SESSION_ID": "934", 
+        "XDG_SESSION_ID": "1064", 
         "_": "/bin/sh"
     }, 
     "ansible_fips": false, 
@@ -1007,16 +1007,16 @@
     }, 
     "ansible_machine": "x86_64", 
     "ansible_machine_id": "de1cbcb0603c491f96684e6ab8fbe1e2", 
-    "ansible_memfree_mb": 62376, 
+    "ansible_memfree_mb": 62348, 
     "ansible_memory_mb": {
         "nocache": {
-            "free": 63547, 
-            "used": 625
+            "free": 63534, 
+            "used": 638
         }, 
         "real": {
-            "free": 62376, 
+            "free": 62348, 
             "total": 64172, 
-            "used": 1796
+            "used": 1824
         }, 
         "swap": {
             "cached": 0, 
@@ -1028,34 +1028,34 @@
     "ansible_memtotal_mb": 64172, 
     "ansible_mounts": [
         {
-            "block_available": 3169740, 
+            "block_available": 3169603, 
             "block_size": 4096, 
             "block_total": 4095722, 
-            "block_used": 925982, 
+            "block_used": 926119, 
             "device": "/dev/nvme0n1p1", 
             "fstype": "ext3", 
-            "inode_available": 918706, 
+            "inode_available": 918674, 
             "inode_total": 1048576, 
-            "inode_used": 129870, 
+            "inode_used": 129902, 
             "mount": "/", 
             "options": "rw,relatime,errors=remount-ro,data=ordered", 
-            "size_available": 12983255040, 
+            "size_available": 12982693888, 
             "size_total": 16776077312, 
             "uuid": "ce184cb1-3771-4a20-b6cd-8e9a4649a561"
         }, 
         {
-            "block_available": 3169740, 
+            "block_available": 3169603, 
             "block_size": 4096, 
             "block_total": 4095722, 
-            "block_used": 925982, 
+            "block_used": 926119, 
             "device": "/dev/nvme0n1p1", 
             "fstype": "ext3", 
-            "inode_available": 918706, 
+            "inode_available": 918674, 
             "inode_total": 1048576, 
-            "inode_used": 129870, 
+            "inode_used": 129902, 
             "mount": "/var/lib/docker/aufs", 
             "options": "rw,relatime,errors=remount-ro,data=ordered,bind", 
-            "size_available": 12983255040, 
+            "size_available": 12982693888, 
             "size_total": 16776077312, 
             "uuid": "ce184cb1-3771-4a20-b6cd-8e9a4649a561"
         }, 
@@ -1230,7 +1230,7 @@
     ], 
     "ansible_system_capabilities_enforced": "True", 
     "ansible_system_vendor": "HP", 
-    "ansible_uptime_seconds": 444687, 
+    "ansible_uptime_seconds": 545282, 
     "ansible_user": "msouppe", 
     "ansible_user_dir": "/root", 
     "ansible_user_gecos": "root", 
@@ -1252,6 +1252,9 @@
     "baseliner_execution_mode": "single-node", 
     "benchmarks": [
         {
+            "devices": [
+                "/dev/sdb"
+            ], 
             "environment_host": {
                 "node1": {
                     "CEPH_PUBLIC_NETWORK": "128.110.152.0/22", 
@@ -1273,15 +1276,7 @@
             "image": "mariettesouppe/rados_bench:master-ec8d33f-luminous-ubuntu-16.04-x86_64", 
             "name": "rados-bench", 
             "network_mode": "host", 
-            "put": [
-                {
-                    "dest": "/tmp/etc/ceph.conf", 
-                    "src": "/experiment/scripts/docker-bench/ceph/etcceph/ceph.conf"
-                }
-            ], 
-            "volumes": [
-                "/tmp/etc:/etc/ceph"
-            ]
+            "privilaged": true
         }
     ], 
     "facter_architecture": "amd64", 
@@ -1324,7 +1319,7 @@
     "facter_macaddress_eno1d1": "14:58:d0:58:df:33", 
     "facter_manufacturer": "HP", 
     "facter_memoryfree": "62.05 GB", 
-    "facter_memoryfree_mb": "63535.59", 
+    "facter_memoryfree_mb": "63534.26", 
     "facter_memorysize": "62.67 GB", 
     "facter_memorysize_mb": "64172.53", 
     "facter_mtu_docker0": 1500, 
@@ -1432,18 +1427,18 @@
     "facter_swapsize": "3.00 GB", 
     "facter_swapsize_mb": "3072.00", 
     "facter_system_uptime": {
-        "days": 5, 
-        "hours": 123, 
-        "seconds": 444688, 
-        "uptime": "5 days"
+        "days": 6, 
+        "hours": 151, 
+        "seconds": 545282, 
+        "uptime": "6 days"
     }, 
     "facter_timezone": "MDT", 
     "facter_type": "Multi-system", 
     "facter_uniqueid": "6e804d99", 
-    "facter_uptime": "5 days", 
-    "facter_uptime_days": 5, 
-    "facter_uptime_hours": 123, 
-    "facter_uptime_seconds": 444688, 
+    "facter_uptime": "6 days", 
+    "facter_uptime_days": 6, 
+    "facter_uptime_hours": 151, 
+    "facter_uptime_seconds": 545282, 
     "facter_uuid": "CBA010CC-0D25-54CC-B062-05DEDEA7709B", 
     "facter_virtual": "physical", 
     "failfast": "false", 
@@ -1471,7 +1466,7 @@
     "inventory_hostname_short": "node2", 
     "local_results_path": "/experiment/results/baseliner_output", 
     "module_setup": true, 
-    "omit": "__omit_place_holder__031708e4ece2e83090c10e6b70e0471db427d45b", 
+    "omit": "__omit_place_holder__4b98839eb4be01bb534ca591d90a43816a0352f7", 
     "playbook_dir": "/experiment", 
     "remote_results_path": "/tmp/baseliner_output_node2", 
     "stat_result": {
