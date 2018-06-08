@@ -5,17 +5,19 @@ benchmarks:
   privilaged: true
   devices:
   - /dev/sdb
+  environment:
+    DEBUG: verbose
   environment_host:
-    node1:
+    node0:
       MONITOR: true
-      MON_IP: 128.110.153.197
-      CEPH_PUBLIC_NETWORK: 128.110.152.0/22
-    node2:
+      MON_IP: 130.127.133.166
+      CEPH_PUBLIC_NETWORK: 130.127.132.0/22
+    node1:
       OSD: true
       OSD_DEVICES: /dev/sdb
-      MON_IP: 128.110.153.197
-      CEPH_PUBLIC_NETWORK: 128.110.152.0/22
-    node3:
+      MON_IP: 130.127.133.166
+      CEPH_PUBLIC_NETWORK: 130.127.132.0/22
+    node2:
       CLIENT: true
-      MON_IP: 128.110.153.197
-      CEPH_PUBLIC_NETWORK: 128.110.152.0/22
+      MON_IP: 130.127.133.166
+      CEPH_PUBLIC_NETWORK: 130.127.132.0/22

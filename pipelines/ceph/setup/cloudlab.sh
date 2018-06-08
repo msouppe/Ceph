@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-docker pull ivotron/geni-lib:v0.9.6.0 &> /dev/null
+docker pull ivotron/geni-lib:v0.9.7.8 &> /dev/null
 
 if [ -z $CLOUDLAB_USER ]; then
   echo "Expecting CLOUDLAB_USER variable"
@@ -34,7 +34,7 @@ docker run --rm \
   -v $CLOUDLAB_CERT_PATH:$CLOUDLAB_CERT_PATH:z \
   -v `pwd`/geni/:/output:z \
   --entrypoint=python \
-  ivotron/geni-lib:v0.9.6.0 -u /output/request.py
+  ivotron/geni-lib:v0.9.7.8 -u /output/request.py
 
 if [ -f geni/localmachines ]; then
   cat geni/localmachines >> geni/machines

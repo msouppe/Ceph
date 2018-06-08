@@ -6,6 +6,8 @@ if [ -z "$OSD_DEVICES" ]; then
   exit 1
 fi
 
+ceph auth get client.bootstrap-osd -o /var/lib/ceph/bootstrap-osd/ceph.keyring
+
 devices=(`echo $OSD_DEVICES | sed 's/,/ /g'`)
 
 for dev in "${devices[@]}" ; do
