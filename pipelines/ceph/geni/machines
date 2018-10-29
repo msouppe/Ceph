@@ -1,6 +1,12 @@
 [mons]
-node0.ceph1-msouppe.schedock-PG0.clemson.cloudlab.us ansible_user=msouppe ansible_become=true
+node0.ceph24-msouppe.schedock-PG0.clemson.cloudlab.us ansible_user=msouppe ansible_become=true
+
+
 
 [osds]
-node1.ceph1-msouppe.schedock-PG0.clemson.cloudlab.us ansible_user=msouppe ansible_become=true
-node2.ceph1-msouppe.schedock-PG0.clemson.cloudlab.us ansible_user=msouppe ansible_become=true
+node1.ceph24-msouppe.schedock-PG0.clemson.cloudlab.us ansible_user=msouppe ansible_become=true
+
+
+node2.ceph24-msouppe.schedock-PG0.clemson.cloudlab.us ansible_user=msouppe ansible_become=true
+
+

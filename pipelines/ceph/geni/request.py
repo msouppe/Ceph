@@ -4,6 +4,8 @@ import os.path
 import geni.cloudlab_util as cl
 from geni.rspec import pg as rspec
 
+from subprocess import call
+
 nodeCount = 3
 
 if not os.path.isdir('/output'):
@@ -12,6 +14,9 @@ if not os.path.isdir('/output'):
 img = "urn:publicid:IDN+clemson.cloudlab.us+image+schedock-PG0:docker-ubuntu16"
 
 requests = {}
+
+mon_ip = None
+mon_host = None
 
 # Function: create_request(site, hw_type, num_nodes)
 # site: Location of cluster site
@@ -31,10 +36,14 @@ def create_request(site, hw_type, num_nodes):
 
         requests[site].addResource(node)
 
+def get_interface(host, ip):
+    output = call(["ssh", host, "/usr/local/etc/emulab/findif -i " + ip])
+    print('>> Interface: ', output)
+
 create_request('cl-clemson', 'c6320', nodeCount)
 
 print("Executing cloudlab request")
-manifests = cl.request(experiment_name=('ceph1-'+os.environ['CLOUDLAB_USER']),
+manifests = cl.request(experiment_name=('ceph24-'+os.environ['CLOUDLAB_USER']),
                        requests=requests, timeout=30, expiration=1200,
                        ignore_failed_slivers=False)
 
@@ -45,8 +54,13 @@ print("Writing /output/machines file")
 with open('/output/machines', 'w') as f:
     for site, manifest in manifests.iteritems():
         for i,n in enumerate(manifest.nodes):
+
+            # 1st node is the Monitor Node
             if i == 0:
                 f.write('[mons]' + os.linesep)
+                mon_host = n.hostfqdn
+                mon_ip = n.hostipv4
+
             elif i == 1:
                 f.write(os.linesep + '[osds]' + os.linesep)
             #elif i == (nodeCount -1)
@@ -54,12 +68,10 @@ with open('/output/machines', 'w') as f:
             
             f.write(n.hostfqdn)
             f.write(' ansible_user=' + os.environ['CLOUDLAB_USER'])
-            f.write(' ansible_become=true' + os.linesep)
+            f.write(' ansible_become=true' + os.linesep + os.linesep + os.linesep)
 
         with open('/output/{}.xml'.format(site), 'w') as mf:
             mf.write(manifest.text)
-            #mf.write(manifest.nodes[0].text)
 
-#print(manifests)
-#print(manifest.nodes[1].host['ipv4'].text)
-#print(manifest.nodes[2].host['ipv4'].text)
+if mon_host and mon_ip is not None:
+    get_interface(mon_host, mon_ip)

@@ -1,37 +1,37 @@
-<rspec xmlns:client="http://www.protogeni.net/resources/rspec/ext/client/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.geni.net/resources/rspec/3" xsi:schemaLocation="http://www.geni.net/resources/rspec/3 http://www.geni.net/resources/rspec/3/manifest.xsd" type="manifest" expires="2018-10-17T17:45:53Z">
-  <node client_id="node0" exclusive="true" component_id="urn:publicid:IDN+clemson.cloudlab.us+node+clnode105" component_manager_id="urn:publicid:IDN+clemson.cloudlab.us+authority+cm" sliver_id="urn:publicid:IDN+clemson.cloudlab.us+sliver+174289">
+<rspec xmlns:client="http://www.protogeni.net/resources/rspec/ext/client/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.geni.net/resources/rspec/3" xsi:schemaLocation="http://www.geni.net/resources/rspec/3 http://www.geni.net/resources/rspec/3/manifest.xsd" type="manifest" expires="2018-10-30T01:51:06Z">
+  <node client_id="node0" exclusive="true" component_id="urn:publicid:IDN+clemson.cloudlab.us+node+clnode119" component_manager_id="urn:publicid:IDN+clemson.cloudlab.us+authority+cm" sliver_id="urn:publicid:IDN+clemson.cloudlab.us+sliver+180825">
     <sliver_type name="raw-pc">
       <disk_image name="urn:publicid:IDN+clemson.cloudlab.us+image+schedock-PG0:docker-ubuntu16"/>
     </sliver_type>
     <hardware_type name="c6320"/>
-    <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="clnode105" hardware_type="c6320"/>
-    <host name="node0.ceph1-msouppe.schedock-PG0.clemson.cloudlab.us" ipv4="130.127.133.114"/>
+    <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="clnode119" hardware_type="c6320"/>
+    <host name="node0.ceph24-msouppe.schedock-PG0.clemson.cloudlab.us" ipv4="130.127.133.128"/>
     <services>
-      <login authentication="ssh-keys" hostname="clnode105.clemson.cloudlab.us" port="22" username="msouppe"/>
+      <login authentication="ssh-keys" hostname="clnode119.clemson.cloudlab.us" port="22" username="msouppe"/>
       <rs:console xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" server="boss.clemson.cloudlab.us"/>
     </services>
   </node>
-  <node client_id="node1" exclusive="true" component_id="urn:publicid:IDN+clemson.cloudlab.us+node+clnode107" component_manager_id="urn:publicid:IDN+clemson.cloudlab.us+authority+cm" sliver_id="urn:publicid:IDN+clemson.cloudlab.us+sliver+174290">
+  <node client_id="node1" exclusive="true" component_id="urn:publicid:IDN+clemson.cloudlab.us+node+clnode115" component_manager_id="urn:publicid:IDN+clemson.cloudlab.us+authority+cm" sliver_id="urn:publicid:IDN+clemson.cloudlab.us+sliver+180826">
     <sliver_type name="raw-pc">
       <disk_image name="urn:publicid:IDN+clemson.cloudlab.us+image+schedock-PG0:docker-ubuntu16"/>
     </sliver_type>
     <hardware_type name="c6320"/>
-    <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="clnode107" hardware_type="c6320"/>
-    <host name="node1.ceph1-msouppe.schedock-PG0.clemson.cloudlab.us" ipv4="130.127.133.116"/>
+    <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="clnode115" hardware_type="c6320"/>
+    <host name="node1.ceph24-msouppe.schedock-PG0.clemson.cloudlab.us" ipv4="130.127.133.124"/>
     <services>
-      <login authentication="ssh-keys" hostname="clnode107.clemson.cloudlab.us" port="22" username="msouppe"/>
+      <login authentication="ssh-keys" hostname="clnode115.clemson.cloudlab.us" port="22" username="msouppe"/>
       <rs:console xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" server="boss.clemson.cloudlab.us"/>
     </services>
   </node>
-  <node client_id="node2" exclusive="true" component_id="urn:publicid:IDN+clemson.cloudlab.us+node+clnode117" component_manager_id="urn:publicid:IDN+clemson.cloudlab.us+authority+cm" sliver_id="urn:publicid:IDN+clemson.cloudlab.us+sliver+174288">
+  <node client_id="node2" exclusive="true" component_id="urn:publicid:IDN+clemson.cloudlab.us+node+clnode118" component_manager_id="urn:publicid:IDN+clemson.cloudlab.us+authority+cm" sliver_id="urn:publicid:IDN+clemson.cloudlab.us+sliver+180827">
     <sliver_type name="raw-pc">
       <disk_image name="urn:publicid:IDN+clemson.cloudlab.us+image+schedock-PG0:docker-ubuntu16"/>
     </sliver_type>
     <hardware_type name="c6320"/>
-    <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="clnode117" hardware_type="c6320"/>
-    <host name="node2.ceph1-msouppe.schedock-PG0.clemson.cloudlab.us" ipv4="130.127.133.126"/>
+    <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="clnode118" hardware_type="c6320"/>
+    <host name="node2.ceph24-msouppe.schedock-PG0.clemson.cloudlab.us" ipv4="130.127.133.127"/>
     <services>
-      <login authentication="ssh-keys" hostname="clnode117.clemson.cloudlab.us" port="22" username="msouppe"/>
+      <login authentication="ssh-keys" hostname="clnode118.clemson.cloudlab.us" port="22" username="msouppe"/>
       <rs:console xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" server="boss.clemson.cloudlab.us"/>
     </services>
   </node>
@@ -39,15 +39,3 @@
     <rs:location country="US" latitude="34.586496" longitude="-82.821457"/>
   </rs:site_info>
 </rspec>
-<node xmlns="http://www.geni.net/resources/rspec/3" xmlns:client="http://www.protogeni.net/resources/rspec/ext/client/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" client_id="node0" exclusive="true" component_id="urn:publicid:IDN+clemson.cloudlab.us+node+clnode105" component_manager_id="urn:publicid:IDN+clemson.cloudlab.us+authority+cm" sliver_id="urn:publicid:IDN+clemson.cloudlab.us+sliver+174289">
-  <sliver_type name="raw-pc">
-    <disk_image name="urn:publicid:IDN+clemson.cloudlab.us+image+schedock-PG0:docker-ubuntu16"/>
-  </sliver_type>
-  <hardware_type name="c6320"/>
-  <rs:vnode xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" name="clnode105" hardware_type="c6320"/>
-  <host name="node0.ceph1-msouppe.schedock-PG0.clemson.cloudlab.us" ipv4="130.127.133.114"/>
-  <services>
-    <login authentication="ssh-keys" hostname="clnode105.clemson.cloudlab.us" port="22" username="msouppe"/>
-    <rs:console xmlns:rs="http://www.protogeni.net/resources/rspec/ext/emulab/1" server="boss.clemson.cloudlab.us"/>
-  </services>
-</node>
