@@ -1,1 +1,20 @@
-# ceph
+# Ceph
+
+Prerquisties
+- Popper
+- Python 3
+- CloudLab account
+
+- Take user credentials and place them into your environmental variables
+
+CLOUDLAB_USER
+CLOUDLAB_PASSWORD
+CLOUDLAB_PROJECT
+CLOUDLAB_PUBKEY_PATH
+CLOUDLAB_CERT_PATH
+
+Pipeline
+- setup.sh
+- run.sh
+- analyze-results.sh
+- teardown.sh
