@@ -4,7 +4,9 @@ import os.path
 import geni.cloudlab_util as cl
 from geni.rspec import pg as rspec
 
-from subprocess import call
+#from subprocess import call
+import subprocess
+import sys
 
 nodeCount = 3
 
@@ -26,24 +28,43 @@ mon_host = None
 def create_request(site, hw_type, num_nodes):
 
     for i in range(0, num_nodes):
-
         node = rspec.RawPC('node' + str(i))
         node.disk_image = img
         node.hardware_type = hw_type
+
+        # Add a raw PC to the request and give it an interface.
+        #interface = node.addInterface()
+
+        # Specify the IPv4 address
+        #interface.addAddress(rspec.IPv4Address("192.168.1.1", "255.255.255.0"))
 
         if site not in requests:
             requests[site] = rspec.Request()
 
         requests[site].addResource(node)
 
-def get_interface(host, ip):
-    output = call(["ssh", host, "/usr/local/etc/emulab/findif -i " + ip])
-    print('>> Interface: ', output)
+# def get_interface(user, hostname, ip):
+
+#     command = "/usr/local/etc/emulab/findif -i " + ip
+#     print(command)
+
+#     ssh = subprocess.Popen(["ssh", "%s" % hostname, command],
+#                            shell=False,
+#                            stdout=subprocess.PIPE)
+#     result = ssh.stdout.readlines()
+#     if result == []:
+#         error = ssh.stderr.readlines()
+#         print >>sys.stderr, "ERROR: %s" % error
+#     else:
+#         print(result)
+
+#     host = user + "@" + hostname
+#     print(host)
 
 create_request('cl-clemson', 'c6320', nodeCount)
 
 print("Executing cloudlab request")
-manifests = cl.request(experiment_name=('ceph24-'+os.environ['CLOUDLAB_USER']),
+manifests = cl.request(experiment_name=('ceph-'+os.environ['CLOUDLAB_USER']),
                        requests=requests, timeout=30, expiration=1200,
                        ignore_failed_slivers=False)
 
@@ -68,10 +89,10 @@ with open('/output/machines', 'w') as f:
             
             f.write(n.hostfqdn)
             f.write(' ansible_user=' + os.environ['CLOUDLAB_USER'])
-            f.write(' ansible_become=true' + os.linesep + os.linesep + os.linesep)
+            f.write(' ansible_become=true' + os.linesep + os.linesep)
 
         with open('/output/{}.xml'.format(site), 'w') as mf:
             mf.write(manifest.text)
 
-if mon_host and mon_ip is not None:
-    get_interface(mon_host, mon_ip)
+#if mon_host and mon_ip is not None:
+#    get_interface(os.environ['CLOUDLAB_USER'], mon_host, mon_ip)

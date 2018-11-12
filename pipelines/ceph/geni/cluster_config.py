@@ -16,9 +16,7 @@ def mon_config(self, hostname, ip_addr):
 	)
 
 
-def get_interface(host, ip):
-	output = run(["ssh", host, "/usr/local/etc/emulab/findif -i " + ip], capture_output=True)
-	print(output)
+
 
 
 
