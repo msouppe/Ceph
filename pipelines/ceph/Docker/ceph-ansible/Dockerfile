@@ -15,9 +15,3 @@ RUN	git clone https://github.com/ceph/ceph-ansible.git && \
 	add-apt-repository ppa:ansible/ansible && \
 	apt-get update && \
 	apt-get install -y ansible
-
-COPY ../geni/machines /etc/ansible/hosts
-COPY ../ceph-ansible/site-docker.yml ceph-ansible/
-COPY ../ceph-ansible/group_vars/* ceph-ansible/group_vars/
-
-RUN ansible-playbook site-docker.yml
