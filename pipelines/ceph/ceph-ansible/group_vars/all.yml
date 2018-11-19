@@ -1,11 +1,18 @@
 ---
-monitor_interface: eno1
+ceph_origin: repository
+ceph_repository: community
+ceph_stable_release: luminous
+monitor_address: 130.127.135.255
 public_network: 130.127.132.0/22
-cluster_network: 130.127.132.0/22
+cluster_network: {{public_network}}
 ceph_conf_overrides:
     osd:
         osd scrub during recovery: false
+docker: true
 ceph_docker_image: "ceph/daemon"
 ceph_docker_image_tag: latest
-ceph_docker_registry: 130.127.132.0/22
+ceph_docker_registry: docker.io
 containerized_deployment: true
+devices:
+  - '/dev/sda'
+  - '/dev/sdb'

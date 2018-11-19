@@ -1,8 +1,23 @@
-FROM ceph/daemon:master-40dfb3f-luminous-ubuntu-16.04-x86_64
+FROM ubuntu:16.04
 
-RUN git clone https://github.com/ceph/ceph-ansible.git
-	git checkout tags/v3.1.10
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+    bash \
+    python \
+    python-pip \
+    git \
+    sudo \
+    software-properties-common \
+    python-software-properties
 
-	pip install -r requirements.txt
+RUN	git clone https://github.com/ceph/ceph-ansible.git && \
+	cd ceph-ansible && \
+	git checkout tags/v3.1.10 && \
+	add-apt-repository ppa:ansible/ansible && \
+	apt-get update && \
+	apt-get install -y ansible
 
-docker run -v /geni/machines:/etc/ansible/hosts
+COPY ../geni/machines /etc/ansible/hosts
+COPY ../ceph-ansible/site-docker.yml ceph-ansible/
+COPY ../ceph-ansible/group_vars/* ceph-ansible/group_vars/
+
+RUN ansible-playbook site-docker.yml

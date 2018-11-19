@@ -43,24 +43,6 @@ def create_request(site, hw_type, num_nodes):
 
         requests[site].addResource(node)
 
-# def get_interface(user, hostname, ip):
-
-#     command = "/usr/local/etc/emulab/findif -i " + ip
-#     print(command)
-
-#     ssh = subprocess.Popen(["ssh", "%s" % hostname, command],
-#                            shell=False,
-#                            stdout=subprocess.PIPE)
-#     result = ssh.stdout.readlines()
-#     if result == []:
-#         error = ssh.stderr.readlines()
-#         print >>sys.stderr, "ERROR: %s" % error
-#     else:
-#         print(result)
-
-#     host = user + "@" + hostname
-#     print(host)
-
 create_request('cl-clemson', 'c6320', nodeCount)
 
 print("Executing cloudlab request")
@@ -89,10 +71,7 @@ with open('/output/machines', 'w') as f:
             
             f.write(n.hostfqdn)
             f.write(' ansible_user=' + os.environ['CLOUDLAB_USER'])
-            f.write(' ansible_become=true' + os.linesep + os.linesep)
+            f.write(' ansible_become=true' + os.linesep)
 
         with open('/output/{}.xml'.format(site), 'w') as mf:
             mf.write(manifest.text)
-
-#if mon_host and mon_ip is not None:
-#    get_interface(os.environ['CLOUDLAB_USER'], mon_host, mon_ip)
