@@ -2,26 +2,22 @@
 
 git clone https://github.com/ceph/ceph-ansible.git && \
 cd ceph-ansible && \
-git checkout tags/v3.1.10 && \
-echo "# Git clone and checkout complete!"
+#git checkout tags/v3.1.10 && \
+echo '# Git clone and checkout complete!'
+echo ''
 
 add-apt-repository --yes --update ppa:ansible/ansible && \
-echo "# Install ppa:ansible/ansible complete!"
+echo '# ppa:ansible/ansible complete!'
+echo ''
 
 apt-get update -y && \
 yes "" | apt-get install -y ansible
 echo '# Ansible install complete!'
+echo ''
 
-cd ..
-echo `pwd`
-echo `ls`
+cp /temp-ceph-ansible/site-container.yml /ceph-ansible
+cp /temp-ceph-ansible/site-docker.yml /ceph-ansible
+cp /temp-ceph-ansible/group_vars/* /ceph-ansible/group_vars
 
-cd temp-ceph-ansible
-head -9 site-docker.yml
-mv site-docker.yml ../ceph-ansible/
-echo `pwd`
-echo `ls`
-
-cd ../ceph-ansible
-echo `pwd`
-echo `ls`
+echo '# Running ansible-playbook'
+ansible-playbook site-container.yml
