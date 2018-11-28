@@ -1,3 +1,0 @@
-node1 ansible_host=ms1044.utah.cloudlab.us ansible_user=msouppe ansible_become=true
-node2 ansible_host=ms0814.utah.cloudlab.us ansible_user=msouppe ansible_become=true
-node3 ansible_host=ms0930.utah.cloudlab.us ansible_user=msouppe ansible_become=true
