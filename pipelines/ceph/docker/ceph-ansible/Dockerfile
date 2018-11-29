@@ -1,14 +1,10 @@
-FROM ubuntu:16.04
+FROM python:3.7-slim-stretch
 
-RUN apt-get clean && apt-get update && apt-get upgrade -y && apt-get install -y \
-    bash \
-    python \
-    python-pip \
-    git \
-    sudo \
-    software-properties-common \
-    python-software-properties
+ENV CEPH_ANSIBLE_VERSION v3.2.0rc4
 
-ADD entrypoint-ceph-ansible.sh /root/
+COPY install.sh /tmp/install.sh
 
-ENTRYPOINT ["/root/entrypoint-ceph-ansible.sh"]
+RUN /tmp/install.sh && rm /tmp/install.sh
+
+WORKDIR "/ceph-ansible"
+ENTRYPOINT ["ansible-playbook", "site.yml"]
