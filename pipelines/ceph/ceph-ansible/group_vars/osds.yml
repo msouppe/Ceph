@@ -1,16 +1,5 @@
 ---
-crush_location: true
-osd_crush_location: "\"root={{ ceph_crush_root }} rack={{ ceph_crush_rack }} host={{ ansible_hostname }}\""
-osd_objectstore: bluestore
-osd_scenario: non-collocated
+osd_scenario: lvm
 devices:
-- /dev/sda
-- /dev/sdb
-dedicated_devices:
-- /dev/nvme0n1
-- /dev/nvme0n1
-- /dev/nvme0n1
-- /dev/nvme0n1
-- /dev/nvme0n1
-- /dev/nvme0n1
-- /dev/nvme0n1
+  - /dev/sda
+  - /dev/sdb
