@@ -1,9 +1,15 @@
 #!/bin/bash
-set -e
+set -ex
 
-docker pull mariettesouppe/ceph-ansible:v0.1
+if [ -z "$SSH_KEY" ]; then
+  echo "Expecting SSH_KEY variable"
+  exit 1
+fi
 
-docker run --rm -t --name=ceph-ansible-cluster \
+# deploy ceph using containers
+docker run --rm --name=ceph-ansible \
+  -v $SSH_KEY:/root/.ssh/id_dsa \
   -v `pwd`/geni/machines:/etc/ansible/hosts \
-  -v `pwd`/ceph-ansible/:/temp-ceph-ansible/ \
-  mariettesouppe/ceph-ansible:v0.2
+  -v `pwd`/ceph-ansible/site-docker.yml:/ceph-ansible/site.yml \
+  -v `pwd`/ceph-ansible/group_vars:/ceph-ansible/group_vars \
+  local/ceph-ansible

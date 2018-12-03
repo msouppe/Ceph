@@ -1,3 +1,6 @@
 *.sw?
 popper_logs
 popper_status
+*.DS_Store
+**/geni/*.xml
+**/geni/machines
