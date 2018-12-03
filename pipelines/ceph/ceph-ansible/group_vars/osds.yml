@@ -1,5 +1,4 @@
 ---
 osd_scenario: lvm
 devices:
-  - /dev/sda
   - /dev/sdb

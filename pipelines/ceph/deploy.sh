@@ -12,4 +12,4 @@ docker run --rm --name=ceph-ansible \
   -v `pwd`/geni/machines:/etc/ansible/hosts \
   -v `pwd`/ceph-ansible/site-docker.yml:/ceph-ansible/site.yml \
   -v `pwd`/ceph-ansible/group_vars:/ceph-ansible/group_vars \
-  local/ceph-ansible
+  mariettesouppe/ceph-ansible:v0.2
