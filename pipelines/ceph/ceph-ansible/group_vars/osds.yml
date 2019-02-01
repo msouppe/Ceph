@@ -1,4 +1,4 @@
 ---
 osd_scenario: lvm
 devices:
-  - /dev/sdb
+  - '/dev/sdb'

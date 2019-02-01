@@ -1,0 +1,40 @@
+- hosts: osds
+  become: True
+  gather_facts: false
+  any_errors_fatal: true
+  tasks:
+    # pre-tasks for upcoming imports -
+    - name: set ceph osd install 'In Progress'
+      run_once: true
+      set_stats:
+        data:
+          installer_phase_ceph_osd:
+            status: "In Progress"
+            start: "{{ lookup('pipe', 'date +%Y%m%d%H%M%SZ') }}"
+
+    - import_role:
+        name: ceph-defaults
+        private: false
+      tags: ['ceph_update_config']
+    - import_role:
+        name: ceph-handler
+        private: false
+    - import_role:
+        name: ceph-container-common
+        private: false
+    - import_role:
+        name: ceph-config
+        private: false
+      tags: ['ceph_update_config']
+    - import_role:
+        name: ceph-osd
+        private: false
+
+    # post-tasks for preceding imports -
+    - name: set ceph osd install 'Complete'
+      run_once: true
+      set_stats:
+        data:
+          installer_phase_ceph_osd:
+            status: "Complete"
+            end: "{{ lookup('pipe', 'date +%Y%m%d%H%M%SZ') }}"
