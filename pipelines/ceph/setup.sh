@@ -22,7 +22,7 @@ if [ -z $CLOUDLAB_CERT_PATH ]; then
   echo "Expecting CLOUDLAB_CERT_PATH variable"
   exit 1
 fi
-
+ 
 docker run --rm --name=geni-lib \
   -e CLOUDLAB_USER=$CLOUDLAB_USER \
   -e CLOUDLAB_PASSWORD=$CLOUDLAB_PASSWORD \

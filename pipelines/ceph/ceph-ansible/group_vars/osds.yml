@@ -1,4 +1,5 @@
 ---
 osd_scenario: lvm
+osd_objectstore: bluestore
 devices:
   - '/dev/sdb'

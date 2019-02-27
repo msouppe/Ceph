@@ -1,6 +1,6 @@
 FROM python:3.7-slim-stretch
 
-ENV CEPH_ANSIBLE_VERSION v3.2.0rc8
+ENV CEPH_ANSIBLE_VERSION v3.2.5
 
 COPY install.sh /tmp/install.sh
 

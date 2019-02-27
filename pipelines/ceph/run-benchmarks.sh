@@ -27,15 +27,8 @@ mkdir -p results/baseliner_output
 docker pull ivotron/baseliner:0.2
 
 # [wf] invoke baseliner
-docker run --rm --name=baseliner \
-  --volume `pwd`:/experiment:z \
-  --volume $SSHKEY:/root/.ssh/id_rsa:z \
-  --volume /var/run/docker.sock:/var/run/docker.sock:z \
-  --workdir=/experiment/ \
-  --net=host \
-  ivotron/baseliner:0.2 \
-    -i /experiment/geni/machines \
-    -f /experiment/config.yml \
-    -o /experiment/results/baseliner_output \
-    -m parallel \
-    $BASELINER_FLAGS
+docker run --rm --name=cbt \
+  --volume $SSHKEY:/root/.ssh/id_rsa \
+  --volume $PWD/results:/cbt/archive \
+  --volume $PWD/cbt/conf.yml:/cbt/conf.yml \
+  msouppe/cbt

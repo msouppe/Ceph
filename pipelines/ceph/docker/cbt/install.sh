@@ -2,10 +2,11 @@
 set -ex
 apt update
 apt install -y git
-git clone https://github.com/ceph/ceph-ansible
-cd ceph-ansible
+git clone https://github.com/ceph/cbt
 
-git checkout "$CEPH_ANSIBLE_VERSION"
+apt install -y python-yaml python-lxml pdsh
+
+git checkout "$CEPH_CBT_VERSION"
 
 if [ -f requirements.txt ]; then
   pip install -r requirements.txt

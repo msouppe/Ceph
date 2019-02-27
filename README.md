@@ -30,3 +30,11 @@ poppper run
 * `teardown.sh`:   
 
 ## Output
+
+## Build docker image
+
+
+docker build -t mariettesouppe/ceph-ansible:v0.2 Docker/ceph-ansible/
+
+for cbt
+
