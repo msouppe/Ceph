@@ -46,7 +46,7 @@ def create_request(site, hw_type, num_nodes):
 create_request('cl-clemson', 'c6320', nodeCount)
 
 print("Executing cloudlab request")
-manifests = cl.request(experiment_name=('ceph1-'+os.environ['CLOUDLAB_USER']),
+manifests = cl.request(experiment_name=('ceph-'+os.environ['CLOUDLAB_USER']),
                        requests=requests, timeout=30, expiration=1200,
                        ignore_failed_slivers=False)
 

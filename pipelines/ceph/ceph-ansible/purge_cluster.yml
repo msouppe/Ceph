@@ -401,21 +401,6 @@
     command: dnf clean all
     when: ansible_pkg_mgr == 'dnf'
 
-  - name: purge rpm cache in /tmp
-    file:
-      path: /tmp/rh-storage-repo
-      state: absent
-
-  - name: clean apt
-    shell: apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-    when: ansible_pkg_mgr == 'apt'
-
-  - name: purge rh_storage.repo file in /etc/yum.repos.d
-    file:
-      path: /etc/yum.repos.d/rh_storage.repo
-      state: absent
-    when: ansible_os_family == 'RedHat'
-
   - name: check for anything running ceph
     command: "ps -u ceph -U ceph"
     register: check_for_running_ceph
@@ -436,7 +421,6 @@
     with_items:
       - "{{ systemd_files.files }}"
     when: ansible_service_mgr == 'systemd'
-
 
 - name: purge fetch directory
 

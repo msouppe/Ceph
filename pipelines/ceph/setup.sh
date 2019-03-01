@@ -34,3 +34,5 @@ docker run --rm --name=geni-lib \
   -v `pwd`/geni/:/output \
   --entrypoint=python \
   ivotron/geni-lib:v0.9.7.9 -u /output/request.py
+
+python `pwd`/geni/monitor_config.py
