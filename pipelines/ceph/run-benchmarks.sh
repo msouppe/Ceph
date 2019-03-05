@@ -1,11 +1,6 @@
 #!/bin/bash
-# [wf] use SSHKEY variable to execute baseliner
-set -ex
 
-if [ -n "$CI" ]; then
-  BASELINER_FLAGS='-s'
-  SSHKEY="$PWD/insecure_rsa"
-fi
+set -ex
 
 if [ -z "$SSHKEY" ]; then
   echo "Expecting SSHKEY variable; will look for .ssh/id_rsa"
@@ -20,15 +15,21 @@ if [ -z "$SSHKEY" ]; then
   SSHKEY="$HOME/.ssh/id_rsa"
 fi
 
-# delete previous results
-sudo rm -fr results/baseliner_output
-mkdir -p results/baseliner_output
+# Retrieving files from ceph cluster and placing them into cbt
+SVR='node0.ceph2-msouppe.schedock-PG0.clemson.cloudlab.us'
+SRC=$CLOUDLAB_USER@$SVR:/etc/ceph
+DST=$PWD/cbt/
 
-docker pull ivotron/baseliner:0.2
+# Change keyring file permission
+ssh -i $SSH_KEY $CLOUDLAB_USER@$SVR 'sudo chmod 644 /etc/ceph/ceph.client.admin.keyring'
 
-# [wf] invoke baseliner
-docker run --rm --name=cbt \
-  --volume $SSHKEY:/root/.ssh/id_rsa \
-  --volume $PWD/results:/cbt/archive \
-  --volume $PWD/cbt/conf.yml:/cbt/conf.yml \
-  msouppe/cbt
+# Copying all files from /etc/ceph to local machine
+scp -i $SSH_KEY -r $SRC $DST
+
+# 
+# docker run --rm --name=cbt \
+#   -v $SSH_KEY:/root/.ssh/id_rsa \ \
+#   -v $PWD/results:/cbt/archive \
+#   -v $PWD/cbt/conf.yml:/cbt/conf.yml \
+#   -v $PWD/cbt/:/cbt/ \
+#   msouppe/cbt
