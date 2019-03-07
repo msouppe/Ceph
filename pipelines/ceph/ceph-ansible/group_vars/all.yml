@@ -2,7 +2,7 @@
 ceph_origin: repository
 ceph_repository: community
 ceph_stable_release: mimic
-monitor_address: 130.127.133.114
+monitor_address: 130.127.133.166
 public_network: 130.127.132.0/22
 cluster_network: "{{public_network}}"
 ceph_conf_overrides:

@@ -8,7 +8,7 @@ from geni.rspec import pg as rspec
 import subprocess
 import sys
 
-nodeCount = 3
+nodeCount = 6
 
 if not os.path.isdir('/output'):
     raise Exception("expecting '/output folder'")

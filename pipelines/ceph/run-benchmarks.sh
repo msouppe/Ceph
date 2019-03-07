@@ -21,12 +21,14 @@ SRC=$CLOUDLAB_USER@$SVR:/etc/ceph
 DST=$PWD/cbt/
 
 # Change keyring file permission
-ssh -i $SSH_KEY $CLOUDLAB_USER@$SVR 'sudo chmod 644 /etc/ceph/ceph.client.admin.keyring'
+#ssh -i $SSH_KEY $CLOUDLAB_USER@$SVR 'sudo chmod 644 /etc/ceph/ceph.client.admin.keyring'
 
 # Copying all files from /etc/ceph to local machine
-scp -i $SSH_KEY -r $SRC $DST
+#scp -i $SSH_KEY -r $SRC $DST
 
-# 
+python `pwd`/cbt/conf_config.py
+
+# a
 # docker run --rm --name=cbt \
 #   -v $SSH_KEY:/root/.ssh/id_rsa \ \
 #   -v $PWD/results:/cbt/archive \
