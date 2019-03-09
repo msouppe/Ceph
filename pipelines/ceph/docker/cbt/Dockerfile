@@ -1,4 +1,4 @@
-FROM python:3.7-slim-stretch
+FROM python:2.7-slim-stretch
 
 ENV CEPH_CBT_VERSION v0.2
 

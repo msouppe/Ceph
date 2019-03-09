@@ -8,6 +8,7 @@ cd cbt
 git checkout "$CEPH_CBT_VERSION"
 
 apt install -y python-yaml python-lxml pdsh
+pip install lxml
 
 if [ -f requirements.txt ]; then
   pip install -r requirements.txt
