@@ -6,4 +6,5 @@ COPY install.sh /tmp/install.sh
 
 RUN /tmp/install.sh && rm /tmp/install.sh
 
-ENTRYPOINT ["cbt.py", "--archive", "/cbt/archive", "/cbt/conf.yml"]
+WORKDIR "/cbt"
+ENTRYPOINT ["cbt.py", "--archive=/cbt/archive", "/cbt/conf.yml"]

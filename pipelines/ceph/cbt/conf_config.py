@@ -8,7 +8,7 @@ with open(cwd + '/cbt/conf.yml', 'r') as file:
     # read a list of lines into data
 	data = file.readlines()
 
-ceph_conf_file = cwd + '/ceph/ceph.conf'
+ceph_conf_file = cwd + '/cbt/ceph/ceph.conf'
 
 # Make changes to monitor ip address
 for i in range(len(data)):
