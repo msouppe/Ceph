@@ -26,13 +26,15 @@ ssh -i $SSH_KEY $CLOUDLAB_USER@$SVR 'sudo chmod 644 /etc/ceph/ceph.client.admin.
 # Copying all files from /etc/ceph to local machine
 scp -i $SSH_KEY -r $SRC $DST
 
-python `pwd`/cbt/conf_config.py
+#python `pwd`/cbt/conf_config.py
 
-# docker run --rm --name=cbt \
-#   -v $SSH_KEY:/root/.ssh/id_rsa \
-#   -v $PWD/results:/cbt/archive \
-#   -v $PWD/cbt/conf_config.py:/cbt/conf_config.py \
-#   -v $PWD/cbt/cbt.py:/cbt/cbt.py \
-#   -v $PWD/cbt/conf.yml:/cbt/conf.yml \
-#   -v $PWD/cbt/:/cbt/ \
-#   mariettesouppe/cbt:v0.1
+echo `pwd`
+
+# Run ceph benchmarks using containers
+docker run --rm --name=cbt \
+  -v $SSH_KEY:/root/.ssh/id_rsa \
+  -v `pwd`/results:/cbt/archive \
+  -v `pwd`/cbt/ceph.conf:/cbt/ceph.conf \
+  -v `pwd`/cbt/cbt.py:/cbt/cbt.py \
+  -v `pwd`/cbt/conf.yml:/cbt/conf.yml \
+  mariettesouppe/cbt:v0.1

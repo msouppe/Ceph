@@ -66,9 +66,13 @@ with open('/output/machines', 'w') as f:
 
             elif i == 1:
                 f.write(os.linesep + '[osds]' + os.linesep)
-            #elif i == (nodeCount -1)
-            #    f.write(os.linesep + '[clients]' + os.linesep)
+
+            elif i == 3:
+                f.write(os.linesep + '[clients]' + os.linesep)
             
+            elif i == 5:
+                f.write(os.linesep + '[head]' + os.linesep)
+
             f.write(n.hostfqdn)
             f.write(' ansible_user=' + os.environ['CLOUDLAB_USER'])
             f.write(' ansible_become=true' + os.linesep)

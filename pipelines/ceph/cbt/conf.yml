@@ -7,7 +7,7 @@ cluster:
   fs: xfs
   mkfs_opts: -f -i size=2048
   mount_opts: -o inode64,noatime,logbsize=256k
-  ceph.conf: /Users/mariette/Desktop/Ceph/pipelines/ceph/cbt/ceph.conf
+  ceph.conf: 'ceph.conf'
   conf_file: "{{ceph.conf}}"
   iterations: 3
   rebuild_every_test: False
