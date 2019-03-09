@@ -17,7 +17,7 @@ fi
 
 # Retrieving files from ceph cluster and placing them into cbt
 SVR='node0.ceph11-msouppe.schedock-PG0.clemson.cloudlab.us'
-SRC=$CLOUDLAB_USER@$SVR:/etc/ceph
+SRC=$CLOUDLAB_USER@$SVR:/etc/ceph/*
 DST=$PWD/cbt/
 
 # Change keyring file permission
@@ -28,10 +28,11 @@ scp -i $SSH_KEY -r $SRC $DST
 
 python `pwd`/cbt/conf_config.py
 
-docker run --rm --name=cbt \
-  -v $SSH_KEY:/root/.ssh/id_rsa \
-  -v $PWD/results:/cbt/archive \
-  -v $PWD/cbt/conf_config.py:/cbt/conf_config.py \
-  -v $PWD/cbt/conf.yml:/cbt/conf.yml \
-  -v $PWD/cbt/:/cbt/ \
-  mariettesouppe/cbt:v0.1
+# docker run --rm --name=cbt \
+#   -v $SSH_KEY:/root/.ssh/id_rsa \
+#   -v $PWD/results:/cbt/archive \
+#   -v $PWD/cbt/conf_config.py:/cbt/conf_config.py \
+#   -v $PWD/cbt/cbt.py:/cbt/cbt.py \
+#   -v $PWD/cbt/conf.yml:/cbt/conf.yml \
+#   -v $PWD/cbt/:/cbt/ \
+#   mariettesouppe/cbt:v0.1

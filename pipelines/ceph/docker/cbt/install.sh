@@ -9,6 +9,8 @@ git checkout "$CEPH_CBT_VERSION"
 
 apt install -y python-yaml python-lxml pdsh
 
+echo `pwd`
+
 if [ -f requirements.txt ]; then
   pip install -r requirements.txt
 else
