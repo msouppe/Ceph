@@ -7,4 +7,4 @@ COPY install.sh /tmp/install.sh
 RUN /tmp/install.sh && rm /tmp/install.sh
 
 WORKDIR "/cbt" 
-ENTRYPOINT ["cbt.py", "--archive=archive", "--conf=ceph.conf", "conf.yml"]
+ENTRYPOINT ["python", "cbt.py", "--archive=archive", "--conf=ceph.conf", "conf.yml"]

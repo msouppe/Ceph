@@ -35,6 +35,5 @@ docker run --rm --name=cbt \
   -v $SSH_KEY:/root/.ssh/id_rsa \
   -v `pwd`/results:/cbt/archive \
   -v `pwd`/cbt/ceph.conf:/cbt/ceph.conf \
-  -v `pwd`/cbt/cbt.py:/cbt/cbt.py \
   -v `pwd`/cbt/conf.yml:/cbt/conf.yml \
   mariettesouppe/cbt:v0.1

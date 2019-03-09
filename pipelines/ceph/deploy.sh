@@ -6,7 +6,7 @@ if [ -z "$SSH_KEY" ]; then
   exit 1
 fi
 
-# deploy ceph using containers
+# Deploy ceph using containers
 docker run --rm --name=ceph-ansible \
   -v $SSH_KEY:/root/.ssh/id_rsa \
   -v `pwd`/geni/machines:/etc/ansible/hosts \
