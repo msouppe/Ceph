@@ -1,8 +1,8 @@
 cluster:
-  head: "node5.ceph11-msouppe.schedock-PG0.clemson.cloudlab.us"
-  clients: ["node3.ceph11-msouppe.schedock-PG0.clemson.cloudlab.us", "node4.ceph11-msouppe.schedock-PG0.clemson.cloudlab.us"]
-  osds: ["node1.ceph11-msouppe.schedock-PG0.clemson.cloudlab.us", "node2.ceph11-msouppe.schedock-PG0.clemson.cloudlab.us"]
-  mons: ["node0.ceph11-msouppe.schedock-PG0.clemson.cloudlab.us"]
+  head: ["msouppe@node5.ceph-msouppe.schedock-PG0.clemson.cloudlab.us"]
+  clients: ["msouppe@node3.ceph-msouppe.schedock-PG0.clemson.cloudlab.us"]
+  osds: ["msouppe@node1.ceph-msouppe.schedock-PG0.clemson.cloudlab.us"]
+  mons: ["msouppe@node0.ceph-msouppe.schedock-PG0.clemson.cloudlab.us"]
   osds_per_node: 1
   fs: xfs
   mkfs_opts: -f -i size=2048

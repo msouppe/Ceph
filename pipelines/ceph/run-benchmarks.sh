@@ -16,7 +16,7 @@ if [ -z "$SSHKEY" ]; then
 fi
 
 # Retrieving files from ceph cluster and placing them into cbt
-SVR='node0.ceph11-msouppe.schedock-PG0.clemson.cloudlab.us'
+SVR='node0.ceph-msouppe.schedock-PG0.clemson.cloudlab.us'
 SRC=$CLOUDLAB_USER@$SVR:/etc/ceph/*
 DST=$PWD/cbt/
 

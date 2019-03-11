@@ -17,9 +17,6 @@ img = "urn:publicid:IDN+clemson.cloudlab.us+image+schedock-PG0:docker-ubuntu16"
 
 requests = {}
 
-mon_ip = None
-mon_host = None
-
 # Function: create_request(site, hw_type, num_nodes)
 # site: Location of cluster site
 # hw_type: Node type
@@ -46,11 +43,9 @@ def create_request(site, hw_type, num_nodes):
 create_request('cl-clemson', 'c6320', nodeCount)
 
 print("Executing cloudlab request")
-manifests = cl.request(experiment_name=('ceph11-'+os.environ['CLOUDLAB_USER']),
+manifests = cl.request(experiment_name=('ceph-'+os.environ['CLOUDLAB_USER']),
                        requests=requests, timeout=30, expiration=1200,
                        ignore_failed_slivers=False)
-
-# Need algorithm to determine number of mons, osds, and clients
 
 # Writing machines file and grouping allocated resources from CloudLab
 print("Writing /output/machines file")
@@ -58,18 +53,19 @@ with open('/output/machines', 'w') as f:
     for site, manifest in manifests.iteritems():
         for i,n in enumerate(manifest.nodes):
 
-            # 1st node is the Monitor Node
+            # 1st node - monitor 
             if i == 0:
                 f.write('[mons]' + os.linesep)
-                mon_host = n.hostfqdn
-                mon_ip = n.hostipv4
 
+            # 2nd, 3rd node - osds
             elif i == 1:
                 f.write(os.linesep + '[osds]' + os.linesep)
 
+            # 4th, 5th node - client
             elif i == 3:
                 f.write(os.linesep + '[clients]' + os.linesep)
             
+            # 6th node - head
             elif i == 5:
                 f.write(os.linesep + '[head]' + os.linesep)
 

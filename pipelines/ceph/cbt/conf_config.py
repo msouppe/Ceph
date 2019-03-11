@@ -12,12 +12,15 @@ ceph_conf_file = cwd + '/cbt/ceph.conf'
 
 # Make changes to monitor ip address
 for i in range(len(data)):
-	# if 'conf_file' in data[i]:
-	# 	print('In here conf_file')
-	# 	data[i] = '  conf_file: ' + str(ceph_conf_file) + '\n'
-	if 'ceph.conf' in data[i]:
-		data[i] = '  ceph.conf: ' + str(ceph_conf_file) + '\n'
-		break
+
+	if 'head' in data[i]:
+		data[i] = '  head: [\"' +  + '\"]\n'
+	if 'clients' in data[i]:
+		data[i] = '  clients: [\"' +  + '\"]\n'
+	if 'mons' in data[i]:
+		data[i] = '  mons: [\"' +  + '\"]\n'
+	if 'osds' in data[i]:
+		data[i] = '  osds: [\"' +  + '\"]\n'
 
 # Write everything back
 with open(cwd + '/cbt/conf.yml', 'w') as file:

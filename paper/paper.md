@@ -13,14 +13,14 @@ abstract: |
 
 # Introduction
 ## Background
-Setting up a distributed system like Ceph is hard and complex because there are many different components that make up Ceph. The goal of this project is implementing a workflow for Ceph experimentation. Instead of going the traditional route of manually installing everything in ad-hoc ways, a SciOps (DevOps for science) methodology is followed to implement experimentation workflows for Ceph. This results in having reproducible studies, transparency (openscience), experiments that are amenable to collaboration and extension. In summary, we apply the SciOps methodology to Ceph experimentation that is typical of storage and data-management R&D settings (e.g think of companies such as Toshiba, WD, Samsung, etc.). In this report we describe what we did.
+Setting up a distributed system like Ceph is hard and complex because there are many different components that make up Ceph. The goal of this project is implementing a workflow for Ceph experimentation. Instead of going the traditional route of manually installing everything in ad-hoc ways, a SciOps (DevOps for science) methodology is followed to implement experimentation workflows for Ceph. This results in having reproducible studies, transparency (open science), experiments that are amenable to collaboration and extension. In summary, we apply the SciOps methodology to Ceph experimentation that is typical of storage and data-management R&D settings (e.g think of companies such as Toshiba, WD, Samsung, etc.). In this report we describe what we did.
 
 Anecdotally, when students take a course in distributed systems and need to setup a distributed environment, it can take several weeks *just* to get the system up and running. If a student were in a ten week class, that does not give students enough time to play around with the system and report interesting observations or results since time is very limited. Reducing the overhead of the setup time will allow for more time working on a project versus spending time getting the system up and running. The workflow that has been implemented will allow for a variety of testing, but this paper one benchmarking test will be performed for a proof of concept basis. Some of these tests which can be performed within Ceph include performance, scalability, correctness, availability, and overhead. The contributions of this project include: 
 
 * Applying SciOps methodology to implement a Ceph experimentation workflow; 
 * A template to deploy and test a Ceph cluster.  
 
-The remainder of this paper is organized as the following, @Sec:approach descibes the approach and technologies used to create the workflow. @Sec:pipeline goes into detail about the different stages in the pipeline. @Sec:challenge reflects on the challenges while creating the experimentation workflow. @Sec:results describes the experimental results and outcome of the experimentation workflow. Lastly, @Sec:future describes the future work and how this project can be futher developed. 
+The remainder of this paper is organized as the following, @Sec:approach describes the approach and technologies used to create the workflow. @Sec:pipeline goes into detail about the different stages in the pipeline. @Sec:challenge reflects on the challenges while creating the experimentation workflow. @Sec:results describes the experimental results and outcome of the experimentation workflow. Lastly, @Sec:future describes the future work and how this project can be further developed. 
 
 ## Ceph
 Ceph [@weil_ceph] is an open source software that provides excellent performance, reliability, highly scalable objects, block, and file-based storage in a distributed system. Other features that are integrated within are having no single point of failure, uses commodity hardware and dynamically increase or decrease nodes where the system will be able to fully recover with underlying algorithms.  
@@ -42,12 +42,12 @@ Popper [@jimenez_2017_popper] is a CLI tool and convention to create reproducibl
 
 # Pipeline {#sec:pipeline}
 ## Prerequisites
-There are three main prerequisites to run this experiment; Popper (v1.1.2), Docker (v2.0.0.3), and a Cloudlab account. Any other additional dependecies that are needed to set up the cluster and benchmarking tool are contained in a Docker container, therefore no additional installs are required.
+There are three main prerequisites to run this experiment; Popper (v1.1.2), Docker (v2.0.0.3), and a Cloudlab account. Any other additional dependencies that are needed to set up the cluster and benchmarking tool are contained in a Docker container, therefore no additional installs are required.
 
-## Worflow
-@Lst:ceph_pop shows the complete pipeline for this experiment. This pipeline consists of the following main stages; setup, deploy, run-benchmark, teardown, and validate. One can notice in @Fig:pipeline_flow that the setup stage is surrounded in a different color compared to the remainder of the stages. The reasoning behind this is to allow for different services for resources for this end-to-end testing environment. For this experiment, the resources are being allocated from Cloulab and the idea is to use other services such as Amazon Web Services or Chameleon for resources. The setup for Amazon Web Services and Chameleon would consist of different processes for requesting resources therefore the setup scripts would differ from the Cloudlab setup script.
+## Workflow
+@Lst:ceph_pop shows the complete pipeline for this experiment. This pipeline consists of the following main stages; setup, deploy, run-benchmark, teardown, and validate. One can notice in @Fig:pipeline_flow that the setup stage is surrounded in a different color compared to the remainder of the stages. The reasoning behind this is to allow for different services for resources for this end-to-end testing environment. For this experiment, the resources are being allocated from Cloudlab and the idea is to use other services such as Amazon Web Services or Chameleon for resources. The setup for Amazon Web Services and Chameleon would consist of different processes for requesting resources therefore the setup scripts would differ from the Cloudlab setup script.
 
-In addition to the scripts to conduct the experiment, there are also other folders in the pipeline such as cbt, ceph-anisble, Docker, and GENI. These folders indicate the different tools are being used throughout the experiment. Each tool will be futher explained in their appropriate stages of how that tool is used.
+In addition to the scripts to conduct the experiment, there are also other folders in the pipeline such as cbt, ceph-anisble, Docker, and GENI. These folders indicate the different tools are being used throughout the experiment. Each tool will be further explained in their appropriate stages of how that tool is used.
 
 {#Fig:pipeline_flow} - MIA
 
@@ -95,7 +95,7 @@ Ceph-repo
 ```
 
 ## Setup.sh
-The setup stage consists of requesting resources. As mentioned earlier, the resources for this experiment will come from Cloudlab. For the resources that are being used for this project, Ceph is using Cloudlab's cluster Clemson and type c6320. @Lst:cl shows the Clemson cluster hardware specifications for the type c6320. The Clemson cluster was choosen versus the other available clusters because of the amount of storage this specific hardware has. 
+The setup stage consists of requesting resources. As mentioned earlier, the resources for this experiment will come from Cloudlab. For the resources that are being used for this project, Ceph is using Cloudlab's cluster Clemson and type c6320. @Lst:cl shows the Clemson cluster hardware specifications for the type c6320. The Clemson cluster was chosen versus the other available clusters because of the amount of storage this specific hardware has. 
 
 ```{#lst:cl .bash caption="Cloudlab Clemson c6320 hardware specifications."}
 CPU   Two Intel E5-2683 v3 14-core CPUs 
@@ -109,8 +109,8 @@ NIC   Qlogic QLE 7340 40 Gb/s Infiniband
 
 For this experiment, using Cloudlab, there are five environment variables that need to be declared in order to begin the request of the nodes. The following environmental variables are; `CLOUDLAB_USER`, `CLOUDLAB_PASSWORD`, `CLOUDLAB_PROJECT`, `CLOUDLAB_PUBKEY_PATH`, `CLOUDLAB_CERT_PATH`.
 
-Once the following environmental variables have been declared, these variables are passed into a Docker container to request resources autonmously through the GENI tool. GENI is an API that allows for ....
-Furthermore, the request API allows users choose which hardware they want to use. For our case Clemson c6320 is choosen. After the request of the resources completes, an `cl-clemson.xml` file is formed with all of the specifications for *X* amount of nodes, where *X* is the amount of nodes a user wants for their experiment. Next, a `machines` file is written to group the allocated resources from Cloudlab. Lastly, the monitor IP address gets copied from the `cl-clemson.xml` into the the `all.yml` file in the ceph-ansible folder to prepare for the deployment of the cluster. Below shows which files are used for this stage and the descriptions of a files' functionality. @Lst:setup shows a table of the files and descriptions of their functionality. 
+Once the following environmental variables have been declared, these variables are passed into a Docker container to request resources autonomously through the GENI tool. GENI is an API that allows for ....
+Furthermore, the request API allows users choose which hardware they want to use. For our case Clemson c6320 is chosen. After the request of the resources completes, an `cl-clemson.xml` file is formed with all of the specifications for *X* amount of nodes, where *X* is the amount of nodes a user wants for their experiment. Next, a `machines` file is written to group the allocated resources from Cloudlab. Lastly, the monitor IP address gets copied from the `cl-clemson.xml` into the the `all.yml` file in the ceph-ansible folder to prepare for the deployment of the cluster. Below shows which files are used for this stage and the descriptions of a files' functionality. @Lst:setup shows a table of the files and descriptions of their functionality. 
 
 ```{#lst:setup .bash caption="Setup stage file breakdown"}
 clemson.xml
@@ -146,7 +146,7 @@ install.sh
    - Clone Ceph-anisble and requirements
 ```
 
-The way to verify that the Ceph cluster is up, is by checking the status of the Ceph cluster by one of three ways. First, looking at the end of the log from the deploy stage or secondly `ssh` into the monitor node and use the command `sudo ceph -s` to view the status of the cluster. @Lst:ceph_config shows a sample output of a running cluster. Note that `health` has a warning. That warning can be ignored because in the configuration files when deploying the cluster, the mgr role was omitted. Another way to make sure that the cluster is configured properly is verfiying that the OSDs are up and running. This can be checked my looking at the `services > osd` from the output. In this case, it is shown that two OSDs are up. If the osds are not up and running, that indicates a cluster doesn't exsist.
+The way to verify that the Ceph cluster is up, is by checking the status of the Ceph cluster by one of three ways. First, looking at the end of the log from the deploy stage or secondly `ssh` into the monitor node and use the command `sudo ceph -s` to view the status of the cluster. @Lst:ceph_config shows a sample output of a running cluster. Note that `health` has a warning. That warning can be ignored because in the configuration files when deploying the cluster, the mgr role was omitted. Another way to make sure that the cluster is configured properly is verifying that the OSDs are up and running. This can be checked my looking at the `services > osd` from the output. In this case, it is shown that two OSDs are up. If the osds are not up and running, that indicates a cluster doesn't exist.
 
 ```{#lst:ceph_config .bash caption="Cluster configuration output."}
   cluster:
@@ -171,14 +171,23 @@ The way to verify that the Ceph cluster is up, is by checking the status of the 
 https://www.snia.org/sites/default/files/SDC/2016/presentations/performance/LoganBlyth_Performance_Testing_CBT.pdf
 
 ## Teardown.sh
+Once a user has completed their experiment there are two ways to terminates all of the allocated machines back to Cloudlab which will erase all of the data that was installed. The first method is letting the resources expire. The second way is using Cloudlab's release API to release the resources back into the resource pool. The teardown stage script will differ depending where the resources has been allocated, just like the setup stage's script. 
 
 # Challenges {#sec:challenge}
+With any project, there are always obstacles that are faced through the process. The main challenge of creating a Ceph experimentation workflow  was setting up the environment. The first main challenge going into this project was having very little knowledge of Ceph. With some help I was able ramp up my understanding of Ceph the current methodologies exit for deployed Ceph. 
+
+A key part of this workflow is for the pipeline to be reproducible. If reproducibility occurred after a pipeline has been completed, there is a risk that the pipeline will break and the programmer, such as myself, will later be stuck in a loop of fixing the pipeline and maintaining the which can result into complicated setup. Incorporating reproducibility from the beginning is important so this entire workflow will be portable from machine to another. 
+
+Another challenge that pushed back the timeline of getting this pipeline working was having to change cloud hosts two times along the way. The first cloud host subscription expired, so then another alternative was suggested and create a local Ceph system. However, the local distribution failed due to permission rights on a Linux - Ubuntu machine and having to change some hardware settings that I didn’t want played with. In hindsight a virtual machine would have been a better solution for the local Ceph system, but another main goal of the project was not to use a virtual machine. Virtual machines are useful, but as mentioned in the Abstract this pipeline is intended to have minimal setup. 
+
+Another one of the challenge encountered was allocating nodes in Cloudlab. Cloudlab nodes consists of a variety of hardware, so when first starting out and allocating nodes, the nodes that were being allocated from the Cloudlab Utah cluster where the node had 256GB on the disk. There was a memory storage limit that was encountered since Ceph has a lot dependencies. Switching to the Cloudlab Clemson solved this issue.
 
 # Results {#sec:results}
 
 # Future Work {#sec:future}
 
-# Conlcusion {#sec:conclusion}
+# Conclusion {#sec:conclusion}
+In conclusion, building a Ceph distributed system is not an easy, straight forward task because there are different components that need to be put together. Additionally, it can take multiple weeks just to get the system running so in a class setting where weeks are limited most of the time is spent troubleshooting and debugging the system versus spending time obtaining interesting results to analyze and then make further tests within Ceph. This workflow, once understood, provides a lightweight automated, reproducible Ceph deployment system with an end to end testing workflow.
 
 ### RESERVE/ IGNORE
 How to add in an image
