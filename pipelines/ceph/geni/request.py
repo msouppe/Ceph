@@ -8,12 +8,12 @@ from geni.rspec import pg as rspec
 import subprocess
 import sys
 
-nodeCount = 6
+nodeCount = 3
 
 if not os.path.isdir('/output'):
     raise Exception("expecting '/output folder'")
 
-img = "urn:publicid:IDN+clemson.cloudlab.us+image+schedock-PG0:docker-ubuntu16"
+img = "urn:publicid:IDN+clemson.cloudlab.us+image+schedock-PG0:ubuntu18-docker"
 
 requests = {}
 
@@ -62,12 +62,12 @@ with open('/output/machines', 'w') as f:
                 f.write(os.linesep + '[osds]' + os.linesep)
 
             # 4th, 5th node - client
-            elif i == 3:
+            elif i == 2:
                 f.write(os.linesep + '[clients]' + os.linesep)
             
             # 6th node - head
-            elif i == 5:
-                f.write(os.linesep + '[head]' + os.linesep)
+            # elif i == 5:
+            #     f.write(os.linesep + '[head]' + os.linesep)
 
             f.write(n.hostfqdn)
             f.write(' ansible_user=' + os.environ['CLOUDLAB_USER'])

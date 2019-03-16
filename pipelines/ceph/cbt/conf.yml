@@ -1,8 +1,9 @@
 cluster:
-  head: ["msouppe@node5.ceph-msouppe.schedock-PG0.clemson.cloudlab.us"]
-  clients: ["msouppe@node3.ceph-msouppe.schedock-PG0.clemson.cloudlab.us"]
-  osds: ["msouppe@node1.ceph-msouppe.schedock-PG0.clemson.cloudlab.us"]
-  mons: ["msouppe@node0.ceph-msouppe.schedock-PG0.clemson.cloudlab.us"]
+  user: 'msouppe'
+  head: ["node0.ceph-msouppe.schedock-PG0.clemson.cloudlab.us"]
+  clients: ["node2.ceph-msouppe.schedock-PG0.clemson.cloudlab.us"]
+  osds: ["node1.ceph-msouppe.schedock-PG0.clemson.cloudlab.us"]
+  mons: ["node0.ceph-msouppe.schedock-PG0.clemson.cloudlab.us"]
   osds_per_node: 1
   fs: xfs
   mkfs_opts: -f -i size=2048
@@ -13,11 +14,10 @@ cluster:
   rebuild_every_test: False
   tmp_dir: "/tmp/cbt"
   pool_profiles:
-    erasure:
-      pg_size: 4096
-      pgp_size: 4096
-      replication: 'erasure'
-      erasure_profile: 'myec'
+    replicated:
+      pg_size: 128
+      pgp_size: 128
+      replication: 1
 benchmarks:
   radosbench:
     op_size: [ 4194304, 524288, 4096 ]
@@ -26,4 +26,4 @@ benchmarks:
     concurrent_ops: [ 128 ]
     concurrent_procs: 1
     use_existing: True
-    pool_profile: erasure
+    pool_profile: replicated

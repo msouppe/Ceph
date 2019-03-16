@@ -4,3 +4,4 @@ popper_status
 *.DS_Store
 **/geni/*.xml
 **/geni/machines
+**/archive

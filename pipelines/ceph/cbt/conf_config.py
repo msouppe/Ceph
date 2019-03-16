@@ -8,9 +8,7 @@ with open(cwd + '/cbt/conf.yml', 'r') as file:
     # read a list of lines into data
 	data = file.readlines()
 
-ceph_conf_file = cwd + '/cbt/ceph.conf'
-
-# Make changes to monitor ip address
+# Make changes to head, cliets, mons, and osds parameters
 for i in range(len(data)):
 
 	if 'head' in data[i]:

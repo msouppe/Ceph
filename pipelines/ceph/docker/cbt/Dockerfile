@@ -1,6 +1,6 @@
 FROM python:2.7-slim-stretch
 
-ENV CEPH_CBT_VERSION v0.2
+ENV CEPH_CBT_VERSION master
 
 COPY install.sh /tmp/install.sh
 

@@ -1,6 +1,7 @@
 ---
 # Defines deployment design and assigns role to server groups
 - include: purge_cluster.yml
+#- include: infrastructure-playbooks/purge-cluster.yml
 
 - hosts:
   - mons
