@@ -13,19 +13,19 @@ abstract: |
 
 # Introduction
 ## Background
-Setting up a distributed system like Ceph is hard and complex because there are many different components that make up Ceph. The goal of this project is to implement a workflow for Ceph experimentation. Instead of going the traditional route of manually installing everything in ad-hoc ways, a SciOps (DevOps for science) methodology is followed to create an experimentation workflow for Ceph. This results in having reproducible studies, transparency (open science), experiments that are amenable to collaboration and extension. In summary, we apply the SciOps methodology to Ceph experimentation that is typical of storage and data-management R&D settings (e.g think of companies such as Toshiba, WD, Samsung, etc.). This report describes the process of how the workflow was implemented and how it can be used.
+Setting up a distributed system like Ceph is hard and complex because there are many different components that make up Ceph. The goal of this project is to implement a workflow for Ceph experimentation. Instead of going the traditional route of manually installing everything in ad-hoc ways, a SciOps (DevOps for science) methodology is followed to create an experimentation workflow for Ceph. This results in having reproducible studies, transparency (open science), experiments that are amenable to collaboration and extension. In summary, we apply the SciOps methodology to Ceph experimentation that is typical of storage and data-management R&D settings (e.g companies such as Toshiba, WD, Samsung, etc.). This report describes the process of how the workflow was implemented and how it can be used.
 
 The audience of this project is targeted towards several groups such as any newcomer of Ceph or existing users wanting a simple workflow for Ceph experimentation. Anecdotally, when students take a course in distributed systems and need to setup a distributed environment, it can take several weeks *just* to get the system up and running. If a student were in a ten week class, that does not give students enough time to play around with the system and report interesting observations or results since time is very limited. Reducing the overhead of the setup time will allow for more time working on a project versus spending time getting the system up and running. The workflow that has been implemented will allow for a variety of testing, but this paper focuses on one benchmarking test which will be performed as a proof of concept basis. Some of these tests which can be performed within Ceph include performance, scalability, correctness, availability, and overhead. The contributions of this project include: 
 
 * Applying SciOps methodology to implement a Ceph experimentation workflow; 
 * A template to deploy and test a Ceph cluster.  
 
-The remainder of this paper is organized as the following, @Sec:approach describes the approach and technologies used to create the workflow. @Sec:pipeline goes into detail about the different stages in the pipeline. @Sec:challenge reflects on the challenges while creating the experimentation workflow. @Sec:results describes the experimental results and outcome of the experimentation workflow. Lastly, @Sec:future describes the future work and how this project can be further developed. 
+The remainder of this paper is organized as follows, @Sec:approach describes the approach and technologies used to create the workflow. @Sec:pipeline goes into detail about the different stages in the pipeline. @Sec:challenge reflects on the challenges while creating the experimentation workflow. @Sec:results describes the experimental results and outcome of the experimentation workflow. Lastly, @Sec:future describes the future work and how this project can be further developed. 
 
 ## Ceph
-Ceph [@weil_ceph] is an open source software that provides excellent performance, reliability, highly scalable objects, block, and file-based storage in a distributed system. Other features that are integrated within are having no single point of failure, uses commodity hardware and dynamically increase or decrease nodes where the system will be able to fully recover with underlying algorithms.  
+Ceph [@weil_ceph] is an open source software that provides excellent performance, reliability, highly scalable objects, block, and file-based storage in a distributed system. Other features include having no single point of failure, using commodity hardware and dynamically increasing or decreasing nodes where the system will be able to fully recover with underlying algorithms.  
 
-As previously mentioned Ceph is scalable. A Ceph cluster consists of many roles such as monitors, agents, OSDs, clients, managers, and rgws. For this project a small Ceph cluster is created, but the experiment is agnostic to the size of the cluster. When first starting out with Ceph, there is a minimum requirement of three nodes needed to get the system running. Each of these three nodes have their own role: a monitor node, one object storage device (OSD) node, and a client node. The monitor node contains a "cluster map" which is the set of maps comprising of the roles of a monitor, OSDs, placement group (PG), MDS, and CRUSH map [@ceph_docs]. These five different maps in the "cluster map" have knowledge of the whole cluster topology. Moreover, the monitor node provides logging and authentication services which are used when setting up the system. The OSD node is in charge of storing objects on a local file system and providing access to them over the network [@ceph_docs]. It is also important that there is one monitor node in a Ceph cluster because the monitor node acts as a leader for the cluster. Additionally, it is important to always have an odd amount of nodes in the system because we want the system to reach consistency so if there is an even amount of nodes there is a possibility of not obtaining a majority. When there is no majority, a system can get stuck and not reach consistency. For a proof of concept this paper focuses on a small system.
+As previously mentioned Ceph is scalable. A Ceph cluster consists of many roles such as monitors, agents, OSDs, clients, managers, and rgws. For this project a small Ceph cluster is created, but the experiment is agnostic to the size of the cluster. When first starting out with Ceph, there is a minimum requirement of three nodes needed to get the system running. Each of these three nodes have their own role: a monitor node, one object storage device (OSD) node, and a client node. The monitor node contains a "cluster map" which is the set of maps comprising of the roles of a monitor, OSDs, placement group (PG), MDS, and CRUSH map [@ceph_docs]. These five different maps in the "cluster map" have knowledge of the whole cluster topology. Moreover, the monitor node provides logging and authentication services which are used when setting up the system. The OSD node is in charge of storing objects on a local file system and providing access to them over the network [@ceph_docs]. It is also important that there is one monitor node in a Ceph cluster because the monitor node acts as a leader for the cluster. Additionally, it is important to always have an odd amount of nodes in the system because we want the system to reach consistency so if there is an even amount of nodes there is a possibility of not obtaining a majority. When there is no majority, a system can get stuck and not reach consistency. For a proof of concept this paper focuses on a small system of three nodes; one monitor, one object storage daemon, and one client.
   
 # Approach {#sec:approach}
 In order to get a Ceph cluster running for experimentation, there are different tools that are used to automate and create a Ceph system; Cloudlab, Ceph Benchmarking Tool, Ceph-Ansible, Docker, and Popper. Some of these tools will need user credentials meaning that a user will need to create an account which are Cloudlab, Docker, and Github. Popper does not need credentials and can be installed through the terminal via the command, `pip install popper`. The first step in the workflow is changing/writing code and then building that code. Next, resources get allocated via Cloudlab. Proceeding this step, Ceph-ansible is used to deploy the code and then the Ceph Benchmarking Tool is used to run the different tests to be conducted on Ceph. Lastly, Jupyter is used to help analyze the results.
@@ -34,14 +34,16 @@ Cloudlab [@cloudlab] is an online service that hosts bare metal machines for use
   
 Docker [@docker], a container platform, helps containerize packages and environments which can be shared among multiple applications. Docker will help create the Ceph environment into a container so all of Ceph’s dependencies will be encapsulated together. As mentioned in the abstract, this workflow is only for MAC and Linux operating systems because of Docker. Docker does not work as easily and nicely on a Windows operating system which was observed from past experience. Once Docker has been installed onto a user's machine, then the obtaining images on Docker will be easy to pull from Docker hub which consists of many images. For this workflow, a base Docker images will contain all of the dependencies for some of the other mentioned tools will be contained within a container.   
 
-Popper [@jimenez_2017_popper] is a CLI tool and convention to create reproducible scientific articles and experiments. The convention is based on the open source software (OSS) development model which creates self-contained experiments that doesn’t require external dependencies than what is already contained in the experiment. The Popper convention uses a pipeline that consists of shell scripts which executes an entire experiment. When a pipeline has been initialized, the pipeline consists of several default stages: the setup, run, postrun, validate, and teardown stage. These default stages are not required for every experiment and stages can be renamed accordingly to what makes sense for your experiment. For this experiment the stage names that are used are setup, deploy, run-benchmarks, teardown, and validate. In the setup stage, a user would usually download all the necessary files to run the project. These files are, for example, data files, libraries, and other dependencies. The run stage executes the script that is used to run the main part of the experiment. The postrun stage is where data can be manipulated so it is setup nicely to the validation stage. The validate stage is where a user would display the results obtained in the postrun stage. This stage could be used to open a log file that shows the results of the experiment or run a script that graphs and displays the results, for our case Jupyter will be used to showcase the results. 
+Ansible [@anisble] is a software provisioning service which helps prepares an inventory file that defines a host.
   
-Ceph-ansible [@ceph_ansible] is an Ansible playbook that helps automate the installation of Ceph to create a Ceph cluster. Furthermore, Ansible is a software provisioning service which helps prepares an inventory file that defines a host. With this inventory file and host information, hosts roles are also defined to create a Ceph cluster. 
+Ceph-ansible [@ceph_ansible] uses Ansible to automate the installation of Ceph to create a Ceph cluster.  With this inventory file and host information, hosts roles are also defined to create a Ceph cluster. 
 
-Ceph Benchmarking Tool [@cbt] is a tool that is used to automate different testing harnesses on top of a Ceph cluster for performance and benchmarking. There are four main benchmarking modules this tool provides; radosbench, librbdfio, kvmrbdfio, and rbdfio. CBT is a layer on top of Ceph and doesn't install Ceph packages to create a cluster which is why Ceph-ansible is used to create the cluster.
+Ceph Benchmarking Tool [@cbt] is a tool that is used to automate different testing harnesses on top of a Ceph cluster for performance and benchmarking. There are four main benchmarking modules this tool provides; radosbench, librbdfio, kvmrbdfio, and rbdfio. CBT is a layer on top of Ceph and does not install Ceph packages to create a cluster which is why Ceph-ansible is used to create the cluster.
 
 Jupyter [@jupyter], also commonly known as Jupyter Notebook, is an open source software interactive tool that integrates visuals, narrative text, and other forms of media in a single document. Jupyter is used in this workflow to help visualize our results which can then be analyzed for further testing.
   
+Popper [@jimenez_2017_popper] is a command-line interpret tool and convention to create reproducible scientific articles and experiments. The convention is based on the open source software (OSS) development model which creates self-contained experiments that does not require external dependencies than what is already contained in the experiment. The Popper convention uses a pipeline that consists of shell scripts which executes an entire experiment. When a pipeline has been initialized, the pipeline consists of several default stages: the setup, run, postrun, validate, and teardown stage. These default stages are not required for every experiment and stages can be renamed accordingly to what makes sense for your experiment. For this experiment the stage names that are used are setup, deploy, run-benchmarks, teardown, and validate. In the setup stage, a user would usually download all the necessary files to run the project. These files are, for example, data files, libraries, and other dependencies. The run stage executes the script that is used to run the main part of the experiment. The postrun stage is where data can be manipulated so it is setup nicely to the validation stage. The validate stage is where a user would display the results obtained in the postrun stage. This stage could be used to open a log file that shows the results of the experiment or run a script that graphs and displays the results, for our case Jupyter will be used to showcase the results. Popper wraps all of these stages together so that this workflow can be deployed with only 
+
 # Pipeline {#sec:pipeline}
 ## Prerequisites
 There are four main prerequisites to run this experiment; Popper (v1.1.2), Docker (v2.0.0.3), a Cloudlab account and Github account. Any other additional dependencies that are needed to set up the cluster and benchmarking tool are contained in a Docker container, therefore no additional installation are required.
@@ -93,6 +95,7 @@ Ceph-repo
 |   |       |-- request.py
 |   |       |-- renew.py
 |   |       |-- monitor_config.py
+|   |   |-- results/
 | paper
 |   |-- build.sh
 |   |-- figures/
@@ -165,7 +168,7 @@ The way to verify that the Ceph cluster is up, is by checking the status of the 
   services:
     mon: 1 daemons, quorum node0
     mgr: no daemons active
-    osd: 2 osds: 2 up, 2 in
+    osd: 1 osds: 1 up, 1 in
  
   data:
     pools:   0 pools, 0 pgs
@@ -185,11 +188,17 @@ ceph.conf
 conf.yml
    - Test configuration files to create 
      parametric sweeps of tests
-Docker-file
+Dockerfile
    - Container containing cbt
 install.sh
    - Clone cbt and requirements
 ```
+
+|OSD count|pg_size|pgp_size|
+|---|:-:|:-:|
+|Less than 5|128|128|
+|Between 5 and 10|512|512|
+|Between 10 and 50|4096|4096|
 
 ## Teardown.sh
 Once a user has completed their experiment there are two ways to terminate all of the allocated machines back to Cloudlab which will erase all of the data that was installed. The first method is letting the resources expire. The second way is using Cloudlab's release API to release the resources back into the resource pool. The teardown stage script will differ depending where the resources has been allocated, just like the setup stage's script. 

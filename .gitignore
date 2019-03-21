@@ -4,4 +4,6 @@ popper_status
 *.DS_Store
 **/geni/*.xml
 **/geni/machines
-**/archive
+**/results
+**/cbt/ceph.conf
+**/cbt/rbdmap

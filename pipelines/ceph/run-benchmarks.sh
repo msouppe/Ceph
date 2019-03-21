@@ -21,18 +21,18 @@ SRC=$CLOUDLAB_USER@$SVR:/etc/ceph/*
 DST=$PWD/cbt/
 
 # Change keyring file permission
-ssh -i $SSH_KEY $CLOUDLAB_USER@$SVR 'sudo chmod 644 /etc/ceph/ceph.client.admin.keyring'
+#ssh -i $SSH_KEY $CLOUDLAB_USER@$SVR 'sudo chmod 644 /etc/ceph/ceph.client.admin.keyring'
 
 # Copying all files from /etc/ceph to local machine
 scp -i $SSH_KEY -r $SRC $DST
 
 # Remove results folder
-
+#rm -R results
 
 # Run ceph benchmarks using containers
 docker run --rm --net=host --name=cbt \
   -v $SSH_KEY:/root/.ssh/id_rsa \
-  -v `pwd`/archive:/cbt/archive \
+  -v `pwd`/results:/cbt/archive \
   -v `pwd`/cbt/radosbench.py:/cbt/benchmark/radosbench.py \
   -v `pwd`/cbt/common.py:/cbt/common.py \
   -v `pwd`/cbt/ceph.conf:/cbt/ceph.conf \
