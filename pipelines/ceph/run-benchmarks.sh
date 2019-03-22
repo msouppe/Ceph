@@ -27,14 +27,14 @@ DST=$PWD/cbt/
 scp -i $SSH_KEY -r $SRC $DST
 
 # Remove results folder
-#rm -R results
+rm -R results
 
 # Run ceph benchmarks using containers
 docker run --rm --net=host --name=cbt \
   -v $SSH_KEY:/root/.ssh/id_rsa \
   -v `pwd`/results:/cbt/archive \
-  -v `pwd`/cbt/radosbench.py:/cbt/benchmark/radosbench.py \
   -v `pwd`/cbt/common.py:/cbt/common.py \
+  -v `pwd`/cbt/radosbench.py:/cbt/benchmark/radosbench.py \
   -v `pwd`/cbt/ceph.conf:/cbt/ceph.conf \
   -v `pwd`/cbt/conf.yml:/cbt/conf.yml \
   -e PDSH_SSH_ARGS_APPEND="-o StrictHostKeyChecking=no" \

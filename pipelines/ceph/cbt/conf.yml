@@ -20,7 +20,7 @@ cluster:
       replication: 1
 benchmarks:
   radosbench:
-    op_size: [ 4194304, 524288, 4096 ]
+    op_size: [ 16384, 65536, 262144, 1048576 ]
     write_only: False
     time: 300
     concurrent_ops: [ 128 ]
